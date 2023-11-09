@@ -34,7 +34,7 @@ USE `trip_database`;
 
 DROP TABLE IF EXISTS `kullanici`;
 CREATE TABLE `kullanici` (
-  `tel_no` char(11) NOT NULL,
+  
   `e_mail` varchar(45) NOT NULL,
   `k_adi` varchar(45) NOT NULL,
   `p_hash` varchar(45) NOT NULL,
@@ -51,8 +51,8 @@ CREATE TABLE `kullanici` (
 -- Tablo döküm verisi `kullanici`
 --
 
-INSERT INTO `kullanici` (`tel_no`, `e_mail`, `k_adi`, `p_hash`, `premium_check`, `user_type`, `r_count`) VALUES
-('', '', '', '$2y$10$E64tfT0WQDqDSKt9WuDIWee.OWLVA2Kg0syCBv', 0, 0, NULL);
+INSERT INTO `kullanici` (`e_mail`, `k_adi`, `p_hash`, `premium_check`, `user_type`, `r_count`) VALUES
+('', '', '$2y$10$E64tfT0WQDqDSKt9WuDIWee.OWLVA2Kg0syCBv', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -109,15 +109,15 @@ CREATE TABLE `mekan_turleri` (
 DROP TABLE IF EXISTS `rotalar`;
 CREATE TABLE `rotalar` (
   `rota_id` int(11) NOT NULL,
-  `tel_no` char(11) NOT NULL,
+  `e_mail` varchar(45) NOT NULL,
   `plaka` int(11) NOT NULL,
   `r_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `rotalar`:
---   `tel_no`
---       `kullanici` -> `tel_no`
+--   `e_mail`
+--       `kullanici` -> `e_mail`
 --   `plaka`
 --       `sehirler` -> `plaka`
 --
@@ -132,7 +132,7 @@ CREATE TABLE `rotalar` (
 
 DROP TABLE IF EXISTS `rota_olustur`;
 CREATE TABLE `rota_olustur` (
-  `k_id` char(11) NOT NULL,
+  `e_mail` varchar(45) NOT NULL,
   `m_id` int(11) NOT NULL,
   `r_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -143,8 +143,8 @@ CREATE TABLE `rota_olustur` (
 --       `mekanlar` -> `mekan_id`
 --   `r_id`
 --       `rotalar` -> `rota_id`
---   `k_id`
---       `kullanici` -> `tel_no`
+--   `e_mail`
+--       `kullanici` -> `e_mail`
 --
 
 -- --------------------------------------------------------
@@ -177,7 +177,7 @@ CREATE TABLE `sehirler` (
 DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
   `yorum_id` int(11) NOT NULL,
-  `tel_no` char(11) NOT NULL,
+  `e_mail` varchar(45) NOT NULL,
   `mekan_id` int(11) NOT NULL,
   `comment_text` text NOT NULL,
   `comment_date` date NOT NULL,
@@ -187,8 +187,8 @@ CREATE TABLE `yorumlar` (
 
 --
 -- TABLO İLİŞKİLERİ `yorumlar`:
---   `tel_no`
---       `kullanici` -> `tel_no`
+--   `e_mail`
+--       `kullanici` -> `e_mail`
 --   `mekan_id`
 --       `mekanlar` -> `mekan_id`
 --
@@ -201,7 +201,7 @@ CREATE TABLE `yorumlar` (
 -- Tablo için indeksler `kullanici`
 --
 ALTER TABLE `kullanici`
-  ADD PRIMARY KEY (`tel_no`),
+  ADD PRIMARY KEY (`e_mail`),
   ADD UNIQUE KEY `mail` (`e_mail`),
   ADD UNIQUE KEY `kullanici_adi` (`k_adi`);
 
@@ -224,14 +224,14 @@ ALTER TABLE `mekan_turleri`
 --
 ALTER TABLE `rotalar`
   ADD PRIMARY KEY (`rota_id`),
-  ADD KEY `tel_no` (`tel_no`),
+  ADD KEY `e_mail` (`e_mail`),
   ADD KEY `plaka` (`plaka`);
 
 --
 -- Tablo için indeksler `rota_olustur`
 --
 ALTER TABLE `rota_olustur`
-  ADD PRIMARY KEY (`k_id`,`m_id`),
+  ADD PRIMARY KEY (`e_mail`,`m_id`),
   ADD KEY `m_id` (`m_id`),
   ADD KEY `r_id` (`r_id`);
 
@@ -246,7 +246,7 @@ ALTER TABLE `sehirler`
 --
 ALTER TABLE `yorumlar`
   ADD PRIMARY KEY (`yorum_id`),
-  ADD KEY `tel_no` (`tel_no`),
+  ADD KEY `e_mail` (`e_mail`),
   ADD KEY `mekan_id` (`mekan_id`);
 
 --
@@ -263,7 +263,7 @@ ALTER TABLE `mekanlar`
 -- Tablo kısıtlamaları `rotalar`
 --
 ALTER TABLE `rotalar`
-  ADD CONSTRAINT `rotalar_ibfk_1` FOREIGN KEY (`tel_no`) REFERENCES `kullanici` (`tel_no`),
+  ADD CONSTRAINT `rotalar_ibfk_1` FOREIGN KEY (`e_mail`) REFERENCES `kullanici` (`e_mail`),
   ADD CONSTRAINT `rotalar_ibfk_2` FOREIGN KEY (`plaka`) REFERENCES `sehirler` (`plaka`);
 
 --
@@ -272,13 +272,13 @@ ALTER TABLE `rotalar`
 ALTER TABLE `rota_olustur`
   ADD CONSTRAINT `rota_olustur_ibfk_1` FOREIGN KEY (`m_id`) REFERENCES `mekanlar` (`mekan_id`),
   ADD CONSTRAINT `rota_olustur_ibfk_2` FOREIGN KEY (`r_id`) REFERENCES `rotalar` (`rota_id`),
-  ADD CONSTRAINT `rota_olustur_ibfk_3` FOREIGN KEY (`k_id`) REFERENCES `kullanici` (`tel_no`);
+  ADD CONSTRAINT `rota_olustur_ibfk_3` FOREIGN KEY (`e_mail`) REFERENCES `kullanici` (`e_mail`);
 
 --
 -- Tablo kısıtlamaları `yorumlar`
 --
 ALTER TABLE `yorumlar`
-  ADD CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`tel_no`) REFERENCES `kullanici` (`tel_no`),
+  ADD CONSTRAINT `yorumlar_ibfk_1` FOREIGN KEY (`e_mail`) REFERENCES `kullanici` (`e_mail`),
   ADD CONSTRAINT `yorumlar_ibfk_2` FOREIGN KEY (`mekan_id`) REFERENCES `mekanlar` (`mekan_id`);
 COMMIT;
 
