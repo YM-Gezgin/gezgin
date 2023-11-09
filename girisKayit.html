@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giris</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Bağlanacak olan CSS dosyası -->
+
+</head>
+<body>
+    <header class="header-navbar" style="display: flex; justify-content: center;">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg" style="background-color: #F8F3EE; flex-wrap: nowrap;">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <h1 class="gezgin-title">gezgin</h1>
+                    <a href="#" class="premium-link">Premium'u Keşfet</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i> Keşfet
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-car"></i>  Otel & Araç Kiralama
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link giris-yap" href="#">
+                        <i class="fas fa-user icon"></i> Giriş Yap
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="jumbotron text-center header-jumbotron" style="background: none;">
+        <h5 style="text-align: center;">"Dünya bir kitaptır ve seyahat etmeyenler, onun sadece bir sayfasını okurlar."- Augustinus.</h5>
+        <!-- Diğer içerikler -->
+    </div>
+    
+
+    
+<!-- Kayıt Ol formu -->
+    <div class="register-form" >
+        <div class="container">
+        
+        <form id="registerForm">
+            <div class="d-flex justify-content-center mt-3">
+                <button type="button" id="showLoginFromRegister" class="btn btn-primary border-0" style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>
+                <button type="button" id="showRegisterFromRegister" class="btn btn-primary border-0" style="border-radius: 0; background-color: #046aad;">Üye Ol</button>
+            </div>
+            
+            <p class="text-center">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim seyahate başla!</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="isim">İsim-Soy isim:</label>
+                        <input type="text" class="form-control" id="isim" placeholder="İsminizi giriniz">
+                    </div>                    
+                    <div class="form-group">
+                        <label for="email">E-posta:</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi giriniz">
+                    </div>                    
+                    <div class="form-group">
+                        <label for="sifre">Şifre:</label>
+                        <input type="password" class="form-control" id="sifre" placeholder="Şifre belirleyiniz">
+                    </div>
+                    <div class="form-group">
+                        <label for="sifre-tekrar">Şifre Tekrar:</label>
+                        <input type="password" class="form-control" id="sifre-tekrar" placeholder="Şifreyi tekrar giriniz">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="onay">
+                        <label class="form-check-label" for="onay">Tarafıma avantajlı tekliflerin sunulabilmesi amacıyla kişisel verilerimin işlenmesine ve paylaşılmasına açık rıza veriyorum.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="onay">
+                        <label class="form-check-label" for="onay">Tarafıma elektronik ileti gönderilmesini kabul ediyorum.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="onay">
+                        <label class="form-check-label" for="onay">Kişisel verilerimin işlenmesine yönelik aydınlatma metnini okudum ve anladım.</label>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="button" class="btn btn-primary border-0" style="border-radius: 0; background-color: #1B9CFC;">Üye Ol</button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </form>
+        </div>
+        
+    </div>
+
+
+
+    <div class="login-form" style="display: none;">
+        <div class="container"> 
+        
+            <form id="loginForm">
+                <!-- Form alanları -->
+            
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="button" id="showLoginFromLogin" class="btn btn-primary border-0" style="border-radius: 0; background-color: #046aad;">Giriş Yap</button>
+                    <button type="button" id="showRegisterFromLogin" class="btn btn-primary border-0" style="border-radius: 0; background-color: #1B9CFC;">Üye Ol</button>
+                </div>
+                    
+                    <p class="text-center">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim seyahate başla!</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                                              
+                            <div class="form-group">
+                                <label for="email">E-posta:</label>
+                                <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sifre">Şifre:</label>
+                                <input type="password" class="form-control" id="sifre" placeholder="Şifrenizi girin">
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button type="button" class="btn btn-primary border-0" style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+
+
+    
+    
+   
+
+    <footer class="footer">
+        <div class="container" style="flex-wrap: nowrap;">
+            <div class="footer-content" style="display: flex;">
+                <div class="column" style="border-right: 1px solid #010101; padding-right: 20px;">
+                    <h5>Hakkımızda</h5>
+                    <p style="font-size: 13px;"> Gezgin olarak seyahat severlerin Türkiye'nin <br> muhteşem destinasyonlarını keşfetmelerine rehberlik etmek için buradayız. <br>                                  
+                        Bizimle keşfedin, düşlerinizdeki seyahati planlamaya başlayın!</p>
+                </div>
+                <div class="column contact-icons">
+                    <h5><a href="#" style="color: white;" >Reklam ve İş Birliği İçin Bize Ulaşın</a></h5>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fas fa-envelope"></i>
+                    <!-- Diğer sosyal medya ikonları -->
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><a href="#" class="trabzonArac-link">Trabzon'da araç kiralama noktaları</a></li>
+                        <li><a href="#" class="istanbul-link">İstanbul' da gezilecek en güzel 10 yerı</a></li>
+                        <li><a href="#" class="ankara-link">Ankara' da gezilecek en güzel 10 yer</a></li>
+                        <li><a href="#" class="izmir-link">İzmir' de gezilecek en güzel 10 yer</a></li>
+                        <li><a href="#" class="antalya-link">Antalya' da gezilecek en güzel 10 yer</a></li>
+                        <li><a href="#" class="istanbulArac-link">İstanbul' da araç kiralama noktaları</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
+
+
+</body>
+</html>
+
+
+
+
+
