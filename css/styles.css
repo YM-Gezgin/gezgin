@@ -1,0 +1,187 @@
+body {
+    background-color: #F8F3EE; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
+}
+
+ 
+
+
+
+
+
+
+footer {
+    position: relative; /* Footer'ı diğer içeriklerin üzerine yerleştir */
+    clear: both; /* Diğer içeriklerden aşağıya yerleştir */
+    text-align: left;
+    
+}
+
+
+    
+.navbar-text {
+    font-size: 20px;
+}
+
+
+a {
+    text-decoration: underline; /* Tüm bağlantılara alt çizgi ekler */
+}
+
+
+
+.navbar {
+    
+    display: flex;
+    justify-content: space-between;/* Menüyü yatay genişletmek için */
+    padding: 10px 100px; /* Navbarı genişletmek için kenar boşluğu artırır */
+    height: 0x; 
+}
+.navbar-nav .nav-item {
+    list-style: none;
+    margin: 0 2px; /* Menü öğeleri arasına boşluk ekler */
+}
+.nav-item a {
+    color: black; /* Bağlantı metninin rengi */
+    
+}
+
+.nav-item a.giris-yap {
+    display: flex;
+    align-items: center;
+    background-color: #1B9CFC; /* Arka plan rengi */
+    padding: 5px 10px; /* Arka plan alanı boyutlandırma */
+    border-radius: 10px; /* Kenar yumuşatma */
+    color: white; /* Yazı rengi */
+    text-decoration: none; /* Link altı çizgisi */
+}
+
+
+.navbar .premium-link {
+    font-size: 14px;
+    text-decoration: underline;
+    color: black; /* Renk düzenlemesi */
+    margin-left: 130px;
+}
+
+
+.navbar-nav {
+    display: flex; /* Menü öğelerini yatay hizalar */
+    align-items: center; /* Öğeleri dikey ortalar */
+}
+
+
+
+
+
+
+
+.footer {
+    background-color: #1B9CFC; /* Açık mavi renk */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Kolonlar arasındaki boşluk */
+    width: 100%; /* Tüm içeriği genişliğe yay */
+
+}
+.footer-content div {
+    text-align: left;
+}
+.contact-icons {
+    text-align: right;
+}
+.contact-icons i {
+    margin-right: 5px;
+    color: rgb(2, 2, 2);
+}
+.contact-icons h5 {
+    line-height: 4; /* İstediğiniz boşluğu sağlayacak olan bir değer girebilirsiniz */
+}
+.contact-icons a {
+    text-decoration: underline;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+/* Kolonlar arasında kenarlık */
+.footer-content div {
+    border-right: 1px solid #010101; /* Kenarlık rengi ve kalınlığı */
+    padding-right: 20px; /* Sağ kenarlık boşluğu */
+}
+
+.footer-content div:last-child {
+    border: none; /* Son kolonun kenarlığını kaldırır */
+    padding-right: 0; /* Sağ kenarlık boşluğunu kaldırır */
+}
+
+
+
+
+
+
+.column i {
+    font-size: 24px; /* İkonların boyutu */
+    margin: 0 10px; /* İkonlar arasındaki boşluk */
+}
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column ul li a {
+    text-decoration: underline;
+    display: inline-block;
+    margin: 5px 0;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    white-space: nowrap; /* Bu özellikle her bağlantının tek satırda kalmasını sağlarız */
+}
+
+
+
+
+
+
+.footer a {
+    text-decoration: none; /* Footer içindeki tüm linklerin alt çizgisini kaldırır */
+    color: white; /* Renk düzenlemesi */
+}
+
+
+
+.gezgin-title {
+    font-size: 80px;
+    margin-right: 10px;
+    color: #1B9CFC; /* Gezgin yazısına kırmızı renk uygular */
+}
+
+.register-form {
+    padding-top: 40px; /* Üst kısma boşluk ekler */
+    padding-bottom: 60px; /* Alt kısma boşluk ekler */
+}
+.login-form {
+    padding-top: 40px; /* Üst kısma boşluk ekler */
+    padding-bottom: 60px; /* Alt kısma boşluk ekler */
+}
+
+.btn {
+    margin-bottom: 20px; /* Butonun altına boşluk ekler */
+}
+.jumbotron {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+
+
+
+
