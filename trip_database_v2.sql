@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 30 Eki 2023, 19:31:41
+-- Üretim Zamanı: 14 Kas 2023, 20:26:15
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -18,51 +18,40 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `trip_database`
+-- Veritabanı: `trip_database:v2`
 --
-CREATE DATABASE IF NOT EXISTS `trip_database` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `trip_database`;
+CREATE DATABASE IF NOT EXISTS `trip_database:v2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `trip_database:v2`;
 
 -- --------------------------------------------------------
 
 --
 -- Tablo için tablo yapısı `kullanici`
 --
--- Oluşturma: 30 Eki 2023, 16:59:45
--- Son güncelleme: 30 Eki 2023, 17:24:47
+-- Oluşturma: 14 Kas 2023, 19:06:54
 --
 
-DROP TABLE IF EXISTS `kullanici`;
 CREATE TABLE `kullanici` (
-  
   `e_mail` varchar(45) NOT NULL,
-  `k_adi` varchar(45) NOT NULL,
+  `ad_soyad` varchar(45) NOT NULL,
   `p_hash` varchar(45) NOT NULL,
-  `premium_check` tinyint(1) NOT NULL,
-  `user_type` tinyint(1) NOT NULL,
-  `r_count` int(11) DEFAULT NULL
+  `premium_kontrol` tinyint(1) NOT NULL,
+  `kullanici_tipi` tinyint(1) NOT NULL,
+  `rota_sayac` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `kullanici`:
 --
 
---
--- Tablo döküm verisi `kullanici`
---
-
-INSERT INTO `kullanici` (`e_mail`, `k_adi`, `p_hash`, `premium_check`, `user_type`, `r_count`) VALUES
-('', '', '$2y$10$E64tfT0WQDqDSKt9WuDIWee.OWLVA2Kg0syCBv', 0, 0, NULL);
-
 -- --------------------------------------------------------
 
 --
 -- Tablo için tablo yapısı `mekanlar`
 --
--- Oluşturma: 30 Eki 2023, 18:19:03
+-- Oluşturma: 14 Kas 2023, 19:16:06
 --
 
-DROP TABLE IF EXISTS `mekanlar`;
 CREATE TABLE `mekanlar` (
   `mekan_id` int(11) NOT NULL,
   `mekan_adi` varchar(45) NOT NULL,
@@ -76,6 +65,8 @@ CREATE TABLE `mekanlar` (
 
 --
 -- TABLO İLİŞKİLERİ `mekanlar`:
+--   `plaka`
+--       `sehirler` -> `plaka`
 --   `mt_id`
 --       `mekan_türleri` -> `mt_id`
 --
@@ -85,13 +76,12 @@ CREATE TABLE `mekanlar` (
 --
 -- Tablo için tablo yapısı `mekan_türleri`
 --
--- Oluşturma: 30 Eki 2023, 18:18:24
+-- Oluşturma: 14 Kas 2023, 19:07:30
 --
 
-DROP TABLE IF EXISTS `mekan_turleri`;
-CREATE TABLE `mekan_turleri` (
+CREATE TABLE `mekan_türleri` (
   `mt_id` int(11) NOT NULL,
-  `type_name` varchar(45) NOT NULL
+  `tur_id` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -103,15 +93,14 @@ CREATE TABLE `mekan_turleri` (
 --
 -- Tablo için tablo yapısı `rotalar`
 --
--- Oluşturma: 30 Eki 2023, 18:24:13
+-- Oluşturma: 14 Kas 2023, 19:18:04
 --
 
-DROP TABLE IF EXISTS `rotalar`;
 CREATE TABLE `rotalar` (
   `rota_id` int(11) NOT NULL,
   `e_mail` varchar(45) NOT NULL,
   `plaka` int(11) NOT NULL,
-  `r_date` date NOT NULL
+  `rota_tarihi` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -127,10 +116,9 @@ CREATE TABLE `rotalar` (
 --
 -- Tablo için tablo yapısı `rota_olustur`
 --
--- Oluşturma: 30 Eki 2023, 18:28:55
+-- Oluşturma: 14 Kas 2023, 19:18:46
 --
 
-DROP TABLE IF EXISTS `rota_olustur`;
 CREATE TABLE `rota_olustur` (
   `e_mail` varchar(45) NOT NULL,
   `m_id` int(11) NOT NULL,
@@ -139,12 +127,12 @@ CREATE TABLE `rota_olustur` (
 
 --
 -- TABLO İLİŞKİLERİ `rota_olustur`:
+--   `e_mail`
+--       `kullanici` -> `e_mail`
 --   `m_id`
 --       `mekanlar` -> `mekan_id`
 --   `r_id`
 --       `rotalar` -> `rota_id`
---   `e_mail`
---       `kullanici` -> `e_mail`
 --
 
 -- --------------------------------------------------------
@@ -152,14 +140,13 @@ CREATE TABLE `rota_olustur` (
 --
 -- Tablo için tablo yapısı `sehirler`
 --
--- Oluşturma: 30 Eki 2023, 17:03:10
+-- Oluşturma: 14 Kas 2023, 19:08:56
 --
 
-DROP TABLE IF EXISTS `sehirler`;
 CREATE TABLE `sehirler` (
   `plaka` int(11) NOT NULL,
   `sehir_adi` varchar(45) NOT NULL,
-  `count` int(11) DEFAULT NULL
+  `sayac` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -171,18 +158,17 @@ CREATE TABLE `sehirler` (
 --
 -- Tablo için tablo yapısı `yorumlar`
 --
--- Oluşturma: 30 Eki 2023, 18:22:18
+-- Oluşturma: 14 Kas 2023, 19:19:42
 --
 
-DROP TABLE IF EXISTS `yorumlar`;
 CREATE TABLE `yorumlar` (
   `yorum_id` int(11) NOT NULL,
   `e_mail` varchar(45) NOT NULL,
   `mekan_id` int(11) NOT NULL,
-  `comment_text` text NOT NULL,
-  `comment_date` date NOT NULL,
-  `rate` int(11) NOT NULL,
-  `confirm` tinyint(1) NOT NULL
+  `yorum_metni` text DEFAULT NULL,
+  `yorum_tarihi` date NOT NULL,
+  `oy` int(11) NOT NULL,
+  `onay` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -201,9 +187,7 @@ CREATE TABLE `yorumlar` (
 -- Tablo için indeksler `kullanici`
 --
 ALTER TABLE `kullanici`
-  ADD PRIMARY KEY (`e_mail`),
-  ADD UNIQUE KEY `mail` (`e_mail`),
-  ADD UNIQUE KEY `kullanici_adi` (`k_adi`);
+  ADD PRIMARY KEY (`e_mail`);
 
 --
 -- Tablo için indeksler `mekanlar`
@@ -211,12 +195,12 @@ ALTER TABLE `kullanici`
 ALTER TABLE `mekanlar`
   ADD PRIMARY KEY (`mekan_id`),
   ADD KEY `plaka` (`plaka`),
-  ADD KEY `mekanlar_ibfk_1` (`mt_id`);
+  ADD KEY `mt_id` (`mt_id`);
 
 --
 -- Tablo için indeksler `mekan_türleri`
 --
-ALTER TABLE `mekan_turleri`
+ALTER TABLE `mekan_türleri`
   ADD PRIMARY KEY (`mt_id`);
 
 --
@@ -250,6 +234,34 @@ ALTER TABLE `yorumlar`
   ADD KEY `mekan_id` (`mekan_id`);
 
 --
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+--
+
+--
+-- Tablo için AUTO_INCREMENT değeri `mekanlar`
+--
+ALTER TABLE `mekanlar`
+  MODIFY `mekan_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `mekan_türleri`
+--
+ALTER TABLE `mekan_türleri`
+  MODIFY `mt_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `rotalar`
+--
+ALTER TABLE `rotalar`
+  MODIFY `rota_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `yorumlar`
+--
+ALTER TABLE `yorumlar`
+  MODIFY `yorum_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Dökümü yapılmış tablolar için kısıtlamalar
 --
 
@@ -257,7 +269,8 @@ ALTER TABLE `yorumlar`
 -- Tablo kısıtlamaları `mekanlar`
 --
 ALTER TABLE `mekanlar`
-  ADD CONSTRAINT `mekanlar_ibfk_1` FOREIGN KEY (`mt_id`) REFERENCES `mekan_turleri` (`mt_id`);
+  ADD CONSTRAINT `mekanlar_ibfk_1` FOREIGN KEY (`plaka`) REFERENCES `sehirler` (`plaka`),
+  ADD CONSTRAINT `mekanlar_ibfk_2` FOREIGN KEY (`mt_id`) REFERENCES `mekan_türleri` (`mt_id`);
 
 --
 -- Tablo kısıtlamaları `rotalar`
@@ -270,9 +283,9 @@ ALTER TABLE `rotalar`
 -- Tablo kısıtlamaları `rota_olustur`
 --
 ALTER TABLE `rota_olustur`
-  ADD CONSTRAINT `rota_olustur_ibfk_1` FOREIGN KEY (`m_id`) REFERENCES `mekanlar` (`mekan_id`),
-  ADD CONSTRAINT `rota_olustur_ibfk_2` FOREIGN KEY (`r_id`) REFERENCES `rotalar` (`rota_id`),
-  ADD CONSTRAINT `rota_olustur_ibfk_3` FOREIGN KEY (`e_mail`) REFERENCES `kullanici` (`e_mail`);
+  ADD CONSTRAINT `rota_olustur_ibfk_1` FOREIGN KEY (`e_mail`) REFERENCES `kullanici` (`e_mail`),
+  ADD CONSTRAINT `rota_olustur_ibfk_2` FOREIGN KEY (`m_id`) REFERENCES `mekanlar` (`mekan_id`),
+  ADD CONSTRAINT `rota_olustur_ibfk_3` FOREIGN KEY (`r_id`) REFERENCES `rotalar` (`rota_id`);
 
 --
 -- Tablo kısıtlamaları `yorumlar`
