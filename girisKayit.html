@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Giris</title>
@@ -122,13 +121,13 @@
 
     </div>
 
-    
+   
+
 
 
     <div class="login-form" style="display: none;">
         <div class="container">
-
-            <form id="loginForm">
+            <form id="loginForm" action="giris_yap.php" method="post">
                 <!-- Form alanları -->
 
                 <div class="d-flex justify-content-center mt-3">
@@ -145,15 +144,15 @@
 
                         <div class="form-group">
                             <label for="g_email">E-posta:</label>
-                            <input type="email" class="form-control" id="g_email" placeholder="E-posta adresinizi girin">
+                            <input type="email" class="form-control" name="g_email" placeholder="E-posta adresinizi girin">
                         </div>
 
                         <div class="form-group">
                             <label for="g_sifre">Şifre:</label>
-                            <input type="password" class="form-control" id="g_sifre" placeholder="Şifrenizi girin">
+                            <input type="password" class="form-control" name="g_sifre" placeholder="Şifrenizi girin">
                         </div>
                         <div class="d-flex justify-content-center mt-3">
-                            <button type="button" class="btn btn-primary border-0"
+                            <button type="submit" class="btn btn-primary border-0"
                                 style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>
                         </div>
 

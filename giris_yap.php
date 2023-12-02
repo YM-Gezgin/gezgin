@@ -1,24 +1,33 @@
 <?php
 require("baglan.php");
+session_start(); 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // POST ile gelen verileri al
+    $email = $_POST["g_email"];
+    $sifre = $_POST["g_sifre"];
 
-    $email = $_POST["email"];
-    $sifre = $_POST["sifre"];
-    
-    $hashed_password = password_hash($sifre, PASSWORD_DEFAULT);
+    $sql = "SELECT * FROM kullanici WHERE e_mail = ?";
+    $stmt = $baglanti->prepare($sql);
+    $stmt->bind_param("s", $email);
 
-    $premium_kontrol=0;
-    $kullanici_tipi=0;
-    $rota_sayac=0;
+    if ($stmt->execute()) {
 
-    $sql = "SELECT e_mail, p_hash from kullanici ";
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
 
-    // Sorguyu çalıştırma
-    if ($baglanti->query($sql) === TRUE) {
-        echo "Veri başarıyla eklendi.";
-    } else {
-        echo "Veri eklenirken hata oluştu: " . $baglanti->error;
+        if (password_verify($sifre, $row['p_hash'])) {
+
+            echo "Giriş yapıldı.";
+            $_SESSION['isim'] = $row['ad_soyad'];
+            header("Location: index.php");
+            exit();
+
+        } else {
+            echo "Geçersiz şifre.";
+        }
     }
-
+    $stmt->close();
+} else {
+    echo "Sorgu hatası: " . $stmt->error;
 }
+?>
