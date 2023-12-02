@@ -34,7 +34,7 @@ USE `trip_database:v2`;
 CREATE TABLE `kullanici` (
   `e_mail` varchar(45) NOT NULL,
   `ad_soyad` varchar(45) NOT NULL,
-  `p_hash` varchar(45) NOT NULL,
+  `p_hash` varchar(255) NOT NULL,
   `premium_kontrol` tinyint(1) NOT NULL,
   `kullanici_tipi` tinyint(1) NOT NULL,
   `rota_sayac` int(11) DEFAULT NULL
