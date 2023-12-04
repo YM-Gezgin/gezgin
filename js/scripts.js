@@ -28,3 +28,77 @@
             loginForm.style.display = 'none';
         });
     });
+
+    function epostacontrol() {
+        
+        var email = document.getElementById("email").value;
+        var text = document.getElementById("text");
+
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(email.match(pattern)) {
+            
+            text.innerHTML = "Geçerli e-posta";
+            text.style.color = "green";
+        } else {
+            
+            text.innerHTML = "Geçersiz e-posta!";
+            text.style.color = "red";
+
+        }
+        if (email == "") {
+            text.innerHTML = "";
+            
+        }
+    }
+
+    function sifreControl() {
+        var sifre = document.getElementById("sifre").value;
+        var sifre_tekrar = document.getElementById("sifre_tekrar").value;
+        var sifreText = document.getElementById("sifreText");
+        var sifre_tekrarText = document.getElementById("sifre_tekrarText");
+        
+        var hasUppercase = /[A-Z]/.test(sifre);
+        var hasNumber = /\d/.test(sifre);
+        var hasMinLength = sifre.length >= 6;
+    
+        if (hasUppercase && hasNumber && hasMinLength) {
+            sifreText.innerHTML = "Güçlü şifre";
+            sifreText.style.color = "green";
+            
+        } else {
+            sifreText.innerHTML = "Şifre zayıf! En az bir büyük harf, bir sayı ve altı karakter içermelidir.";
+            sifreText.style.color = "red";
+            
+            
+            }
+    
+        if (sifre === sifre_tekrar && sifre_tekrar !== "") {
+            sifre_tekrarText.innerHTML = "Şifreler eşleşiyor";
+            sifre_tekrarText.style.color = "green";
+            
+            
+            
+        } else {
+            sifre_tekrarText.innerHTML = "Şifreler eşleşmiyor";
+            sifre_tekrarText.style.color = "red";
+            
+            
+        }
+    }
+
+    function validateForm() {
+        
+        epostacontrol();
+        sifreControl();
+    
+        
+        var emailIsValid = document.getElementById("text").style.color === "green";
+        var passwordIsValid = document.getElementById("sifreText").style.color === "green" &&
+                              document.getElementById("sifre_tekrarText").style.color === "green";
+    
+        // kontroller doğru ise return true 
+        return emailIsValid && passwordIsValid;
+    }
+
+
+    

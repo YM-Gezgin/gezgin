@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giris</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -60,7 +61,7 @@
     <div class="register-form">
         <div class="container">
 
-            <form id="registerForm" action="uye_ol.php" method="post">
+            <form id="registerForm" action="uye_ol.php" method="post" onsubmit="return validateForm()">
                 <div class="d-flex justify-content-center mt-3">
                     <button type="button" id="showLoginFromRegister" class="btn btn-primary border-0"
                         style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>
@@ -75,42 +76,56 @@
                         <div class="col-md-6">
 
                             
-                                <label for="isim">İsim-Soy isim:</label>
-                                <input type="text" class="form-control" name="isim" placeholder="İsminizi giriniz" required>
+                            <label for="isim">İsim-Soy isim:</label>
+                            <input type="text" class="form-control" name="isim" id= "isim" placeholder="İsminizi giriniz" required>
                         
-                            <div class="form-group">
-                                <label for="email">E-posta:</label>
-                                <input type="email" class="form-control" name="email"
-                                    placeholder="E-posta adresinizi giriniz" required>
+                            
+                            <div class="form-group">                             
+                                
+                                    <label for="email">E-posta:</label>
+                                    <input type="text" class="form-control" name="email" id="email" onkeyup="epostacontrol()" placeholder="E-posta adresinizi giriniz" >
+                                    <span id="text"></span>
+                                                             
                             </div>
-                            <div class="form-group">
+                            
+                            
+                            <div class="form-group">                                    
+                                
                                 <label for="sifre">Şifre:</label>
-                                <input type="password" class="form-control" name="sifre"  placeholder="Şifre belirleyiniz" required>
+                                <input type="password" class="form-control" name="sifre" id="sifre" onkeyup="sifreControl()" placeholder="Şifrenizi giriniz">
+                                <span id="sifreText"></span>
+                                
                             </div>
-                            <div class="form-group">
-                                <label for="sifre-tekrar">Şifre Tekrar:</label>
-                                <input type="password" class="form-control" name="sifre_tekrar"
-                                    placeholder="Şifreyi tekrar giriniz" required>
+                            <div class="form-group">                                    
+                                
+                                <label for="sifre_tekrar">Tekrar Şifre:</label>
+                                <input type="password" class="form-control" name="sifre_tekrar" id="sifre_tekrar" onkeyup="sifreControl()" placeholder="Şifrenizi tekrar giriniz">
+                                <span id="sifre_tekrarText"></span>
+                                
                             </div>
+
+                            
+                            
+
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="onay1" required >
-                                <label class="form-check-label" for="onay">Tarafıma avantajlı tekliflerin sunulabilmesi
+                                <label class="form-check-label" for="onay1">Tarafıma avantajlı tekliflerin sunulabilmesi
                                     amacıyla kişisel verilerimin işlenmesine ve paylaşılmasına açık rıza
                                     veriyorum.</label>
                             </div>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="onay2" required>
-                                <label class="form-check-label" for="onay1">Tarafıma elektronik ileti gönderilmesini
+                                <label class="form-check-label" for="onay2">Tarafıma elektronik ileti gönderilmesini
                                     kabul ediyorum.</label>
                             </div>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="onay3" required>
-                                <label class="form-check-label" for="onay2">Kişisel verilerimin işlenmesine yönelik
+                                <label class="form-check-label" for="onay3">Kişisel verilerimin işlenmesine yönelik
                                     aydınlatma metnini okudum ve anladım.</label>
                             </div>
                             <div class="d-flex justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary border-0" id="uye_ol_button"
-                                    style="border-radius: 0; background-color: #1B9CFC;">Üye Ol</button>
+                                    style="border-radius: 0; background-color: #1B9CFC;" onclick="validateForm()">Üye Ol</button>
                             </div>
 
                         </div>
@@ -144,17 +159,19 @@
 
                         <div class="form-group">
                             <label for="g_email">E-posta:</label>
-                            <input type="email" class="form-control" name="g_email" placeholder="E-posta adresinizi girin">
+                            <input type="email" class="form-control" name="g_email" id= "g_email" placeholder="E-posta adresinizi girin" >
                         </div>
 
                         <div class="form-group">
                             <label for="g_sifre">Şifre:</label>
-                            <input type="password" class="form-control" name="g_sifre" placeholder="Şifrenizi girin">
+                            <input type="password" class="form-control" name="g_sifre" id= "g_sifre" placeholder="Şifrenizi girin">
                         </div>
                         <div class="d-flex justify-content-center mt-3">
                             <button type="submit" class="btn btn-primary border-0"
                                 style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>
+                                <a href="#"> Şifremi unuttum</a>
                         </div>
+                        
 
 
                     </div>
@@ -205,9 +222,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script src="js/scripts.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
+    
 
 
 </body>
 
 </html>
-

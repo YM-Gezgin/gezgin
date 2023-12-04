@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Veritabanı: `trip_database:v2`
 --
-CREATE DATABASE IF NOT EXISTS `trip_database:v2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `trip_database:v2`;
+CREATE DATABASE IF NOT EXISTS `trip_database` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `trip_database`;
 
 -- --------------------------------------------------------
 
