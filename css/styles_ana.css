@@ -1,0 +1,439 @@
+body {
+    background-color: #F8F3EE; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
+    margin: 0;
+    
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar {
+    background-color: #F8F3EE !important; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    border: none;
+  }
+  
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 25%;
+    margin-left: 10%;
+}
+@media (max-width: 768px) {
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+.navbar-brand {
+    color: #1B9CFC !important; /* Başlık rengi */
+    font-size: 80px;    
+    border: none;
+    display: inline-block;
+}
+.custom-link {
+    color: black !important;
+    text-decoration: underline;
+    display: block;
+    margin-left: 110px;
+}
+
+
+
+.navbar-nav .nav-link {
+    color: black !important; /* Menü öğesi rengi */
+    margin-right: 20px;
+    text-decoration: none;
+}
+  
+  /* Menü öğelerinin üzerine gelindiğinde */
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.nav-item.giris-yap .nav-link {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    background-color: #1B9CFC; /* Arka plan rengi */
+    padding: 5px 10px; /* Arka plan alanı boyutlandırma */
+    border-radius: 10px; /* Kenar yumuşatma */
+    color: white !important; /* Yazı rengi */
+    text-decoration: none; /* Link altı çizgisi */
+    
+}
+.nav-item.giris-yap .nav-link i {
+    margin-right: 8px; /* İkon ile metin arasına boşluk ekleyin */
+}
+
+
+.jumbotron-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 0; /* İhtiyaca göre değiştirilebilir */
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+.jumbotron {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .kesfet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15%;
+    width: 40%;
+  }
+
+  label {
+    margin-bottom: 10px; /* İsterseniz boşluk ayarlayabilirsiniz */
+    width:100%;
+    font-size: 18px;
+  }
+
+  input {
+    display: inline-block;
+    padding: 10px;
+    height: 30px;
+    width:100%;
+    border: 2px solid #152F4F(0, 0, 0, 0.4);
+    border-radius: 15px; /* Yarı çapı yüksekliğin yarısı kadar olacak şekilde ayarlandı */
+    background-color: #f0f0f0; /* Arka plan rengi */
+    box-shadow: 0 4px 8px 0 rgb(255, 254, 254); /* Gölgelendirme */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M21.15 20.435l-3.352-3.353A8.977 8.977 0 0 0 20 11a9 9 0 1 0-9 9 8.977 8.977 0 0 0 5.082-1.568l3.353 3.352a1 1 0 1 0 1.414-1.414zM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+  }
+  #sehir::placeholder {
+    color: #1B9CFC; /* İstediğiniz renk kodunu buraya ekleyebilirsiniz */
+}
+img {
+    width: 20%;
+    height: 20%;
+}
+@media screen and (max-width: 650px) {
+    img {
+      display: none; /* Ekran genişliği 600px'den küçükse fotoğrafı gizle */
+    }
+    .img-mobile {
+        display: block;
+    }
+  
+    .kesfet-container {
+      width: 100%; /* .kesfet-container'ı sayfanın genişliğine sığacak şekilde ayarla */
+      margin-left: 2%;
+    }
+  }
+
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 63%;
+    max-width: 100½;
+    border: 1px solid #ddd;
+    background-color: white;
+    margin: 0 auto;
+
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+  }
+
+  th:first-child {
+    border-bottom: none; 
+    width: auto;
+  }
+  td:first-child {
+    border-top: none; 
+    color: #1B9CFC;
+    text-decoration: underline;
+    width: auto;
+  }
+
+   th:not(:first-child),
+   td:not(:first-child) {
+     width: 17%; /* Adjust the width as needed */
+}
+
+  .centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10vh; /* Optionally set a height for full-height vertical centering */
+  }
+
+@media (max-width: 600px) {
+    .centered-container h2 {
+        font-size: 1.0rem; /* Font size for screens up to 600px wide */
+    }
+    
+}
+ 
+  
+
+
+
+#container,
+#container2 {
+    height: 50vh;
+    display: grid;
+    place-items: center;
+}
+#slider-container,
+#slider-container2 {
+    margin-top: 0; /* Üst boşluğu kaldır */
+    margin-bottom: 0; 
+    height: 300px;
+    width: 85vw;
+    max-width: 1000px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+#slider-container .btn,
+#slider-container2 .btn2 {
+    position: absolute;
+    top: calc(80% - 30%);
+    height: 15px;
+    width: 15px;
+    border-left: 8px solid #1B9CFC;
+    border-top: 8px solid;
+    cursor: pointer;
+}
+#slider-container .btn:hover,
+#slider-container2 .btn2:hover {
+    transform: scale(1.2);
+}
+#slider-container .btn.inactive,
+#slider-container2 .btn2.inactive {
+    border-color: #282828;
+}
+#slider-container .btn:first-of-type,
+#slider-container2 .btn2:first-of-type {
+    transform: rotate(-45deg);
+    left: 10px;
+}
+#slider-container .btn:last-of-type,
+#slider-container2 .btn2:last-of-type {
+    transform: rotate(135deg);
+    right: 10px;
+}
+#slider-container #slider,
+#slider-container2 #slider2 {
+    display: flex;
+    width: 1000%;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all .5s;
+}
+#slider-container #slider .slide,
+#slider-container2 #slider2 .slide2 {
+    height: 110%;
+    margin: auto 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px white, -2px -2px 4px 2px white;
+    display: grid;
+    place-items: center;
+}
+#slider-container #slider .slide span,
+#slider-container2 #slider2 .slide2 span {
+    color: white;
+    font-size: 60px;
+}
+#slider-container #slider .slide img,
+#slider-container2 #slider2 .slide2 img {
+    width: 100%;
+    height: 100%;          
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Kenarları yuvarlak yapar, isteğe bağlı olarak ayarlayabilirsiniz */
+    object-fit: cover; /* Resmin kartın içinde düzgün bir şekilde yerleşmesini sağlar */
+}
+#slider-container #slider .slide .card-body,
+#slider-container2 #slider2 .slide2 .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    
+    
+    
+}
+#slider-container #slider .slide .card-title,
+#slider-container2 #slider2 .slide2 .card-title {
+margin-bottom: 0.5rem;
+color: #333333;
+}
+
+#slider-container #slider .slide .card-text,
+#slider-container2 #slider2 .slide2 .card-text {
+color: #666666;
+margin-top: 0.5rem;
+margin-bottom: 1px;
+}
+
+#slider-container #slider .slide .text-body-secondary,
+#slider-container2 #slider2 .slide2 .text-body-secondary  {
+color: #999999;
+}
+
+#slider-container #slider .slide .fa,
+#slider-container2 #slider2 .slide2 .fa {
+font-size: 21px;
+margin-top: 0.5rem;  
+}
+
+#slider-container #slider .slide .checked,
+#slider-container2 #slider2 .slide2 .checked {
+color: gold;
+}
+
+#slider-container #slider .slide h3,
+#slider-container #slider .slide .star-container,
+#slider-container #slider .slide p,
+#slider-container2 #slider2 .slide2 h3,
+#slider-container2 #slider2 .slide2 .star-container,
+#slider-container2 #slider2 .slide2 p {
+    margin: 0;
+}
+@media screen and (max-width: 767px) {
+    #slider-container #slider .slide .card-body,
+    #slider-container2 #slider2 .slide2 .card-body {
+        padding: 0; /* Boşluk bırakmayı kaldır */
+    }
+
+    #slider-container #slider .slide .card-body h3,
+    #slider-container #slider .slide .card-body .star-container,
+    #slider-container #slider .slide .card-body p,
+    #slider-container2 #slider2 .slide2 h3,
+    #slider-container2 #slider2 .slide2 .star-container,
+    #slider-container2 #slider2 .slide2 p {
+        margin: 0; /* Başlık, yıldızlar ve metin için boşlukları kaldır */
+    }
+    #slider-container #slider .slide .card-body h3,
+    #slider-container2 #slider2 .slide2 .card-body h3 {
+        font-size: 18px; /* İstediğiniz boyutu ayarlayın */
+        margin: 0; 
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1100px) {
+    #slider-container #slider .slide,
+    #slider-container2 #slider2 .slide2 {
+        width: calc(2.5% - 20px);
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #slider-container #slider .slide,
+    #slider-container2 #slider2 .slide2 {
+        width: calc(3.3333333% - 20px);
+    }
+}
+@media only screen and (max-width: 900px) {
+    #slider-container #slider .slide,
+    #slider-container2 #slider2 .slide2 {
+        width: calc(5% - 20px);
+    }
+}
+@media only screen and (max-width:550px) {
+    #slider-container #slider .slide,
+    #slider-container2 #slider2 .slide2 {
+        width: calc(10% - 20px);
+    }
+}
+
+
+.footer{
+    background: #152F4F;
+    color:white;
+    
+    .links ul {
+        list-style-type: none;
+    }
+    
+    .links li a {
+        color: white;
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+    
+    .links li a:hover {
+        text-decoration: underline;
+        color: #4180CB;
+    }
+     
+    
+    .about-company i {
+        font-size: 25px;
+    }
+    
+    .about-company a {
+        color: white;
+        transition: color 0.2s;
+    }
+    
+    .about-company a:hover {
+        color: #4180CB;
+        text-decoration: none;
+    }
+     
+    .location i {
+        font-size: 18px;
+        margin: 0 5px;
+        color: white;
+    }
+    
+    .location p {
+        color: white;
+    }
+    
+    .location a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+    .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+    }
+
+  
+
+
+
+
