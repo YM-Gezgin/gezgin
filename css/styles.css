@@ -1,161 +1,96 @@
 body {
     background-color: #F8F3EE; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
-}
-
- 
-
-
-footer {
-    position: relative; /* Footer'ı diğer içeriklerin üzerine yerleştir */
-    clear: both; /* Diğer içeriklerden aşağıya yerleştir */
-    text-align: left;
+    margin: 0;
     
 }
-
-
-    
-.navbar-text {
-    font-size: 20px;
+.navbar-toggler {
+    border: none;
+    outline: none;
 }
 
-
-a {
-    text-decoration: underline; /* Tüm bağlantılara alt çizgi ekler */
+.navbar-toggler-icon {
+    background-color: transparent;
 }
-
-
 
 .navbar {
-    
+    background-color: #F8F3EE !important; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    border: none;
+  }
+  
+.nav-container{
     display: flex;
-    justify-content: space-between;/* Menüyü yatay genişletmek için */
-    padding: 10px 100px; /* Navbarı genişletmek için kenar boşluğu artırır */
-    height: 0x; 
+    flex-direction: column;
+    margin-right: 25%;
+    margin-left: 10%;
 }
-.navbar-nav .nav-item {
-    list-style: none;
-    margin: 0 2px; /* Menü öğeleri arasına boşluk ekler */
+@media (max-width: 768px) {
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+.navbar-brand {
+    color: #1B9CFC !important; /* Başlık rengi */
+    font-size: 80px;    
+    border: none;
+    display: inline-block;
 }
-.nav-item a {
-    color: black; /* Bağlantı metninin rengi */
-    
+.custom-link {
+    color: black !important;
+    text-decoration: underline;
+    display: block;
+    margin-left: 110px;
 }
 
-.nav-item a.giris-yap {
+
+
+.navbar-nav .nav-link {
+    color: black !important; /* Menü öğesi rengi */
+    margin-right: 20px;
+    text-decoration: none;
+}
+  
+  /* Menü öğelerinin üzerine gelindiğinde */
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.nav-item.giris-yap .nav-link {
     display: flex;
     align-items: center;
+    margin-right: 10px;
     background-color: #1B9CFC; /* Arka plan rengi */
     padding: 5px 10px; /* Arka plan alanı boyutlandırma */
     border-radius: 10px; /* Kenar yumuşatma */
-    color: white; /* Yazı rengi */
+    color: white !important; /* Yazı rengi */
     text-decoration: none; /* Link altı çizgisi */
-}
-
-
-.navbar .premium-link {
-    font-size: 14px;
-    text-decoration: underline;
-    color: black; /* Renk düzenlemesi */
-    margin-left: 130px;
-}
-
-
-.navbar-nav {
-    display: flex; /* Menü öğelerini yatay hizalar */
-    align-items: center; /* Öğeleri dikey ortalar */
-}
-
-
-
-
-
-
-
-.footer {
-    background-color: #1B9CFC; /* Açık mavi renk */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
     
 }
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Kolonlar arasındaki boşluk */
-    width: 100%; /* Tüm içeriği genişliğe yay */
-
-}
-.footer-content div {
-    text-align: left;
-}
-.contact-icons {
-    text-align: right;
-}
-.contact-icons i {
-    margin-right: 5px;
-    color: rgb(2, 2, 2);
-}
-.contact-icons h5 {
-    line-height: 4; /* İstediğiniz boşluğu sağlayacak olan bir değer girebilirsiniz */
-}
-.contact-icons a {
-    text-decoration: underline;
-    display: inline-block;
-    white-space: nowrap;
+.nav-item.giris-yap .nav-link i {
+    margin-right: 8px; /* İkon ile metin arasına boşluk ekleyin */
 }
 
 
-/* Kolonlar arasında kenarlık */
-.footer-content div {
-    border-right: 1px solid #010101; /* Kenarlık rengi ve kalınlığı */
-    padding-right: 20px; /* Sağ kenarlık boşluğu */
+.jumbotron-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 0; /* İhtiyaca göre değiştirilebilir */
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
 }
-
-.footer-content div:last-child {
-    border: none; /* Son kolonun kenarlığını kaldırır */
-    padding-right: 0; /* Sağ kenarlık boşluğunu kaldırır */
-}
-
-
-
-
-
-
-.column i {
-    font-size: 24px; /* İkonların boyutu */
-    margin: 0 10px; /* İkonlar arasındaki boşluk */
-}
-.column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.column ul li a {
-    text-decoration: underline;
-    display: inline-block;
-    margin: 5px 0;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    white-space: nowrap; /* Bu özellikle her bağlantının tek satırda kalmasını sağlarız */
-}
-
-
-
-
-
-
-.footer a {
-    text-decoration: none; /* Footer içindeki tüm linklerin alt çizgisini kaldırır */
-    color: white; /* Renk düzenlemesi */
-}
-
-
-
-.gezgin-title {
-    font-size: 80px;
-    margin-right: 10px;
-    color: #1B9CFC; /* Gezgin yazısına kırmızı renk uygular */
+.jumbotron {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .register-form {
@@ -167,17 +102,140 @@ a {
     padding-bottom: 60px; /* Alt kısma boşluk ekler */
 }
 
-.btn {
-    margin-bottom: 20px; /* Butonun altına boşluk ekler */
+
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
 }
-.jumbotron {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 20px;
-    padding-bottom: 0;
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.sifremiUnuttum {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+}
+
+#sifremiUnuttumButton {
+    border: none;
+    outline: none;
+    padding: 0 0;
+    cursor: pointer;
+    color: gray;
+    text-decoration: underline;
+    background-color: #F8F3EE;
+
+}
+
+#sifreResetButton {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    background-color: #1B9CFC;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
 }
 
 
 
+
+
+
+
+
+
+.footer{
+    background: #152F4F;
+    color:white;
+    
+    .links ul {
+        list-style-type: none;
+    }
+    
+    .links li a {
+        color: white;
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+    
+    .links li a:hover {
+        text-decoration: underline;
+        color: #4180CB;
+    }
+     
+    
+    .about-company i {
+        font-size: 25px;
+    }
+    
+    .about-company a {
+        color: white;
+        transition: color 0.2s;
+    }
+    
+    .about-company a:hover {
+        color: #4180CB;
+        text-decoration: none;
+    }
+     
+    .location i {
+        font-size: 18px;
+        margin: 0 5px;
+        color: white;
+    }
+    
+    .location p {
+        color: white;
+    }
+    
+    .location a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+    .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+    }
+    
+   
+
+   
+  
 
 
