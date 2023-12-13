@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ana Sayfa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles_ana.css">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="nav-container mx a">
+    <a class="navbar-brand" href="#">gezgin 
+      <a href="#" class="custom-link">Premiumu Keşfet</a>
+    </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-search"></i> Keşfet </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-car"></i> Otel & Araç Kiralama</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hakkımızda</a>
+        </li>
+        <li class="nav-item giris-yap">
+          <a class="nav-link" href="#"><i class="fas fa-user icon"></i> Giriş Yap</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron text-center header-jumbotron" style="background: none;">
+    <h5 style="text-align: center;">"Dünya bir kitaptır ve seyahat etmeyenler, onun sadece bir sayfasını okurlar."-
+        Augustinus.</h5>
+    <!-- Diğer içerikler -->
+</div>
+
+
+<div class="container-wrapper">
+  <div class="kesfet-container">
+    <label for="sehir">Sen gezmek istediğin şehri seç! Biz rotanı oluşturalım.</label>
+    <input type="text" placeholder="Gezmek istediğiniz şehri girin" id="sehir" style="height: 50px;">
+    
+  </div>
+  <img src="images/route_icon.png" alt="rota">
+</div>
+
+<div class="centered-container">
+<h2>Bu yıl en çok beğenilen şehirlere göz atın!</h2>
+</div>
+
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Şehir Adı</th>
+      <th>Şehir Puanı</th>
+      <th>Mekan sayısı</th>
+      <th>Rota sayısı</th>
+      <th>Yorum sayısı</th>
+    </tr>
+    <tr>
+      <td>daha fazlası için tıklayınız</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z</td>
+      <td>t</td>
+    </tr>
+    
+    
+  </table>
+</div>
+
+  <div id="container">
+    <div id="slider-container">
+        <span onclick="slideRight()" class="btn"></span>
+        <div id="slider">
+            <div class="slide"><img src="images/Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+                <div id="card_id" class="card-body">
+                    <h3 class="card-title">Mekan adı</h3>
+                    <div class="star-container">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text">x kez rota oluşturuldu</p>
+                </div>
+            </div>
+            <div class="slide"><img src="images/Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+                <div id="card_id" class="card-body">
+                    <h3 class="card-title">Mekan adı</h3>
+                    <div class="star-container">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text">x kez rota oluşturuldu</p>
+                </div>
+            </div>
+            <div class="slide"><img src="images/Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+                <div id="card_id" class="card-body">
+                    <h3 class="card-title">Mekan adı</h3>
+                    <div class="star-container">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text">x kez rota oluşturuldu</p>
+                </div>
+            </div>
+            <div class="slide"><img src="images/Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+                <div id="card_id" class="card-body">
+                    <h3 class="card-title">Mekan adı</h3>
+                    <div class="star-container">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text">x kez rota oluşturuldu</p>
+                </div>
+            </div>
+            <div class="slide"><img src="images/Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+                <div id="card_id" class="card-body">
+                    <h3 class="card-title">Mekan adı</h3>
+                    <div class="star-container">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text">x kez rota oluşturuldu</p>
+                </div>
+            </div>
+            <div class="slide"><img src="images/Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+                <div id="card_id" class="card-body">
+                    <h3 class="card-title">Mekan adı</h3>
+                    <div class="star-container">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                    <p class="card-text">x kez rota oluşturuldu</p>
+                </div>
+            </div>
+        </div>
+        <span onclick="slideLeft()" class="btn"></span>
+    </div>
+</div>
+
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Şehir Adı</th>
+      <th>Şehir Puanı</th>
+      <th>Mekan sayısı</th>
+      <th>Rota sayısı</th>
+      <th>Yorum sayısı</th>
+    </tr>
+    <tr>
+      <td>daha fazlası için tıklayınız</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z</td>
+      <td>t</td>
+    </tr>
+    
+    
+  </table>
+</div>
+
+<div id="container2">
+  <div id="slider-container2">
+      <span onclick="slideRight2()" class="btn2"></span>
+      <div id="slider2">
+          <div class="slide2"><img src="C:\Users\zeyne\OneDrive\Masaüstü\gezgin-iht\Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+              <div id="card_id2" class="card-body">
+                  <h3 class="card-title">Mekan adı</h3>
+                  <div class="star-container">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                  </div>
+                  <p class="card-text">x kez rota oluşturuldu</p>
+              </div>
+          </div>
+          <div class="slide2"><img src="C:\Users\zeyne\OneDrive\Masaüstü\gezgin-iht\Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+              <div id="card_id2" class="card-body">
+                  <h3 class="card-title">Mekan adı</h3>
+                  <div class="star-container">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                  </div>
+                  <p class="card-text">x kez rota oluşturuldu</p>
+              </div>
+          </div>
+          <div class="slide2"><img src="C:\Users\zeyne\OneDrive\Masaüstü\gezgin-iht\Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+              <div id="card_id2" class="card-body">
+                  <h3 class="card-title">Mekan adı</h3>
+                  <div class="star-container">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                  </div>
+                  <p class="card-text2">x kez rota oluşturuldu</p>
+              </div>
+          </div>
+          <div class="slide2"><img src="C:\Users\zeyne\OneDrive\Masaüstü\gezgin-iht\Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+              <div id="card_id2" class="card-body">
+                  <h3 class="card-title">Mekan adı</h3>
+                  <div class="star-container">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                  </div>
+                  <p class="card-text">x kez rota oluşturuldu</p>
+              </div>
+          </div>
+          <div class="slide2"><img src="C:\Users\zeyne\OneDrive\Masaüstü\gezgin-iht\Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+              <div id="card_id2" class="card-body">
+                  <h3 class="card-title">Mekan adı</h3>
+                  <div class="star-container">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                  </div>
+                  <p class="card-text">x kez rota oluşturuldu</p>
+              </div>
+          </div>
+          <div class="slide2"><img src="C:\Users\zeyne\OneDrive\Masaüstü\gezgin-iht\Ayasofya-trabzon.jpg" class="card-img-top img-mobile" alt="...">
+              <div id="card_id2" class="card-body">
+                  <h3 class="card-title">Mekan adı</h3>
+                  <div class="star-container">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                  </div>
+                  <p class="card-text">x kez rota oluşturuldu</p>
+              </div>
+          </div>
+      </div>
+      <span onclick="slideLeft2()" class="btn2"></span>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="mt-5 pt-5 pb-5 footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 col-xs-12 about-company">
+  <p>Hakkımızda</p>
+  <p class="pr-5 text-white-50">Gezgin olarak seyahat severlerin Türkiye'nin muhteşem
+    destinasyonlarını keşfetmelerine rehberlik etmek için buradayız.
+    Bizimle keşfedin, düşlerinizdeki seyahati planlamaya başlayın! </p>
+  
+</div>            
+<div class="col-lg-4 col-xs-12 location">
+  <h4 class="mt-lg-0 mt-sm-4"></h4>
+  <p>Reklam ve iş birliği için bize ulaşın</p>
+  <p><a href="#"><i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i></p>
+  <p><i class="fa fa-envelope"></i>info@gezgin.com</p>
+</div>
+<div class="col-lg-3 col-xs-12 links">
+    <h4 class="mt-lg-0 mt-sm-3"></h4>
+      <ul class="m-0 p-0">
+          <li><a href="#">Trabzon'da araç kiralama noktaları</a></li>
+          <li><a href="#">İstanbul' da gezilecek en güzel 10 yerı</a></li>
+          <li><a href="#">Ankara' da gezilecek en güzel 10 yer</a></li>
+          <li><a href="#">İzmir' de gezilecek en güzel 10 yer</a></li>
+          <li><a href="#">Antalya' da gezilecek en güzel 10 yer</a></li>
+          <li><a href="#">İstanbul' da araç kiralama noktaları</a></li>
+      </ul>
+  </div>
+</div>
+<div class="row mt-5">
+<div class="col copyright">
+  <p class=""><small class="text-white-50">© 2023. All Rights Reserved.</small></p>
+</div>
+</div>
+</div>
+</div>
+       
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyDE46C5I2v5K56Jl2K6Uc2LiXm81I" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha384-8/0tSZKXLqHKhIdVGEBBAAKlO4jgYhC2og9uLj4ASGl6zTfbJt3p3F78VXzvPfwx" crossorigin="anonymous"></script>
+      
+  <script src="js/scripts_ana.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
+    
+</body>
+</html>
+
+
