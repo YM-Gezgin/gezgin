@@ -1,34 +1,59 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.querySelector('.login-form');
+    const registerForm = document.querySelector('.register-form');
+    
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const loginForm = document.querySelector('.login-form');
-        const registerForm = document.querySelector('.register-form');
+    
+    const showLoginFromRegister = document.getElementById('showLoginFromRegister');
+    const showRegisterFromRegister = document.getElementById('showRegisterFromRegister');
+    const showLoginFromLogin = document.getElementById('showLoginFromLogin');
+    const showRegisterFromLogin = document.getElementById('showRegisterFromLogin');
+    
+    
+
+    showLoginFromRegister.addEventListener('click', function() {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
         
-        const showLoginFromRegister = document.getElementById('showLoginFromRegister');
-        const showRegisterFromRegister = document.getElementById('showRegisterFromRegister');
-        const showLoginFromLogin = document.getElementById('showLoginFromLogin');
-        const showRegisterFromLogin = document.getElementById('showRegisterFromLogin');
-
-        showLoginFromRegister.addEventListener('click', function() {
-            loginForm.style.display = 'block';
-            registerForm.style.display = 'none';
-        });
-
-        showRegisterFromRegister.addEventListener('click', function() {
-            registerForm.style.display = 'block';
-            loginForm.style.display = 'none';
-        });
-
-        showLoginFromLogin.addEventListener('click', function() {
-            loginForm.style.display = 'block';
-            registerForm.style.display = 'none';
-        });
-
-        showRegisterFromLogin.addEventListener('click', function() {
-            registerForm.style.display = 'block';
-            loginForm.style.display = 'none';
-        });
     });
 
+    showRegisterFromRegister.addEventListener('click', function() {
+        registerForm.style.display = 'block';
+        loginForm.style.display = 'none';
+        
+    });
+
+    showLoginFromLogin.addEventListener('click', function() {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        
+    });
+
+    showRegisterFromLogin.addEventListener('click', function() {
+        registerForm.style.display = 'block';
+        loginForm.style.display = 'none';
+    });
+
+    
+
+   
+});
+
+// Şifremi unuttum butonuna tıklandığında
+document.getElementById("sifremiUnuttumButton").addEventListener("click", function() {
+    // Giriş yap butonunu ve şifre alanını gizle
+    document.getElementById("sifremiUnuttumButton").style.display = "none";
+    document.getElementById("sifreResetButton").style.display = "block";
+    document.getElementById("g_sifre").style.display = "none";
+    document.getElementById("g_girişYap").style.display = "none";
+    document.getElementById("g_sifreLabel").style.display = "none";
+  });
+  
+
+
+
+
+    
     function epostacontrol() {
         
         var email = document.getElementById("email").value;
@@ -59,14 +84,14 @@
         
         var hasUppercase = /[A-Z]/.test(sifre);
         var hasNumber = /\d/.test(sifre);
-        var hasMinLength = sifre.length >= 6;
+        var hasMinLength = sifre.length >= 8;
     
         if (hasUppercase && hasNumber && hasMinLength) {
             sifreText.innerHTML = "Güçlü şifre";
             sifreText.style.color = "green";
             
         } else {
-            sifreText.innerHTML = "Şifre zayıf! En az bir büyük harf, bir sayı ve altı karakter içermelidir.";
+            sifreText.innerHTML = "Şifre zayıf! En az bir büyük harf, bir sayı ve sekiz karakter içermelidir.";
             sifreText.style.color = "red";
             
             
@@ -99,6 +124,33 @@
         // kontroller doğru ise return true 
         return emailIsValid && passwordIsValid;
     }
+
+    
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName('close')[0];
+    var aydinlatmaMetni = document.getElementById('aydinlatma-metni');
+
+    aydinlatmaMetni.onclick = function () {
+        modal.style.display = 'block';
+    };
+
+    span.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    
+
+    
+    
+    
+
+
 
 
     
