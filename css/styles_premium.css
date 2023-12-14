@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.card-container,
+.circle {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 1vh;
+    /*background: linear-gradient(45deg, #c3dcf0, #F8F3EE);*/
+    background-attachment: fixed;
+}
+body {
+    
+    background-color: #F8F3EE; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
+    margin: 0;
+    
+}
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar {
+    background-color: #F8F3EE !important; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    border: none;
+  }
+  
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 25%;
+    margin-left: 10%;
+}
+@media (max-width: 768px) {
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+.navbar-brand {
+    color: #1B9CFC !important; /* Başlık rengi */
+    font-size: 80px;    
+    border: none;
+    display: inline-block;
+}
+.custom-link {
+    color: black !important;
+    text-decoration: underline;
+    display: block;
+    margin-left: 110px;
+}
+
+
+
+.navbar-nav .nav-link {
+    color: black !important; /* Menü öğesi rengi */
+    margin-right: 20px;
+    text-decoration: none;
+}
+  
+  /* Menü öğelerinin üzerine gelindiğinde */
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.nav-item.giris-yap .nav-link {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    background-color: #1B9CFC; /* Arka plan rengi */
+    padding: 5px 10px; /* Arka plan alanı boyutlandırma */
+    border-radius: 10px; /* Kenar yumuşatma */
+    color: white !important; /* Yazı rengi */
+    text-decoration: none; /* Link altı çizgisi */
+    
+}
+.nav-item.giris-yap .nav-link i {
+    margin-right: 8px; /* İkon ile metin arasına boşluk ekleyin */
+}
+
+
+.jumbotron-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 0; /* İhtiyaca göre değiştirilebilir */
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+.jumbotron {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+.card-container {
+    position: relative;
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.card-container .card {
+    position: relative;
+    width: 300px;
+    height: 420px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.card-container:hover .card {
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+.card-container .card:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.card-container .card .circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: circle(180px at center 0);
+    text-align: center;
+}
+
+.card-container .card .circle h2 {
+    color: white;
+    font-size: 4.5em;
+    padding: 30px 0;
+}
+
+.card-container .card .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.card-container .card .content p {
+    color: #666;
+}
+
+
+.card-container .card .circle .h2 {
+    font-size: 10px;
+}
+
+.card-container .card .content .yillik-button,
+.yillik_button,
+.card-container .card .content .aylik-button,
+.aylik_button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.card-container .card:nth-child(1) .circle,
+.card-container .card:nth-child(1) .content .yillik-button,
+.yillik_button {
+    background: #F7C661;
+}
+
+.card-container .card:nth-child(2) .circle,
+.card-container .card:nth-child(2) .content .aylik-button,
+.aylik_button {
+    background: #00CC99;
+}
+
+.card-container .card .content .yillik-button.ilk-yillik-button {
+    background: #F7C661;
+}
+
+.card-container .card .content .aylik-button.ikinci-aylik-button {
+    background: #00CC99;
+}
+
+#form-container {
+    text-align: center;
+}
+
+
+
+
+.footer{
+    background: #152F4F;
+    color:white;
+    
+    .links ul {
+        list-style-type: none;
+    }
+    
+    .links li a {
+        color: white;
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+    
+    .links li a:hover {
+        text-decoration: underline;
+        color: #4180CB;
+    }
+     
+    
+    .about-company i {
+        font-size: 25px;
+    }
+    
+    .about-company a {
+        color: white;
+        transition: color 0.2s;
+    }
+    
+    .about-company a:hover {
+        color: #4180CB;
+        text-decoration: none;
+    }
+     
+    .location i {
+        font-size: 18px;
+        margin: 0 5px;
+        color: white;
+    }
+    
+    .location p {
+        color: white;
+    }
+    
+    .location a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+    .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+    }
+    
+   
+
+   
+  
+
+
