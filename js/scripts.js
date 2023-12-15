@@ -144,6 +144,19 @@ document.getElementById("sifremiUnuttumButton").addEventListener("click", functi
         }
     };
 
+    function setActiveLink(element) {
+        // Tıklandığında diğer linklerden 'active' sınıfını kaldır
+        var links = document.querySelectorAll('.fa-ul a');
+        links.forEach(function(link) {
+          link.classList.remove('active');
+        });
+        element.classList.add('active');
+        
+        var faLiCoText = document.querySelector('.active .fa-li-co').innerText;    
+        document.getElementById('p_title').innerText=faLiCoText;
+    
+      }
+
     
 
     
