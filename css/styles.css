@@ -172,14 +172,6 @@ body {
     margin: 0 auto;
 }
 
-
-
-
-
-
-
-
-
 .footer{
     background: #152F4F;
     color:white;
@@ -233,7 +225,39 @@ body {
     .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
     }
     
-   
+    .yuvarlak-imge {
+        border-radius: 50%;
+    }
+    
+    .fa-ul li {
+        font-size: 1.2em;
+        padding-bottom: 14px; /* İstediğiniz boyutu ayarlayın */
+      }
+      .fa-li-co{
+        padding-left: 5px;
+      }
+      
+      .fa-ul li:hover .fa-li i,
+      .fa-ul li:hover .fa-li-co {
+        color: #76b4e4; /* Mavi renk, isteğe bağlı olarak değiştirilebilir */
+      }
+    
+      .fa-ul li.clicked {
+        background-color: #2ecc71; /* Tıklandığında rengi, isteğe bağlı olarak değiştirilebilir */
+      }
+      .fa-ul a{
+        color: black;
+    }
+      .fa-ul a:hover {
+        text-decoration: none;
+      }
+      .fa-ul a:link,
+        .fa-ul a:visited {
+          color: black; /* Tıklanılmamış ve ziyaret edilmemiş durum için siyah renk */
+        }
+      .fa-ul a.active {
+        color: #1B9CFC !important; /* Tıklandığında (aktif durumda) mavi renk (isteğe bağlı) */
+      }
 
    
   
