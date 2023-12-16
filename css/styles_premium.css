@@ -132,7 +132,7 @@ body {
 .card-container {
     position: relative;
     width: 1150px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +145,7 @@ body {
     width: 300px;
     height: 420px;
     background-color: white;
-    margin: 20px;
+    margin: 15px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
@@ -292,24 +292,21 @@ body {
     }
 }
 
-/* Normal stil kuralları */
-
-@media screen and (max-width: 1058px) {
-    .col-md-9 {
-        /* col-md-9'un yerine col-md-10'u kullan */
-        flex: 0 0 83.3333333333%;
-        max-width: 83.3333333333%;
-    }
-    
-}
 @media screen and (min-width: 760px){
     .mt-4{
         margin-top: 0 !important;
     }
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1238px) {
     .col-md-9 {
-        /* col-md-9'un yerine col-md-11'u kullan */
+        flex: 0 0 83.3333333333%;
+        max-width: 83.3333333333%;
+    }
+    
+    
+}
+@media screen and (max-width: 1008px) {
+    .col-md-9 {
         flex: 0 0 91.6666666667%;
         max-width: 91.6666666667%;
     }
@@ -325,10 +322,47 @@ body {
         flex: 0 0 61%;
         max-width: 61%;
     }
-    
-    
-    
+    .card-container .card {
+        width: 320px; 
+        height: 390px;
+      } 
 }
+@media screen and (max-width: 1800px){
+    .card-container .card {
+        width: 290px; 
+        height: 390px;
+      } 
+}
+@media screen and (max-width: 1600px){
+    .card-container .card {
+        width: 280px; 
+        height: 390px;
+      } 
+}
+
+@media screen and (max-width: 1460px){
+    .card-container .card {
+        width: 240px; 
+        height: 390px;
+      } 
+}
+
+@media screen and (max-width: 1300px){
+    .card-container .card {
+        width: 210px; 
+        height: 390px;
+      } 
+}
+
+@media screen and (max-width: 1240px){
+    .card-container .card {
+        width: 330px; 
+        height: 380px;
+      } 
+      
+}
+
+
 @media screen and (max-width: 760px) {
     
     .col-md-4 {
@@ -336,8 +370,38 @@ body {
         max-width: 80%;
     }
     .col-md-8 {
-        flex: 0 0 71%;
-        max-width: 71%;
+        flex: 0 0 98%;
+        max-width: 98%;
     }
-    
+    .card-container{
+        padding: 0px;
+    }
+    .card-container .card {
+      width: 215px; 
+      height: 380px;
+       
+    }
 }
+
+@media screen and (max-width: 745px){
+    .card-container .card {
+        width: 320px; 
+        height: 390px;
+      }   
+}
+@media screen and (max-width: 350px){
+    .col-md-8 {
+        flex: 0 0 98%;
+        max-width: 98%;
+    }
+    .card-container .card {
+        width: 240px; 
+        height: 380px;
+      }   
+    .card-container{
+        padding: 0px;
+    }
+}
+
+
+  
