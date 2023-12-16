@@ -247,6 +247,7 @@ body {
       }
       .fa-ul a{
         color: black;
+        cursor: pointer;
     }
       .fa-ul a:hover {
         text-decoration: none;

@@ -1,5 +1,5 @@
 function setActiveLink(element) {
-    // Tıklandığında diğer linklerden 'active' sınıfını kaldır
+
     var links = document.querySelectorAll('.fa-ul a');
     links.forEach(function(link) {
       link.classList.remove('active');
@@ -13,15 +13,33 @@ function setActiveLink(element) {
     links.forEach(function(link) {
       link.style.display='none';
     });
+    
     document.getElementById(faLiCoText).style.display='inline';
 
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    console.log(screenWidth);
+    var div = document.getElementById('p_title');
+    div.classList.remove('mt-4');
+    if(screenWidth <= 760){
+      div.classList.add('mt-4');
+      document.getElementById('p_div').scrollIntoView({ behavior: 'smooth' });
+      
+    }
+    else{
+      window.scrollTo({
+        top: 30,
+        behavior: 'smooth' 
+    });
+    }
+    
+    
   }
 
   function showDescription(type) {
+
     var aylikForm = document.getElementById('aylik-form');
     var yillikForm = document.getElementById('yillik-form')
 
-    // Farklı açıklamaları göster
     if (type === 'aylik') {
         aylikForm.style.display = 'block';
         yillikForm.style.display = 'none';
@@ -31,6 +49,6 @@ function setActiveLink(element) {
         aylikForm.style.display = 'none';
         
     }
-    // Açıklama satırına kaydır
+    
     document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
 }
