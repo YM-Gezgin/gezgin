@@ -1,5 +1,6 @@
+
 body {
-    background-color: #F8F3EE; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    background-color: #f5f5f5; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
     margin: 0;
     
@@ -14,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: #F8F3EE !important; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    background-color: #f5f5f5 !important; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
     border: none;
   }
   
@@ -33,22 +34,21 @@ body {
     }
   }
 .navbar-brand {
-    color: #1B9CFC !important; /* Başlık rengi */
+    color: #0e6a3a !important; /* Başlık rengi */
     font-size: 80px;    
     border: none;
     display: inline-block;
 }
 .custom-link {
-    color: black !important;
+    color: #444 !important;
     text-decoration: underline;
     display: block;
     margin-left: 110px;
 }
 
 
-
 .navbar-nav .nav-link {
-    color: black !important; /* Menü öğesi rengi */
+    color: #444 !important; /* Menü öğesi rengi */
     margin-right: 20px;
     text-decoration: none;
 }
@@ -60,12 +60,11 @@ body {
 
 
 
-
 .nav-item.giris-yap .nav-link {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    background-color: #1B9CFC; /* Arka plan rengi */
+    background-color: #0e6a3a; /* Arka plan rengi */
     padding: 5px 10px; /* Arka plan alanı boyutlandırma */
     border-radius: 10px; /* Kenar yumuşatma */
     color: white !important; /* Yazı rengi */
@@ -75,7 +74,6 @@ body {
 .nav-item.giris-yap .nav-link i {
     margin-right: 8px; /* İkon ile metin arasına boşluk ekleyin */
 }
-
 
 .jumbotron-container {
     width: 100%;
@@ -94,13 +92,30 @@ body {
 }
 
 .register-form {
+
     padding-top: 40px; /* Üst kısma boşluk ekler */
     padding-bottom: 60px; /* Alt kısma boşluk ekler */
+    margin: 0 auto;
 }
+
 .login-form {
+
     padding-top: 40px; /* Üst kısma boşluk ekler */
     padding-bottom: 60px; /* Alt kısma boşluk ekler */
+    margin: 0 auto;
 }
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15px;
+    /*background: linear-gradient(45deg, #c59d63, #bcb88f);*/
+    background: white;
+}
+
+
 
 
 
@@ -154,7 +169,7 @@ body {
     cursor: pointer;
     color: gray;
     text-decoration: underline;
-    background-color: #F8F3EE;
+    background: none;
 
 }
 
@@ -164,7 +179,8 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     color: white;
-    background-color: #1B9CFC;
+    background-color: #0e6a3a;
+    border-radius: 5px;
 }
 
 .center {
@@ -173,7 +189,7 @@ body {
 }
 
 .footer{
-    background: #152F4F;
+    background: #222;
     color:white;
     
     .links ul {
@@ -239,7 +255,7 @@ body {
       
       .fa-ul li:hover .fa-li i,
       .fa-ul li:hover .fa-li-co {
-        color: #76b4e4; /* Mavi renk, isteğe bağlı olarak değiştirilebilir */
+        color: #2ecc71; /* Mavi renk, isteğe bağlı olarak değiştirilebilir */
       }
     
       .fa-ul li.clicked {
@@ -257,10 +273,23 @@ body {
           color: black; /* Tıklanılmamış ve ziyaret edilmemiş durum için siyah renk */
         }
       .fa-ul a.active {
-        color: #1B9CFC !important; /* Tıklandığında (aktif durumda) mavi renk (isteğe bağlı) */
+        color: #2ecc71 !important; /* Tıklandığında (aktif durumda) mavi renk (isteğe bağlı) */
       }
 
    
   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

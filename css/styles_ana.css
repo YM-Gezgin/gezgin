@@ -124,7 +124,7 @@ body {
     width:100%;
     border: 2px solid #152F4F(0, 0, 0, 0.4);
     border-radius: 15px; /* Yarı çapı yüksekliğin yarısı kadar olacak şekilde ayarlandı */
-    background-color: #f0f0f0; /* Arka plan rengi */
+    background-color: #F8F3EE; /* Arka plan rengi */
     box-shadow: 0 4px 8px 0 rgb(255, 254, 254); /* Gölgelendirme */
     background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M21.15 20.435l-3.352-3.353A8.977 8.977 0 0 0 20 11a9 9 0 1 0-9 9 8.977 8.977 0 0 0 5.082-1.568l3.353 3.352a1 1 0 1 0 1.414-1.414zM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>');
     background-repeat: no-repeat;
