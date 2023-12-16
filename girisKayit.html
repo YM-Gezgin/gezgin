@@ -9,11 +9,9 @@
 
     <link rel="stylesheet" href="css/styles.css"> <!-- Bağlanacak olan CSS dosyası -->
 
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
 </head>
 
@@ -51,18 +49,18 @@
     </div>
 
 
-
     <!-- Kayıt Ol formu -->
     <div class="register-form">
-        <div class="container">
+        <div class="d-flex justify-content-center mt-0">
+            <button type="button" id="showLoginFromRegister" class="btn btn-primary border-0"
+                style="border-radius: 0; background-color: #f0efef; margin-right: 2px; color: #444;">Giriş Yap</button>
+            <button type="button" id="showRegisterFromRegister" class="btn btn-primary border-0"
+                style="border-radius: 0; background-color: white; color: #444;;">Üye Ol</button>
+        </div>
+        <div class="form-container">
 
             <form id="registerForm" action="uye_ol.php" method="post" onsubmit="return validateForm()">
-                <div class="d-flex justify-content-center mt-0">
-                    <button type="button" id="showLoginFromRegister" class="btn btn-primary border-0"
-                        style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>
-                    <button type="button" id="showRegisterFromRegister" class="btn btn-primary border-0"
-                        style="border-radius: 0; background-color: #046aad;">Üye Ol</button>
-                </div>
+                
 
                 <p class="text-center" style="margin-top: 10px;">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim
                     seyahate başla!</p>
@@ -118,7 +116,7 @@
                                 <input type="checkbox" class="form-check-input" id="onay3" required>
                                 <label class="form-check-label" for="onay3">
                                     Kişisel verilerimin işlenmesine yönelik
-                                    <span id="aydinlatma-metni" style="color: #1B9CFC; cursor: pointer;  text-decoration: underline;">aydınlatma metnini </span>
+                                    <span id="aydinlatma-metni" style="color: gray; cursor: pointer;  text-decoration: underline;">aydınlatma metnini </span>
                                     okudum ve anladım.
                                 </label>
                             </div>
@@ -169,7 +167,7 @@
                             
                             <div class="d-flex justify-content-center mt-3">
                                 <button type="submit" class="btn btn-primary border-0" id="uye_ol_button"
-                                    style="border-radius: 0; background-color: #1B9CFC;" onclick="validateForm()">Üye Ol</button>
+                                    style="border-radius: 0; background-color: #0e6a3a; border-radius: 10px; margin-bottom: 10px;" onclick="validateForm()">Üye Ol</button>
                             </div>
 
                         </div>
@@ -183,18 +181,18 @@
    
 
 
-
     <div class="login-form" style="display: none;">
-        <div class="container">
+        <div class="d-flex justify-content-center mt-0">
+            <button type="button" id="showLoginFromLogin" class="btn btn-primary border-0"
+                style="border-radius: 0; background-color: white; margin-right: 2px; color: #444">Giriş Yap</button>
+            <button type="button" id="showRegisterFromLogin" class="btn btn-primary border-0"
+                style="border-radius: 0; background-color: #d7d4d4; color: #444;">Üye Ol</button>
+        </div>
+        <div class="form-container">
             <form id="loginForm" action="giris_yap.php" method="post">
                 <!-- Form alanları -->
 
-                <div class="d-flex justify-content-center mt-0">
-                    <button type="button" id="showLoginFromLogin" class="btn btn-primary border-0"
-                        style="border-radius: 0; background-color: #046aad;">Giriş Yap</button>
-                    <button type="button" id="showRegisterFromLogin" class="btn btn-primary border-0"
-                        style="border-radius: 0; background-color: #1B9CFC;">Üye Ol</button>
-                </div>
+                
 
                 <p class="text-center" style="margin-top: 10px;">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim
                     seyahate başla!</p>
@@ -216,7 +214,7 @@
                         </div>
                         <div class="d-flex justify-content-center mt-3">
                             <button type="submit" class="btn btn-primary border-0" id = g_girişYap
-                                style="border-radius: 0; background-color: #1B9CFC;">Giriş Yap</button>                                
+                                style="border-radius: 0; background-color: #0e6a3a; border-radius: 10px; margin-bottom: 10px;">Giriş Yap</button>                                
                         </div>
                         <!-- Inside the login-form div -->
                         
@@ -231,7 +229,6 @@
     </div>
 
     
-
 
     <div class="mt-5 pt-5 pb-5 footer">
         <div class="container">
@@ -279,7 +276,7 @@
     <script src="js/scripts.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
     
 
-
 </body>
 
 </html>
+
