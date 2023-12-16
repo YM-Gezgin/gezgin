@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 14 Kas 2023, 20:26:15
+-- Üretim Zamanı: 16 Ara 2023, 10:34:56
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `trip_database:v2`
+-- Veritabanı: `trip_database`
 --
 CREATE DATABASE IF NOT EXISTS `trip_database` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `trip_database`;
@@ -28,7 +28,8 @@ USE `trip_database`;
 --
 -- Tablo için tablo yapısı `kullanici`
 --
--- Oluşturma: 14 Kas 2023, 19:06:54
+-- Oluşturma: 16 Ara 2023, 09:32:33
+-- Son güncelleme: 16 Ara 2023, 09:32:33
 --
 
 CREATE TABLE `kullanici` (
@@ -37,19 +38,27 @@ CREATE TABLE `kullanici` (
   `p_hash` varchar(255) NOT NULL,
   `premium_kontrol` tinyint(1) NOT NULL,
   `kullanici_tipi` tinyint(1) NOT NULL,
-  `rota_sayac` int(11) DEFAULT NULL
+  `rota_sayac` int(11) DEFAULT NULL,
+  `fotograf` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `kullanici`:
 --
 
+--
+-- Tablo döküm verisi `kullanici`
+--
+
+INSERT INTO `kullanici` (`e_mail`, `ad_soyad`, `p_hash`, `premium_kontrol`, `kullanici_tipi`, `rota_sayac`, `fotograf`) VALUES
+('', '', '', 0, 0, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
 -- Tablo için tablo yapısı `mekanlar`
 --
--- Oluşturma: 14 Kas 2023, 19:16:06
+-- Oluşturma: 13 Ara 2023, 17:53:35
 --
 
 CREATE TABLE `mekanlar` (
@@ -76,7 +85,7 @@ CREATE TABLE `mekanlar` (
 --
 -- Tablo için tablo yapısı `mekan_türleri`
 --
--- Oluşturma: 14 Kas 2023, 19:07:30
+-- Oluşturma: 13 Ara 2023, 17:53:35
 --
 
 CREATE TABLE `mekan_türleri` (
@@ -93,7 +102,7 @@ CREATE TABLE `mekan_türleri` (
 --
 -- Tablo için tablo yapısı `rotalar`
 --
--- Oluşturma: 14 Kas 2023, 19:18:04
+-- Oluşturma: 13 Ara 2023, 17:53:35
 --
 
 CREATE TABLE `rotalar` (
@@ -116,7 +125,7 @@ CREATE TABLE `rotalar` (
 --
 -- Tablo için tablo yapısı `rota_olustur`
 --
--- Oluşturma: 14 Kas 2023, 19:18:46
+-- Oluşturma: 13 Ara 2023, 17:53:35
 --
 
 CREATE TABLE `rota_olustur` (
@@ -140,7 +149,7 @@ CREATE TABLE `rota_olustur` (
 --
 -- Tablo için tablo yapısı `sehirler`
 --
--- Oluşturma: 14 Kas 2023, 19:08:56
+-- Oluşturma: 13 Ara 2023, 17:53:35
 --
 
 CREATE TABLE `sehirler` (
@@ -158,7 +167,7 @@ CREATE TABLE `sehirler` (
 --
 -- Tablo için tablo yapısı `yorumlar`
 --
--- Oluşturma: 14 Kas 2023, 19:19:42
+-- Oluşturma: 13 Ara 2023, 17:53:36
 --
 
 CREATE TABLE `yorumlar` (
