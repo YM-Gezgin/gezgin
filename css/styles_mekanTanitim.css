@@ -73,9 +73,9 @@
 
   .tanitim {
     width: 75%;
-    height: auto;
+    height: 72%;
     max-width: 75%;
-    max-height: 60%;
+    max-height: 72%;
     border: 1px solid #2d2a2a; /* Çerçeve genişliği ve rengi */
     padding: 2px; /* Metin kutusu içindeki iç boşluk */
     background-color: #E0F5FA;
@@ -109,10 +109,11 @@
   }
 
   @media screen and (max-width: 768px) {
-    img {
-      max-width: 90%;
+    .carousel {
+      width: 75%;
+      height: auto;
       margin-left: 16%;
-      margin-top: -23%;
+      
     }
   }
   @media screen and (max-width: 768px) {
@@ -121,9 +122,15 @@
     }
   }
   @media screen and (max-width: 768px) {
-    .table2 {
-      margin-left: 18%;
-      max-width: 78%;
+    .butonlar1 {
+      margin-left: 30%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .table2,
+    .yorumAlani {
+      margin-left: 16%;
+      max-width: 75%;
     }
   }
 
@@ -133,7 +140,7 @@
     max-width: 100%;
     height: auto;
     padding-top: 3%;
-      }
+  }
 
   .yorumKutusu{
     background-color: #B0EEE9;
@@ -161,5 +168,18 @@
     height: 1px; /* Çizgi kalınlığını belirler */
     background-color: black; /* Çizgi rengini belirler */
     margin: 0 auto; /* Yatayda ortalar */
+  }
 
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .yorumAlani{
+    width: 100%;
+    background-color: #D8FFFC;
+  }
+
+  .butonlar1 {
   }

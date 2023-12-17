@@ -16,8 +16,9 @@
   <link rel="stylesheet" href="css/styles_mekanTanitim.css">
   <title>MekanTanitim</title>
 </head>
+
 <body>
-  
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="nav-container mx a">
     <a class="navbar-brand" href="#">gezgin 
@@ -142,16 +143,21 @@
                 <td>yorum 3...</td>
               </tr>
               <tr class="yorumKutusu">
-                <td>yorum 4...</td>
-              </tr>
-              <tr class="yorumKutusu">
                 <td style="text-align: center;"><a href="#">TÜM YORUMLARI GÖR</a></td>
               </tr>
           </tbody>
-        </table>
+        </table><br>
+        <form id="myForm">
+          <textarea class="yorumAlani" id="userInput" name="userInput" rows="4" placeholder="Burası hakkında düşüncelerini diğer gezginlerle paylaşmaye ne dersin?"></textarea>
+          <div class="butonlar1">
+            <button type="button" class="btn btn-info" onclick="clearInput()">TEMİZLE</button>
+            <button type="submit" class="btn btn-dark">YORUM YAP</button>
+          </div>
+
+      </form>
       </div>
     </div>
-  </div>
+  </div><br>
 
   <div class="yatayCizgi"></div><br>
 
