@@ -18,3 +18,7 @@ function changeText2() {
     }
 }
 
+function clearInput() {
+  document.getElementById("myForm").reset();
+}
+
