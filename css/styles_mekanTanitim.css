@@ -1,0 +1,165 @@
+.welcome {
+    margin-top: 1%;
+    padding-left: 20%;
+    font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+    color: #5C5C5C;
+  }
+
+  .welcome p {
+    font-size: 20px;
+  }
+
+
+  .container {
+    display: flex;
+    flex-wrap: wrap; /* Yeni eklenen satır */
+  }
+
+  .left-side {
+    flex: 1; /* Bu elemanın konteyner içinde diğer elemanlara göre iki kat fazla alan kaplamasını sağlar */
+    padding: 2px;
+    box-sizing: border-box;
+  }
+
+  .right-side {
+    flex: 1.5; /* Bu elemanın konteyner içinde diğer elemanlara göre yarım alan kaplamasını sağlar */
+    padding: 2px;
+    box-sizing: border-box;
+    padding-right: 7%;
+  }
+
+  .table1 {
+    width: 75%;
+    margin-left: 17%;
+    max-width: 75%;
+    border-collapse: collapse;
+    max-width: 100½;
+    border: 1px solid #042365;
+  }
+
+  .table1 td{
+    font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    /* text-align: center; */
+    text-decoration: none;
+    }
+
+  .row1 {
+    background-color: #0F76B1; /* Pembe */
+  }
+  .row2 {
+    background-color: #4BB1EC; /* Mavi */
+  }
+  .row3 {
+    background-color: #51CACC; /* Yeşil */
+  }
+
+  .buttonRow{
+    font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+    font-size: 16px;
+    margin-left: 17%;
+  }
+
+  .buttonRow button {
+    padding: 6px;
+    color: white;
+    background-color: #5C5C5C;
+    height: 10%;
+    width: 44.6%;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  .tanitim {
+    width: 75%;
+    height: auto;
+    max-width: 75%;
+    max-height: 60%;
+    border: 1px solid #2d2a2a; /* Çerçeve genişliği ve rengi */
+    padding: 2px; /* Metin kutusu içindeki iç boşluk */
+    background-color: #E0F5FA;
+    margin-left: 17%;
+    padding: 15px;
+    overflow: hidden; /* Sığmayan içeriği gizle */
+    text-overflow: ellipsis; 
+  }
+
+  .tanitim p{
+    font-size: 17px;
+  }
+
+  .carousel {
+    
+    width: 100%;
+    height: auto;
+    max-width: 100%; 
+    display: block; /* Görseli blok element yapar, dikey hizalamada yardımcı olur */
+    margin: 0 auto; /* Görseli yatayda ortalar */
+    transition: transform 0.5s ease-in-out
+  }
+
+
+  /* Yeni eklenen medya sorgusu */
+  @media screen and (max-width: 768px) {
+    .left-side,
+    .right-side {
+      flex: 100%; /* Tam genişlik alacak şekilde güncellendi */
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    img {
+      max-width: 90%;
+      margin-left: 16%;
+      margin-top: -23%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .left-side {
+      margin-right: 8%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .table2 {
+      margin-left: 18%;
+      max-width: 78%;
+    }
+  }
+
+  .mekanYorum{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-top: 3%;
+      }
+
+  .yorumKutusu{
+    background-color: #B0EEE9;
+  }
+  
+  .table2{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100½;
+    border: 1px solid #042365;
+  }
+  
+
+  .table2 td,a {
+    font-size: 17px;
+    color: darkslategray;
+    /* text-align: center; */
+    text-decoration: none;
+  }
+
+  .yatayCizgi {
+    width: 1000px; /* Çizgi uzunluğunu istediğiniz değere ayarlayabilirsiniz */
+    padding-left: 15%;
+    height: 1px; /* Çizgi kalınlığını belirler */
+    background-color: black; /* Çizgi rengini belirler */
+    margin: 0 auto; /* Yatayda ortalar */
+
+  }
