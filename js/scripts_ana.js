@@ -11,23 +11,23 @@ var containerWidth = container.offsetWidth;
 var prevKeyActivate = false;
 var nextKeyActivate = true;
 
-window.addEventListener("resize" ,  checkWidth);
+window.addEventListener("resize", checkWidth);
 
 function checkWidth() {
     containerWidth = container.offsetWidth;
     setParams(containerWidth);
 }
 
-function setParams(w){
+function setParams(w) {
     if (w < 551) {
         slidesPerPage = 1;
-    }else {
+    } else {
         if (w < 901) {
             slidesPerPage = 2;
-        }else{
+        } else {
             if (w < 1101) {
                 slidesPerPage = 3;
-            }else {
+            } else {
                 slidesPerPage = 4;
             }
         }
@@ -38,13 +38,13 @@ function setParams(w){
     };
     currentMargin = - currentPosition * (100 / slidesPerPage);
     slider.style.marginLeft = currentMargin * '%';
-    if (currentPosition > 0){
+    if (currentPosition > 0) {
         buttons[0].classList.remove('inactive');
     }
-    if (currentPosition < slidesCount){
+    if (currentPosition < slidesCount) {
         buttons[1].classList.remove('inactive');
     }
-    if (currentPosition >= slidesCount){
+    if (currentPosition >= slidesCount) {
         buttons[1].classList.remove('inactive');
     }
 }
@@ -52,7 +52,7 @@ function setParams(w){
 setParams();
 
 function slideRight() {
-    if (currentPosition != 0){
+    if (currentPosition != 0) {
         slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
         currentMargin += (100 / slidesPerPage);
         currentPosition--;

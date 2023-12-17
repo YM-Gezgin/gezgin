@@ -1,6 +1,6 @@
 body {
-    background-color: #F8F3EE; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
+    background-color: #F8F3EE; 
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); 
     margin: 0;
     
 }
@@ -15,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: #F8F3EE !important; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    background-color: #F8F3EE !important; 
     border: none;
   }
   
@@ -58,9 +58,11 @@ body {
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
 }
-
-
-
+@media screen and (min-width:1600px ) {
+    .navbar-nav{
+        margin-left: 8%;
+    }
+}
 
 .nav-item.giris-yap .nav-link {
     display: flex;
@@ -433,7 +435,22 @@ color: gold;
     }
 
   
-
+    @media screen and (max-width:700px) {
+        td .daha_fazlasi{
+            display: none;
+        }
+        td .daha_fazla{
+            display: inline;
+        }
+    }
+    @media screen and (min-width:700px) {
+        td .daha_fazla{
+            display: none;
+        }
+        td .daha_fazlasi{
+            display: inline;
+        }
+    }
 
 
 

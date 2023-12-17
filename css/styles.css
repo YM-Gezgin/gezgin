@@ -1,6 +1,6 @@
 
 body {
-    background-color: #f5f5f5; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
+    background-color: #f5f5f5;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
     margin: 0;
     
@@ -34,7 +34,7 @@ body {
     }
   }
 .navbar-brand {
-    color: #0e6a3a !important; /* Başlık rengi */
+    color: #00CC99 !important; /* Başlık rengi */
     font-size: 80px;    
     border: none;
     display: inline-block;
@@ -64,7 +64,7 @@ body {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    background-color: #0e6a3a; /* Arka plan rengi */
+    background-color: #00CC99; /* Arka plan rengi */
     padding: 5px 10px; /* Arka plan alanı boyutlandırma */
     border-radius: 10px; /* Kenar yumuşatma */
     color: white !important; /* Yazı rengi */
@@ -117,11 +117,6 @@ body {
 
 
 
-
-
-
-
-
 .modal {
     display: none;
     position: fixed;
@@ -159,7 +154,7 @@ body {
 
 .sifremiUnuttum {
     display: flex;
-    justify-content: flex-end; /* Aligns buttons to the right */
+    justify-content: flex-end; 
 }
 
 #sifremiUnuttumButton {
@@ -179,7 +174,7 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     color: white;
-    background-color: #0e6a3a;
+    background-color: #00CC99;
     border-radius: 5px;
 }
 
@@ -189,7 +184,7 @@ body {
 }
 
 .footer{
-    background: #222;
+    background: #30336b    ;
     color:white;
     
     .links ul {
@@ -247,7 +242,7 @@ body {
     
     .fa-ul li {
         font-size: 1.2em;
-        padding-bottom: 14px; /* İstediğiniz boyutu ayarlayın */
+        padding-bottom: 14px; 
       }
       .fa-li-co{
         padding-left: 5px;
@@ -255,11 +250,11 @@ body {
       
       .fa-ul li:hover .fa-li i,
       .fa-ul li:hover .fa-li-co {
-        color: #2ecc71; /* Mavi renk, isteğe bağlı olarak değiştirilebilir */
+        color: #2ecc71; 
       }
     
       .fa-ul li.clicked {
-        background-color: #2ecc71; /* Tıklandığında rengi, isteğe bağlı olarak değiştirilebilir */
+        background-color: #2ecc71; 
       }
       .fa-ul a{
         color: black;
@@ -270,10 +265,10 @@ body {
       }
       .fa-ul a:link,
         .fa-ul a:visited {
-          color: black; /* Tıklanılmamış ve ziyaret edilmemiş durum için siyah renk */
+          color: black; 
         }
       .fa-ul a.active {
-        color: #2ecc71 !important; /* Tıklandığında (aktif durumda) mavi renk (isteğe bağlı) */
+        color: #2ecc71 !important; 
       }
 
    
