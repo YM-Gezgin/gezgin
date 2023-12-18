@@ -52,3 +52,19 @@ function setActiveLink(element) {
     
     document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
 }
+
+
+function confirmExit() {
+  /*window.location.replace = "http://localhost:3000/girisKayit.html";   sadece yayınlanmış sayfalara yönlendiriyormuş*/
+  window.open("girisKayit.html", "_blank");
+}
+
+function closeModal() {
+  /*window.location.href = "profilim.html";*/
+  document.getElementById("myModal").style.display = "none";
+
+}
+
+
+
+

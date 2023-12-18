@@ -165,15 +165,17 @@
             <!-- kart adı falan çıkıp verdiği puan yorum gösterebiliriz.-->
 
             </div>
-            <div class="p_content" id="Çıkış yap" style="display: none;">
-
-              <!--BURASI DOLDURULUCAK
-                 çıkış yapmak istediğine emin misin alerti gelir 
-                 sonra giriş yap sayfasına yönlendirme yapar o kadar
-                -->
-              <h1>Çıkış içeriği</h1>
-
+              <div class="p_content" id="Çıkış yap" style="display: none;">
+                <div id="myModal" class="modal" style="display: block;">
+                  <div class="modal-content">
+                      <h2>Çıkış yapmak istediğinizden emin misiniz?</h2>
+                      <div class="modal-buttons">
+                          <button onclick="confirmExit()">Evet</button>
+                          <button onclick="closeModal()">Hayır</button>
+                      </div>
+                  </div>
               </div>
+            </div>
 
       </div>
     </div>

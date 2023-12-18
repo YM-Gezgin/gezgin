@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +25,7 @@
         </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span> <i class="fas fa-bars" style="color: #fa8000;"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -43,22 +45,21 @@
         </div>
       </nav>
       <div class="jumbotron text-center header-jumbotron" style="background: none;">
-        <hr>
         <h5 style="text-align: center;">"Dünya bir kitaptır ve seyahat etmeyenler, onun sadece bir sayfasını okurlar."-
-            Augustinus.</h5> 
+            Augustinus.</h5> <hr>
         <!-- Diğer içerikler -->
     </div>
-
 
     <!-- Kayıt Ol formu -->
     <div class="register-form">
         <div class="d-flex justify-content-center mt-0">
-            <button type="button" id="showLoginFromRegister" class="btn btn-primary border-0"
-                style="border-radius: 0; background-color: #f0efef; margin-right: 2px; color: #444;">Giriş Yap</button>
-            <button type="button" id="showRegisterFromRegister" class="btn btn-primary border-0"
-                style="border-radius: 0; background-color: white; color: #444;;">Üye Ol</button>
+            <button type="button" id="showLoginFromRegister" class="btn btn-primary"
+                >Giriş Yap</button>
+            <button type="button" id="showRegisterFromRegister" class="btn btn-secondary "
+                >Üye Ol</button>
         </div>
         <div class="form-container">
+            
 
             <form id="registerForm" action="uye_ol.php" method="post" onsubmit="return validateForm()">
                 
@@ -167,8 +168,8 @@
                             </div>
                             
                             <div class="d-flex justify-content-center mt-3">
-                                <button type="submit" class="btn btn-primary border-0" id="uye_ol_button"
-                                    style="border-radius: 0; background-color: #00CC99; border-radius: 10px; margin-bottom: 10px;" onclick="validateForm()">Üye Ol</button>
+                                <button type="submit" class="btn btn-third" id="uye_ol_button"
+                                     onclick="validateForm()">Üye Ol</button>
                             </div>
 
                         </div>
@@ -181,21 +182,18 @@
 
    
 
-
     <div class="login-form" style="display: none;">
         <div class="d-flex justify-content-center mt-0">
-            <button type="button" id="showLoginFromLogin" class="btn btn-primary border-0"
-                style="border-radius: 0; background-color: white; margin-right: 2px; color: #00CC99">Giriş Yap</button>
-            <button type="button" id="showRegisterFromLogin" class="btn btn-primary border-0"
-                style="border-radius: 0; background-color: #d7d4d4; color: #00CC99;">Üye Ol</button>
+            <button type="button" id="showLoginFromLogin" class="btn btn-secondary "
+                >Giriş Yap</button>
+            <button type="button" id="showRegisterFromLogin" class="btn btn-primary "
+                >Üye Ol</button>
         </div>
         <div class="form-container">
             <form id="loginForm" action="giris_yap.php" method="post">
-                <!-- Form alanları -->
-
+                <!-- Form alanları -->               
                 
-
-                <p class="text-center" style="margin-top: 10px;">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim
+               <p class="text-center" style="margin-top:10px;">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim
                     seyahate başla!</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
@@ -214,8 +212,8 @@
                             <button id="sifreResetButton"class="center" style="display: none;">Şifreyi Resetle</button>
                         </div>
                         <div class="d-flex justify-content-center mt-3">
-                            <button type="submit" class="btn btn-primary border-0" id = g_girişYap
-                                style="border-radius: 0; background-color: #00CC99; border-radius: 10px; margin-bottom: 10px;">Giriş Yap</button>                                
+                            <button type="submit" class="btn btn-third" id = g_girişYap
+                                >Giriş Yap</button>                                
                         </div>
                         <!-- Inside the login-form div -->
                         
@@ -280,4 +278,7 @@
 </body>
 
 </html>
+
+
+
 

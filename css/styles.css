@@ -1,6 +1,6 @@
 
 body {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
     margin: 0;
     
@@ -24,6 +24,7 @@ body {
     flex-direction: column;
     margin-right: 25%;
     margin-left: 10%;
+    
 }
 @media (max-width: 768px) {
     .nav-container {
@@ -34,10 +35,11 @@ body {
     }
   }
 .navbar-brand {
-    color: #00CC99 !important; /* Başlık rengi */
+    color: #fa8000 !important; /* Başlık rengi */
     font-size: 80px;    
     border: none;
     display: inline-block;
+    padding-bottom: 0;
 }
 .custom-link {
     color: #444 !important;
@@ -45,7 +47,6 @@ body {
     display: block;
     margin-left: 110px;
 }
-
 
 .navbar-nav .nav-link {
     color: #444 !important; /* Menü öğesi rengi */
@@ -58,13 +59,11 @@ body {
     text-decoration: underline;
 }
 
-
-
 .nav-item.giris-yap .nav-link {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    background-color: #00CC99; /* Arka plan rengi */
+    background-color: #fa8000; /* Arka plan rengi */
     padding: 5px 10px; /* Arka plan alanı boyutlandırma */
     border-radius: 10px; /* Kenar yumuşatma */
     color: white !important; /* Yazı rengi */
@@ -92,28 +91,87 @@ body {
 }
 
 .register-form {
-
     padding-top: 40px; /* Üst kısma boşluk ekler */
     padding-bottom: 60px; /* Alt kısma boşluk ekler */
-    margin: 0 auto;
+
 }
 
 .login-form {
-
     padding-top: 40px; /* Üst kısma boşluk ekler */
     padding-bottom: 60px; /* Alt kısma boşluk ekler */
-    margin: 0 auto;
+    
+    
 }
 .form-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 60%;
     margin: 0 auto;
-    width: 50%;
+    background-color: white;
     border-radius: 15px;
-    /*background: linear-gradient(45deg, #c59d63, #bcb88f);*/
-    background: white;
 }
+@media screen and (max-width: 767px) {
+    .form-container {
+        width: 95%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 15px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .form-container {
+        width: 80%;;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 15px;
+}
+}
+.btn-primary.active,
+.btn-primary:active,
+.btn-secondary.active,
+.btn-secondary:active {
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: #d7d4d4 !important; /* Sıfırlanan durum için istediğiniz arka plan rengini belirtin */
+    border-color: #fa8000 !important; /* Sıfırlanan durum için istediğiniz kenarlık rengini belirtin */
+    color: #444 !important; /* Sıfırlanan durum için istediğiniz metin rengini belirtin */
+}
+
+.btn-primary {
+    color: #fa8000;
+    border: none;
+    background-color: #d7d4d4; 
+    margin-right: 2px;
+    border-radius: 0;
+    
+}
+.btn-primary:hover {
+    border: none;
+    background-color: #d7d4d4;
+    color: #444;
+    
+}
+.btn-secondary {
+    color: #fa8000;
+    border: none;
+    background-color: white; 
+    margin-right: 2px;
+    border-radius: 0;
+    
+}
+.btn-secondary:hover {
+    border: none;
+    background-color: #d7d4d4;  
+    color: #444;   
+}
+.btn-third {
+    color: white;
+    background-color: #fa8000;
+    border-radius: 10px; 
+    margin-bottom: 10px;
+}
+
 
 
 
@@ -154,7 +212,7 @@ body {
 
 .sifremiUnuttum {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end; /* Aligns buttons to the right */
 }
 
 #sifremiUnuttumButton {
@@ -174,7 +232,7 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     color: white;
-    background-color: #00CC99;
+    background-color: #fa8000;
     border-radius: 5px;
 }
 
@@ -184,7 +242,7 @@ body {
 }
 
 .footer{
-    background: #30336b    ;
+    background: #152F4F;
     color:white;
     
     .links ul {
@@ -199,7 +257,7 @@ body {
     
     .links li a:hover {
         text-decoration: underline;
-        color: #4180CB;
+        color: #fa8000;
     }
      
     
@@ -213,7 +271,7 @@ body {
     }
     
     .about-company a:hover {
-        color: #4180CB;
+        color: #fa8000;
         text-decoration: none;
     }
      
@@ -242,7 +300,7 @@ body {
     
     .fa-ul li {
         font-size: 1.2em;
-        padding-bottom: 14px; 
+        padding-bottom: 14px; /* İstediğiniz boyutu ayarlayın */
       }
       .fa-li-co{
         padding-left: 5px;
@@ -250,11 +308,11 @@ body {
       
       .fa-ul li:hover .fa-li i,
       .fa-ul li:hover .fa-li-co {
-        color: #2ecc71; 
+        color: #fa8000; /* Mavi renk, isteğe bağlı olarak değiştirilebilir */
       }
     
       .fa-ul li.clicked {
-        background-color: #2ecc71; 
+        background-color: #fa8000; /* Tıklandığında rengi, isteğe bağlı olarak değiştirilebilir */
       }
       .fa-ul a{
         color: black;
@@ -265,14 +323,18 @@ body {
       }
       .fa-ul a:link,
         .fa-ul a:visited {
-          color: black; 
+          color: black; /* Tıklanılmamış ve ziyaret edilmemiş durum için siyah renk */
         }
       .fa-ul a.active {
-        color: #2ecc71 !important; 
+        color: #fa8000 !important; /* Tıklandığında (aktif durumda) mavi renk (isteğe bağlı) */
       }
 
    
   
+
+
+
+
 
 
 
