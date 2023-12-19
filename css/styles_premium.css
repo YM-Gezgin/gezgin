@@ -16,7 +16,7 @@
 
 body {
 
-    background-color: #F8F3EE;
+    background-color: #f5f5f5;
     /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
     /* Gölgelendirme: RGB(0, 0, 0) Şeffaflık: 0.5 */
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar {
-    background-color: #F8F3EE !important;
+    background-color: #f5f5f5 !important;
     /* Renk: RGB(0, 128, 255) Şeffaflık: 0.5 */
     border: none;
 }
@@ -56,11 +56,12 @@ body {
 }
 
 .navbar-brand {
-    color: #1B9CFC !important;
+    color: #fa8000 !important;
     /* Başlık rengi */
     font-size: 80px;
     border: none;
     display: inline-block;
+    padding-bottom: 0;
 }
 
 .custom-link {
@@ -91,7 +92,7 @@ body {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    background-color: #1B9CFC;
+    background-color: #fa8000;
     /* Arka plan rengi */
     padding: 5px 10px;
     /* Arka plan alanı boyutlandırma */
@@ -283,7 +284,7 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 15px;
-    border: 2px solid #00CC99; 
+    border: 2px solid #fa8000; 
     background: transparent;
 }
 
@@ -291,7 +292,7 @@ body {
 
 
 .footer {
-    background: #30336b;
+    background: #152F4F;
     color: white;
 
     .links ul {
@@ -306,7 +307,7 @@ body {
 
     .links li a:hover {
         text-decoration: underline;
-        color: #4180CB;
+        color: #fa8000;
     }
 
 
@@ -320,7 +321,7 @@ body {
     }
 
     .about-company a:hover {
-        color: #4180CB;
+        color: #fa8000;
         text-decoration: none;
     }
 
