@@ -6,14 +6,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="css/styles_ana.css">
   <link rel="stylesheet" href="css/styles_mekanTanitim.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
   <title>MekanTanitim</title>
 </head>
 
@@ -52,39 +55,41 @@
   </div>
 
   <div style="overflow-x:auto;">
-    <table>
+    <table class="sehirTable3">
       <tr>
-        <th>Şehir Adı</th>
+        <th>ŞEHİR ADI</th>
+      </tr>
+    </table>
+    <table class="sehirTable2">
+      <tr>
         <th>Şehir Puanı</th>
         <th>Mekan sayısı</th>
         <th>Rota sayısı</th>
         <th>Yorum sayısı</th>
       </tr>
       <tr>
-        <td>daha fazlası için tıklayınız</td>
-        <td>x</td>
-        <td>y</td>
-        <td>z</td>
-        <td>t</td>
+        <td>4.5 <i class="fas fa-star"></i></td>
+        <td>10 <i class='fas fa-university'></i></td>
+        <td>392 <i class='fas fa-route'></i></td>
+        <td>254 <i class='far fa-comment-alt'></i></td>
       </tr>
     </table>
   </div><br>
 
-  <div class="yatayCizgi"></div><br>
   <div class="container">
     <div class="left-side">
       <table class="table1">
           <tr class="row1">
-              <td>#MEKAN-ADI</td>
+              <td style="text-align: center;">#MEKAN-ADI</td>
           </tr>
       </table>
       <table class="table1">
             <tr class="row2">
-                <td>MEKAN PUANI</td>
-                <td>X</td>
+                <td style="border-top: none;">Mekan Puanı</td>
+                <td style="border-top: none;">X</td>
             </tr>
             <tr class="row3">
-                <td>ROTADA BULUNMA</td>
+                <td>Rotada Bulunma</td>
                 <td>Y</td>
             </tr>
       </table> 
@@ -142,23 +147,20 @@
               <tr class="yorumKutusu">
                 <td>yorum 3...</td>
               </tr>
-              <tr class="yorumKutusu">
-                <td style="text-align: center;"><a href="#">TÜM YORUMLARI GÖR</a></td>
+              <tr class="tumYorumKutusu">
+                <td><a href="#">TÜM YORUMLARI GÖR</a></td>
               </tr>
           </tbody>
         </table><br>
         <form id="myForm">
           <textarea class="yorumAlani" id="userInput" name="userInput" rows="4" placeholder="Burası hakkında düşüncelerini diğer gezginlerle paylaşmaye ne dersin?"></textarea>
-          <div class="butonlar1">
-            <button type="button" class="btn btn-info" onclick="clearInput()">TEMİZLE</button>
-            <button type="submit" class="btn btn-dark">YORUM YAP</button>
+          <div>
+            <button type="submit" class="buttonYorumYap">YORUM YAP</button>
           </div>
-
       </form>
       </div>
     </div>
   </div><br>
-
   <div class="yatayCizgi"></div><br>
 
   <div class="container">
@@ -219,6 +221,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+
       <div class="mekanYorum">
         <table class="table2">
           <tbody>
@@ -231,18 +234,21 @@
               <tr class="yorumKutusu">
                 <td>yorum 3...</td>
               </tr>
-              <tr class="yorumKutusu">
-                <td>yorum 4...</td>
-              </tr>
-              <tr class="yorumKutusu">
-                <td style="text-align: center;"><a href="#">TÜM YORUMLARI GÖR</a></td>
+              <tr class="tumYorumKutusu">
+                <td><a href="#">TÜM YORUMLARI GÖR</a></td>
               </tr>
           </tbody>
-        </table>
+        </table><br>
+        <form id="myForm">
+          <textarea class="yorumAlani" id="userInput" name="userInput" rows="4" placeholder="Burası hakkında düşüncelerini diğer gezginlerle paylaşmaye ne dersin?"></textarea>
+          <div>
+            <button type="submit" class="buttonYorumYap">YORUM YAP</button>
+          </div>
+      </form>
       </div>
     </div>
-    <div class="yatayCizgi"></div><br>
-  </div>
+  </div><br>
+  <div class="yatayCizgi"></div><br>
 
 <div class="mt-5 pt-5 pb-5 footer">
 <div class="container">
