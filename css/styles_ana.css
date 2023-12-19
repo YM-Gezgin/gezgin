@@ -35,6 +35,7 @@ body {
     font-size: 80px;    
     border: none;
     display: inline-block;
+    padding-bottom: 0;
 }
 .custom-link {
     color: black !important;
@@ -167,9 +168,14 @@ img {
     
 }
 
-#container,
-#container2 {
-    height: 40vh;
+
+
+
+#card-container,
+#card-container2 {
+    height: calc(50vh - 30px); /* Üst ve alt toplamı 30 piksel (10px üst + 20px alt) */
+    margin-top: 5px; /* Üst kısma 10 piksel boşluk */
+    margin-bottom: 90px; /* Alt kısma 90 piksel boşluk */
     display: grid;
     place-items: center;
 }
@@ -177,7 +183,7 @@ img {
 #slider-container2 {
     margin-top: 0; /* Üst boşluğu kaldır */
     margin-bottom: 0; 
-    height: 300px;
+    height: 110%;
     width: 85vw;
     max-width: 1000px;
     position: relative;
@@ -187,10 +193,10 @@ img {
 #slider-container .btn,
 #slider-container2 .btn2 {
     position: absolute;
-    top: calc(80% - 30%);
+    top: calc(70% - 30%);
     height: 15px;
     width: 15px;
-    border-left: 8px solid #1B9CFC;
+    border-left: 8px solid #fa8000;
     border-top: 8px solid;
     cursor: pointer;
 }
@@ -223,14 +229,17 @@ img {
 }
 #slider-container #slider .slide,
 #slider-container2 #slider2 .slide2 {
-    height: 110%;
-    margin: auto 10px;
+    height: 50%;
+    margin-right: 25px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 2px 4px white, -2px -2px 4px 2px white;
-    display: grid;
+    display: flex;
     place-items: center;
+    flex-direction: column;
 }
+
+
 #slider-container #slider .slide span,
 #slider-container2 #slider2 .slide2 span {
     color: white;
@@ -238,6 +247,7 @@ img {
 }
 #slider-container #slider .slide img,
 #slider-container2 #slider2 .slide2 img {
+    
     width: 100%;
     height: 100%;          
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -246,17 +256,19 @@ img {
 }
 #slider-container #slider .slide .card-body,
 #slider-container2 #slider2 .slide2 .card-body {
-    display: flex;
+    
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 16px;
+    margin: 0;
     
     
     
 }
 #slider-container #slider .slide .card-title,
 #slider-container2 #slider2 .slide2 .card-title {
+font-size: 15px;
 margin-bottom: 0.5rem;
 color: #333333;
 }
@@ -342,58 +354,59 @@ color: #fa8000;
 }
 
 
-.footer{
+.footer {
     background: #152F4F;
-    color:white;
-    
-    .links ul {
-        list-style-type: none;
-    }
-    
-    .links li a {
-        color: white;
-        transition: color 0.2s;
-        text-decoration: none;
-    }
-    
-    .links li a:hover {
-        text-decoration: underline;
-        color: #4180CB;
-    }
-     
-    
-    .about-company i {
-        font-size: 25px;
-    }
-    
-    .about-company a {
-        color: white;
-        transition: color 0.2s;
-    }
-    
-    .about-company a:hover {
-        color: #4180CB;
-        text-decoration: none;
-    }
-     
-    .location i {
-        font-size: 18px;
-        margin: 0 5px;
-        color: white;
-    }
-    
-    .location p {
-        color: white;
-    }
-    
-    .location a {
-        text-decoration: none;
-        color: white;
-    }
-    
-    
-    .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
-    }
+    color: white;
+}
+
+.footer .links ul {
+    list-style-type: none;
+}
+
+.footer .links li a {
+    color: white;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.footer .links li a:hover {
+    text-decoration: underline;
+    color: #4180CB;
+}
+
+.footer .about-company i {
+    font-size: 25px;
+}
+
+.footer .about-company a {
+    color: white;
+    transition: color 0.2s;
+}
+
+.footer .about-company a:hover {
+    color: #4180CB;
+    text-decoration: none;
+}
+
+.footer .location i {
+    font-size: 18px;
+    margin: 0 5px;
+    color: white;
+}
+
+.footer .location p {
+    color: white;
+}
+
+.footer .location a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer .copyright p {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 
   
     @media screen and (max-width:700px) {

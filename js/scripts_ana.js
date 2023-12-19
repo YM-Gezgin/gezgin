@@ -1,4 +1,4 @@
-var container = document.getElementById('container');
+var container = document.getElementById('card-container');
 var slider = document.getElementById('slider');
 var slides = document.getElementsByClassName('slide').length;
 var buttons = document.getElementsByClassName('btn');
@@ -80,7 +80,7 @@ function slideLeft() {
 };
 
 
-var container2 = document.getElementById('container2');
+var container2 = document.getElementById('card-container2');
 var slider2 = document.getElementById('slider2');
 var slides2 = document.getElementsByClassName('slide2').length;
 var buttons2 = document.getElementsByClassName('btn2');
