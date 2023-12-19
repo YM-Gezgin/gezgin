@@ -395,23 +395,5 @@ color: #fa8000;
     .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
     }
 
-  
-    @media screen and (max-width:700px) {
-        td .daha_fazlasi{
-            display: none;
-        }
-        td .daha_fazla{
-            display: inline;
-        }
-    }
-    @media screen and (min-width:700px) {
-        td .daha_fazla{
-            display: none;
-        }
-        td .daha_fazlasi{
-            display: inline;
-        }
-    }
-
 
 

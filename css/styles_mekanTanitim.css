@@ -9,7 +9,6 @@
     font-size: 20px;
   }
 
-
   .container {
     display: flex;
     flex-wrap: wrap; /* Yeni eklenen satır */
@@ -33,42 +32,44 @@
     margin-left: 17%;
     max-width: 75%;
     border-collapse: collapse;
+    border-bottom: none;
     max-width: 100½;
-    border: 1px solid #042365;
+    border: none;
+    font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
   }
 
   .table1 td{
-    font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
     font-size: 17px;
-    color: rgb(255, 255, 255);
+    text-align: left;
+    color: #152F4F;
     /* text-align: center; */
     text-decoration: none;
+    border: 1px solid #fa8000;
     }
 
   .row1 {
-    background-color: #0F76B1; /* Pembe */
+    background-color: #E8AA42; /* Pembe  025464 */
   }
-  .row2 {
-    background-color: #4BB1EC; /* Mavi */
-  }
-  .row3 {
-    background-color: #51CACC; /* Yeşil */
+  .row1 td{
+    border: 1px solid #152F4F;
   }
 
   .buttonRow{
-    font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+ 
     font-size: 16px;
     margin-left: 17%;
   }
 
   .buttonRow button {
+    
     padding: 6px;
     color: white;
-    background-color: #5C5C5C;
-    height: 10%;
+    
+    background-color: #152F4F; /*025464  152F4F */
+    height: auto;
     width: 44.6%;
-    border: 1px solid black;
     cursor: pointer;
+    border-radius: 5px;
   }
 
   .tanitim {
@@ -76,9 +77,8 @@
     height: 72%;
     max-width: 75%;
     max-height: 72%;
-    border: 1px solid #2d2a2a; /* Çerçeve genişliği ve rengi */
+    border: 1px solid #fa8000; /* Çerçeve genişliği ve rengi */
     padding: 2px; /* Metin kutusu içindeki iç boşluk */
-    background-color: #E0F5FA;
     margin-left: 17%;
     padding: 15px;
     overflow: hidden; /* Sığmayan içeriği gizle */
@@ -142,8 +142,14 @@
     padding-top: 3%;
   }
 
-  .yorumKutusu{
-    background-color: #B0EEE9;
+
+  .tumYorumKutusu td{
+    background-color: #152F4F !important;
+    text-align: center !important;
+  }
+
+  .tumYorumKutusu a{
+    color: white;
   }
   
   .table2{
@@ -151,22 +157,22 @@
     border-spacing: 0;
     width: 100%;
     max-width: 100½;
-    border: 1px solid #042365;
+    border: 1px solid #fa8000;
   }
   
 
   .table2 td,a {
     font-size: 17px;
     color: darkslategray;
-    /* text-align: center; */
+    text-align: left;
     text-decoration: none;
   }
 
   .yatayCizgi {
     width: 1000px; /* Çizgi uzunluğunu istediğiniz değere ayarlayabilirsiniz */
     padding-left: 15%;
-    height: 1px; /* Çizgi kalınlığını belirler */
-    background-color: black; /* Çizgi rengini belirler */
+    height: 1px !important; /* Çizgi kalınlığını belirler */
+    background-color: #042365; /* Çizgi rengini belirler */
     margin: 0 auto; /* Yatayda ortalar */
   }
 
@@ -176,10 +182,63 @@
     font-size: 16px;
   }
   
-  .yorumAlani{
+  .yorumAlani {
     width: 100%;
-    background-color: #D8FFFC;
+    background-color: #ece9e9;
+    border: 1px solid #fa8000;
   }
 
-  .butonlar1 {
+  @media screen and (min-width: 768px) {
+    .buttonYorumYap{
+      background-color: #152F4F;
+      color: white;
+      width: 30%;
+      margin-left: 70%;
+      border-radius: 7px;
+      border: #5C5C5C;
+    }
+  }
+
+  @media screen and (max-width: 768px) {  
+    .buttonYorumYap{
+      background-color: #152F4F;
+      color: white;
+      width: 30%;
+      margin-left: 61%;
+      border-radius: 7px;
+      border: #5C5C5C;
+    }
+  }
+  
+  .sehirTable2{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 63%;
+    max-width: 100½;
+    border: 1px solid #ddd;
+    color: #152F4F;
+    margin: 0 auto;
+  }
+
+  .sehirTable2 th,td{
+    text-align: center;
+    padding: 4px;
+    border: 1px solid #fa8000;
+    border-top: none;
+  }
+
+  .sehirTable3 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 63%;
+    max-width: 100½;
+    border: 1px solid #152F4F;
+    background-color: #E8AA42;
+    color: #152F4F;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tableLink1 {
+    text-align: center !important;
   }
