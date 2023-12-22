@@ -1,5 +1,5 @@
 <?php 
-session_start();
-echo "Hoşgeldin " .$_SESSION['isim'];
-
+//session_start();
+//echo "Hoşgeldin " .$_SESSION['isim'];
+echo "Hoşgeldin ";
 ?>

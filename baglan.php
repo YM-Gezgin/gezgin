@@ -101,6 +101,6 @@ if ($baglanti->connect_errno > 0) {
 // }
 
 
-$baglanti->close();
+//$baglanti->close();
 
 ?>

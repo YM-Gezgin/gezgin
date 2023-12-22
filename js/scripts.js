@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const showRegisterFromRegister = document.getElementById('showRegisterFromRegister');
     const showLoginFromLogin = document.getElementById('showLoginFromLogin');
     const showRegisterFromLogin = document.getElementById('showRegisterFromLogin');
-    
+    var defaultGiris=document.getElementById('g_girisYap');
     
 
     showLoginFromRegister.addEventListener('click', function() {
@@ -34,8 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
         loginForm.style.display = 'none';
     });
 
-    
+    defaultGiris.addEventListener('click',function(){
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'block';
+    })
 
+    
    
 });
 
@@ -45,7 +49,7 @@ document.getElementById("sifremiUnuttumButton").addEventListener("click", functi
     document.getElementById("sifremiUnuttumButton").style.display = "none";
     document.getElementById("sifreResetButton").style.display = "block";
     document.getElementById("g_sifre").style.display = "none";
-    document.getElementById("g_girişYap").style.display = "none";
+    document.getElementById("g_girisYap").style.display = "none";
     document.getElementById("g_sifreLabel").style.display = "none";
   });
   
