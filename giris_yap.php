@@ -1,6 +1,5 @@
 <?php
 require("baglan.php");
-session_start(); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["g_email"];
@@ -15,19 +14,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
 
-        if (password_verify($sifre, $row['p_hash'])) {
+        if($row>0){
+           if (password_verify($sifre, $row['p_hash'])) {
 
-            echo "Giriş yapıldı.";
-            $_SESSION['isim'] = $row['ad_soyad'];
-            header("Location: index.php");
-            exit();
+            echo 'success';
 
         } else {
-            echo "Geçersiz şifre.";
+            echo 'password';
+        } 
         }
+        else{
+            echo 'mail';
+        }
+
+        
     }
     $stmt->close();
-} else {
-    echo "Sorgu hatası: " . $stmt->error;
-}
+} 
 ?>

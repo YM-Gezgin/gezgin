@@ -20,17 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try{
         
         if ($baglanti->query($sql) === TRUE) {
-            header("Location: anaSayfa.html");
-        } else {
-            echo "Veri eklenirken bilinmeyen bir hata oluştu: " . $baglanti->error;
-            header("Location: girisKayit.html");
-            exit;
+            echo 'success';
+        } 
+        else {
+            echo 'unsuccess';
 
         }
     }
     catch (mysqli_sql_exception $e){
-            echo "Mail adresi sisteme kayıtlı!";
-            header("Location: girisKayit.html");
-            exit;
+            echo 'mail';
     }
 }
