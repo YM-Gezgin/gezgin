@@ -242,25 +242,29 @@
 
                 // Ajax isteği yapılıyor
                 $.ajax({
-                    url: "uye_ol.php", // Verilerin gönderileceği sayfa
-                    type: "POST", // HTTP methodu
-                    data: formData, // Gönderilecek veriler
+                    url: "uye_ol.php",
+                    type: "POST",
+                    data: formData,
                     contentType: false,
                     processData: false,
                     success: function(response) {
                         if (response === 'success') {
-                            window.location.href = "anaSayfa.html";
+                            var userEmail = $('#g_email').val();
+                            window.location.href = "index.php";
                         } 
                         else if(response==='mail'){
+                            document.getElementById('register_error').style.color = "red";
                             $('#register_error').text('Mail adresi sisteme kayıtlı.');
                         }
                         else {
+                            document.getElementById('register_error').style.color = "red";
                             $('#register_error').text('başarısız');
                         }
                     },
                     error: function(error) {
-                        // İstek başarısız olduğunda burada işlemler yapabilirsiniz
-                        document.getElementById('register_error').innerText = "hataaa2";
+                    
+                        document.getElementById('register_error').style.color = "red";
+                        document.getElementById('register_error').innerText = "Bilinmeyen bir hata oluştu";
                     }
                 });
             });
@@ -283,7 +287,9 @@
                     success: function(response) {
                         // İstek başarılıysa burada işlemler yapabilirsiniz
                         if (response === 'success') {
-                            window.location.href = "anaSayfa.html";
+                            var userEmail = $('#g_email').val(); // E-posta alanının doğru id'sini kullanarak alabilirsiniz
+                            window.location.href = "index.php" ;
+                            
                         } 
                         else if(response==='password'){
                             $('#login_error').text('Şifre hatalı.');

@@ -1,7 +1,6 @@
 <?php
 require("baglan.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // POST ile gelen verileri al
 
     $isim = $_POST["isim"];
     $email = $_POST["email"];
