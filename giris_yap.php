@@ -1,5 +1,6 @@
 <?php
 require("baglan.php");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["g_email"];
@@ -16,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($row>0){
            if (password_verify($sifre, $row['p_hash'])) {
-
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $email;
             echo 'success';
 
         } else {
