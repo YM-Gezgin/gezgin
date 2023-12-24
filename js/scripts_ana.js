@@ -1,7 +1,9 @@
-var container = document.getElementById('card-container');
-var slider = document.getElementById('slider');
-var slides = document.getElementsByClassName('slide').length;
-var buttons = document.getElementsByClassName('btn');
+var container = document.getElementById('card-container-1');
+var slider = document.getElementById('slider-1');
+var slider_container = document.getElementById('slider-container-1');
+var buttons = container.getElementsByClassName('btn');
+var slide = slider_container.getElementsByClassName('slide');
+var slides = slide.length;
 
 var currentPosition = 0;
 var currentMargin = 0;
@@ -51,7 +53,7 @@ function setParams(w) {
 
 setParams();
 
-function slideRight() {
+function slideRight1() {
     if (currentPosition != 0) {
         slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
         currentMargin += (100 / slidesPerPage);
@@ -65,7 +67,7 @@ function slideRight() {
     }
 };
 
-function slideLeft() {
+function slideLeft1() {
     if (currentPosition != slidesCount) {
         slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
         currentMargin -= (100 / slidesPerPage);
@@ -80,10 +82,12 @@ function slideLeft() {
 };
 
 
-var container2 = document.getElementById('card-container2');
-var slider2 = document.getElementById('slider2');
-var slides2 = document.getElementsByClassName('slide2').length;
-var buttons2 = document.getElementsByClassName('btn2');
+var container2 = document.getElementById('card-container-2');
+var slider2 = document.getElementById('slider-2');
+var slider_container2 = document.getElementById('slider-container-2');
+var buttons2 = container2.getElementsByClassName('btn');
+var slide2 = slider_container2.getElementsByClassName('slide');
+var slides2 = slide2.length;
 
 var currentPosition2 = 0;
 var currentMargin2 = 0;
@@ -158,6 +162,91 @@ function slideLeft2() {
     }
     if (currentPosition2 > 0) {
         buttons2[0].classList.add('inactive');
+    }
+};
+
+var container3 = document.getElementById('card-container-3');
+var slider3 = document.getElementById('slider-3');
+var slider_container3 = document.getElementById('slider-container-3');
+var buttons3 = container3.getElementsByClassName('btn');
+var slide3 = slider_container3.getElementsByClassName('slide');
+var slides3 = slide3.length;
+
+
+
+var currentPosition3 = 0;
+var currentMargin3 = 0;
+var slidesPerPage3 = 0;
+var slidesCount3 = slides3 - slidesPerPage3;
+var containerWidth3 = container3.offsetWidth;
+var prevKeyActivate3 = false;
+var nextKeyActivate3 = true;
+
+window.addEventListener("resize", checkWidth3);
+
+function checkWidth3() {
+    containerWidth3 = container3.offsetWidth;
+    setParams3(containerWidth3);
+}
+
+function setParams3(w) {
+    if (w < 551) {
+        slidesPerPage3 = 1;
+    } else {
+        if (w < 901) {
+            slidesPerPage3 = 2;
+        } else {
+            if (w < 1101) {
+                slidesPerPage3 = 3;
+            } else {
+                slidesPerPage3 = 4;
+            }
+        }
+    }
+    slidesCount3 = slides3 - slidesPerPage3;
+    if (currentPosition3 > slidesCount3) {
+        currentPosition3 -= slidesPerPage3;
+    };
+    currentMargin3 = -currentPosition3 * (100 / slidesPerPage3);
+    slider3.style.marginLeft = currentMargin3 + '%';
+    if (currentPosition3 > 0) {
+        buttons3[0].classList.remove('inactive');
+    }
+    if (currentPosition3 < slidesCount3) {
+        buttons3[1].classList.remove('inactive');
+    }
+    if (currentPosition3 >= slidesCount3) {
+        buttons3[1].classList.remove('inactive');
+    }
+}
+
+setParams3();
+
+function slideRight3() {
+    if (currentPosition3 != 0) {
+        slider3.style.marginLeft = currentMargin3 + (100 / slidesPerPage3) + '%';
+        currentMargin3 += (100 / slidesPerPage3);
+        currentPosition3--;
+    };
+    if (currentPosition3 === 0) {
+        buttons3[0].classList.add('inactive');
+    }
+    if (currentPosition3 < slidesCount3) {
+        buttons3[1].classList.add('inactive');
+    }
+};
+
+function slideLeft3() {
+    if (currentPosition3 != slidesCount3) {
+        slider3.style.marginLeft = currentMargin3 - (100 / slidesPerPage3) + '%';
+        currentMargin3 -= (100 / slidesPerPage3);
+        currentPosition3++;
+    }
+    if (currentPosition3 == slidesCount3) {
+        buttons3[1].classList.add('inactive');
+    }
+    if (currentPosition3 > 0) {
+        buttons3[0].classList.add('inactive');
     }
 };
 

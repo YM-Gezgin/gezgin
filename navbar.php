@@ -11,11 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 
     <link rel="stylesheet" href="css/navbar.css">
 </head>
@@ -26,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="nav-container mx a">
             <a class="navbar-brand" href="index.php">gezgin
-                <a href="#" class="custom-link">Premiumu Keşfet</a>
+                <a href="profilim.php" class="custom-link">Premiumu Keşfet</a>
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,21 +41,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Hakkımızda</a>
                 </li>
-                <li class="nav-item giris-yap">
-                    <a class="nav-link" href="login.php" id="giris"><i class="fas fa-user icon"></i>
-                        <?php
-                        session_start();
+                <li class="nav-item giris-yap" id="logged">
 
-                        // Oturum kontrolü
-                        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-                            echo "Giriş Yap";
-                        }
-                        else{
-                            echo "Profilim";
-                        }
-                        ?>
+                    <?php
+                    session_start();
 
-                        </a>
+                    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+                        echo "<script> 
+                document.getElementById('logged').innerHTML = 
+                '<a class=\"nav-link\" href=\"login.php\" id=\"giris\"><i class=\"fas fa-user icon\"></i> Giriş Yap</a>';
+            </script>";
+                    } else {
+                        echo "<script> 
+                document.getElementById('logged').innerHTML = 
+                '<a class=\"nav-link\" href=\"profilim.php\" id=\"giris\"><i class=\"fas fa-user icon\"></i> Profilim</a>';
+            </script>";
+                    }
+                    ?>
+
+
                 </li>
             </ul>
         </div>
@@ -65,7 +67,7 @@
     <div class="container-fluid">
         <hr>
     </div>
-    
+
 </body>
 
 </html>
