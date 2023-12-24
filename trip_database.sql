@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 18 Ara 2023, 22:44:09
+-- Üretim Zamanı: 23 Ara 2023, 20:01:55
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -42,7 +42,8 @@ CREATE TABLE `kullanici` (
 --
 
 INSERT INTO `kullanici` (`e_mail`, `ad_soyad`, `p_hash`, `premium_kontrol`, `kullanici_tipi`, `rota_sayac`, `fotograf`) VALUES
-('aa@gmail.com', 'Alperen Kosemeci', '$2y$10$xVHUFhro90Fjzz1s28aFlO6iS8VCZVWq4vgXmxzSH0nYDqUG4ix.u', 0, 1, 0, NULL);
+('aa@gmail.com', 'Alperen Kosemeci', '$2y$10$xVHUFhro90Fjzz1s28aFlO6iS8VCZVWq4vgXmxzSH0nYDqUG4ix.u', 0, 1, 0, NULL),
+('alpiren1905@gmail.com', 'asd', '$2y$10$MRBDgvMjCsOShKitBfWcbexQOIJqB4cOB1pSAkQRiWxFv14HYvALe', 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -77,7 +78,16 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 (8, 'Ankara Kalesi', 'Altındağ', 1, 2, 'https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2078000/ankara-kalesi-2079071.jpg', 'asd', 6, 7),
 (9, 'Anıtkabir', 'Çankaya', 1, 1, 'https://www.kulturportali.gov.tr/contents/images/20171113134357515_ANKARA%20Anitkabir%20%20Murat%20O', 'sadad', 6, 7),
 (10, 'Kuğulu Park', 'Çankaya', 2, 2, 'https://www.lutarsturizm.com/wp-content/uploads/2016/03/ku%C4%9Fulu-park-900x600.jpg', 'asds', 6, 3),
-(11, 'Rahmi Koç Müzesi', 'Altındağ', 5, 5, 'https://www.meroddi.com/wp-content/uploads/2022/08/koc-muzesi.png', 'asdasd', 6, 1);
+(11, 'Rahmi Koç Müzesi', 'Altındağ', 5, 5, 'https://www.meroddi.com/wp-content/uploads/2022/08/koc-muzesi.png', 'asdasd', 6, 1),
+(12, 'Tokat Kalesi', 'Merkez', 1, 2, 'https://belediyehaber.net/wp-content/uploads/2021/11/1.jpg', 'Tokatı yaşayan bilir.', 60, 7),
+(13, 'Ballıca Mağarası', 'Semerkant', 3, 3, 'https://www.etstur.com/letsgo/wp-content/uploads/2015/03/lets-go-825x600-11.jpg', 'assasddas', 60, 7),
+(14, 'Niksar Kalesi', 'Niksar', 3, 4, 'https://im.haberturk.com/l/2022/08/16/ver1660632895/3512603/jpg/640x360', 'Trnin en büyük 2.kalesi', 60, 7),
+(15, 'Uzungöl', 'Çaykara', 4, 5, 'https://www.uzungol.net/wp-content/uploads/2015/08/Uzungol-manzara-748x498.jpg', 'arapların diyarı', 61, 7),
+(16, 'Ayasofya', 'Ortahisar', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/43/b3/dc/trabzon-ayasofya-muzesi.jpg?w=1200&h=-1&s=1', 'asaasd', 61, 2),
+(17, 'Cazılar Deresi', 'Yomra', 2, 2, 'https://fastly.4sqi.net/img/general/600x600/1375144478_yLfJt-50GHwdHVeiYoBwB3vojTNIGn26Hl_70EZy21w.jpg', 'asdasd', 61, 4),
+(18, 'Atatürk Köşkü', 'Ortahisar', 2, 2, 'https://www.hepsiemlak.com/emlak-yasam/wp-content/uploads/2018/09/ataturk-kosku-ndeki-gizemli-gecit-2.jpg', 'asd', 61, 7),
+(19, 'Nakkaştepe Milelt Bahçesi', 'Üsküdar', 2, 3, 'https://yerler.com.tr/wp-content/uploads/2021/06/nakkastepe-millet-bahcesi.jpeg', 'asd', 34, 3),
+(20, 'Boztepe', 'Boztepe', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/78/79/1a/boztepe.jpg?w=1200&h=1200&s=1', 'asd', 61, 4);
 
 -- --------------------------------------------------------
 
@@ -150,7 +160,7 @@ INSERT INTO `sehirler` (`plaka`, `sehir_adi`, `sayac`) VALUES
 (3, 'Afyonkarahisar', 0),
 (4, 'Ağrı', 0),
 (5, 'Amasya', 0),
-(6, 'Ankara', 0),
+(6, 'Ankara', 1),
 (7, 'Antalya', 0),
 (8, 'Artvin', 0),
 (9, 'Aydın', 0),
@@ -178,7 +188,7 @@ INSERT INTO `sehirler` (`plaka`, `sehir_adi`, `sayac`) VALUES
 (31, 'Hatay', 0),
 (32, 'Isparta', 0),
 (33, 'Mersin', 0),
-(34, 'İstanbul', 0),
+(34, 'İstanbul', 2),
 (35, 'İzmir', 0),
 (36, 'Kars', 0),
 (37, 'Kastamonu', 0),
@@ -204,8 +214,8 @@ INSERT INTO `sehirler` (`plaka`, `sehir_adi`, `sayac`) VALUES
 (57, 'Sinop', 0),
 (58, 'Sivas', 0),
 (59, 'Tekirdağ', 0),
-(60, 'Tokat', 0),
-(61, 'Trabzon', 0),
+(60, 'Tokat', 1),
+(61, 'Trabzon', 1),
 (62, 'Tunceli', 0),
 (63, 'Şanlıurfa', 0),
 (64, 'Uşak', 0),
@@ -305,7 +315,7 @@ ALTER TABLE `yorumlar`
 -- Tablo için AUTO_INCREMENT değeri `mekanlar`
 --
 ALTER TABLE `mekanlar`
-  MODIFY `mekan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `mekan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `mekan_türleri`

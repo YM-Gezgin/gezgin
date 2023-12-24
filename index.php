@@ -16,6 +16,7 @@
 
     <title>Gezgin</title>
     <link rel="stylesheet" href="css/styles_ana.css">
+    
 </head>
 
 <body>
@@ -42,16 +43,16 @@
     $result = $baglanti->query($sql);
 
     if ($result->num_rows > 0) {
-        $count=1;
+        $count = 1;
         while ($sehirler = $result->fetch_assoc()) {
     ?>
-            <div id="card-container">
-                <div id="slider-container">
+            <div id="card-container-<?php echo $count ?>" class="card-container">
+                <div id="slider-container-<?php echo $count ?>" class="slider-container">
                     <h3>
-                        <?php echo $count ."-". $sehirler['sehir_adi'] ?>
+                        <?php echo $count . "-" . $sehirler['sehir_adi'] ?>
                     </h3>
-                    <span onclick="slideRight(<?php echo $count ?>)" class="btn"></span>
-                    <div id="slider">
+                    <span onclick="slideRight<?php echo $count ?>()" class="btn"></span>
+                    <div id="slider-<?php echo $count ?>" class="slider">
                         <?php
                         $plaka = $sehirler['plaka'];
                         $sql_mekan = "SELECT mekan_adi,semt_ismi,fotograf FROM mekanlar WHERE plaka='$plaka'";
@@ -69,7 +70,6 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
                                         <!-- burası için bir şey düşünülecek-->
                                     </div>
                                 </div>
@@ -78,11 +78,11 @@
                         }
                         ?>
                     </div>
-                    <span onclick="slideLeft(<?php echo $count ?>)" class="btn"></span>
+                    <span onclick="slideLeft<?php echo $count ?>()" class="btn"></span>
                 </div>
             </div>
     <?php
-        $count++;
+            $count++;
         }
     } else {
         echo "Bilinmeyen bir hata oluştu";
@@ -128,8 +128,8 @@
         </div>
     </div>
 
-    <script src="js/scripts_ana.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
-
+    
+    <script src="js/scripts_ana.js"></script> 
 </body>
 
 </html>

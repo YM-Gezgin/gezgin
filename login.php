@@ -12,48 +12,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <link rel="stylesheet" href="css/styles.css"> <!-- Bağlanacak olan CSS dosyası -->
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="nav-container mx a">
-            <a class="navbar-brand" href="#">gezgin
-                <a href="#" class="custom-link">Premiumu Keşfet</a>
-            </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span> <i class="fas fa-bars" style="color: #fa8000;"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-search"></i> Keşfet </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-car"></i> Otel & Araç Kiralama</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Hakkımızda</a>
-                </li>
-                <li class="nav-item giris-yap">
-                    <a class="nav-link" href="#"><i class="fas fa-user icon"></i> Giriş Yap</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php
+    require_once('navbar.php');
+    ?>
+
     <div class="jumbotron text-center header-jumbotron" style="background: none;">
         <h5 style="text-align: center;">"Dünya bir kitaptır ve seyahat etmeyenler, onun sadece bir sayfasını okurlar."-
             Augustinus.</h5>
-        <hr>
-        <!-- Diğer içerikler -->
     </div>
 
 
@@ -249,20 +223,25 @@
                     processData: false,
                     success: function(response) {
                         if (response === 'success') {
-                            var userEmail = $('#g_email').val();
-                            window.location.href = "index.php";
-                        } 
-                        else if(response==='mail'){
+                            document.getElementById('register_error').style.color = "green";
+                            $('#register_error').text('Sisteme başarıyla kayıt oldunuz.');
+                            document.getElementById('isim').value='';
+                            document.getElementById('email').value='';
+                            document.getElementById('sifre_tekrar').value='';
+                            document.getElementById('sifre').value='';                            
+                            document.getElementById('onay1').value='';
+                            document.getElementById('onay2').value='';
+                            document.getElementById('onay3').value='';
+                        } else if (response === 'mail') {
                             document.getElementById('register_error').style.color = "red";
                             $('#register_error').text('Mail adresi sisteme kayıtlı.');
-                        }
-                        else {
+                        } else {
                             document.getElementById('register_error').style.color = "red";
                             $('#register_error').text('başarısız');
                         }
                     },
                     error: function(error) {
-                    
+
                         document.getElementById('register_error').style.color = "red";
                         document.getElementById('register_error').innerText = "Bilinmeyen bir hata oluştu";
                     }
@@ -287,14 +266,11 @@
                     success: function(response) {
                         // İstek başarılıysa burada işlemler yapabilirsiniz
                         if (response === 'success') {
-                            var userEmail = $('#g_email').val(); // E-posta alanının doğru id'sini kullanarak alabilirsiniz
-                            window.location.href = "index.php" ;
-                            
-                        } 
-                        else if(response==='password'){
+                            window.location.href = "index.php";
+
+                        } else if (response === 'password') {
                             $('#login_error').text('Şifre hatalı.');
-                        }
-                        else {
+                        } else {
                             $('#login_error').text('Mail adresi kayıtlı değil.');
                         }
                     },
@@ -346,10 +322,10 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-    <!-- Bootstrap JavaScript -->
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
 
 
