@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/styles_ana.css">
+  <link rel="stylesheet" href="css/styles_mekanTanitim.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <title>MekanTanitim</title>
+</head>
+
+<body>
+
+  <?php require_once("navbar.php") ?>
+
+  <div class="welcome">
+    <br><h4>DEĞERLİ GEZGİN,</h4>
+    <p>SENİN İÇİN ŞEHİR HAKKINDA ARAŞTIRMA YAPTIK BİLE. İŞTE ROTANA EKLEYEBİLECEĞİN YERLER!</p>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="sehirTable3">
+      <tr>
+        <th>ŞEHİR ADI</th>
+      </tr>
+    </table>
+    <table class="sehirTable2">
+      <tr>
+        <th>Şehir Puanı</th>
+        <th>Mekan sayısı</th>
+        <th>Rota sayısı</th>
+        <th>Yorum sayısı</th>
+      </tr>
+      <tr>
+        <td>4.5 <i class="fas fa-star"></i></td>
+        <td>10 <i class='fas fa-university'></i></td>
+        <td>392 <i class='fas fa-route'></i></td>
+        <td>254 <i class='far fa-comment-alt'></i></td>
+      </tr>
+    </table>
+  </div><br>
+
+  <div class="container">
+    <div class="left-side">
+      <table class="table1">
+          <tr class="row1">
+              <td style="text-align: center;">#MEKAN-ADI</td>
+          </tr>
+      </table>
+      <table class="table1">
+            <tr class="row2">
+                <td style="border-top: none;">Mekan Puanı</td>
+                <td style="border-top: none;">X</td>
+            </tr>
+            <tr class="row3">
+                <td>Rotada Bulunma</td>
+                <td>Y</td>
+            </tr>
+      </table> 
+      <div class="buttonRow">
+        <button id="myButton1" onclick="changeText1()">KAYDET</button>
+        <button id="myButton2" onclick="changeText2()">EKLE</button>
+      </div><br>
+
+      <label class="tanitim" for="tanitim"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores illo placeat doloribus 
+        in quis natus consequatur tenetur iure dolorum, reiciendis ab praesentium nisi repellat doloremque nulla, aut, 
+        est asperiores sint.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores illo placeat doloribus 
+        in quis natus consequatur tenetur iure dolorum, reiciendis ab praesentium nisi repellat doloremque nulla, aut, 
+        est asperiores sint.sit amet, consectetur adipisicing. </p>
+      </label>
+    </div>
+
+
+    <div class="right-side">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/sarnic.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/sarnic.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/sarnic.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="mekanYorum">
+        <table class="table2">
+          <tbody>
+              <tr class="yorumKutusu">
+                <td>yorum 1...</td>
+              </tr>
+              <tr class="yorumKutusu">
+                <td>yorum 2...</td>
+              </tr>
+              <tr class="yorumKutusu">
+                <td>yorum 3...</td>
+              </tr>
+              <tr class="tumYorumKutusu">
+                <td><a href="#">TÜM YORUMLARI GÖR</a></td>
+              </tr>
+          </tbody>
+        </table><br>
+        <form id="myForm">
+          <textarea class="yorumAlani" id="userInput" name="userInput" rows="4" placeholder="Burası hakkında düşüncelerini diğer gezginlerle paylaşmaye ne dersin?"></textarea>
+          <div>
+            <button type="submit" class="buttonYorumYap">YORUM YAP</button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div><br>
+  <div class="yatayCizgi"></div><br>
+
+  <div class="container">
+    <div class="left-side">
+      <table class="table1">
+          <tr class="row1">
+              <td>#MEKAN-ADI</td>
+          </tr>
+      </table>
+      <table class="table1">
+            <tr class="row2">
+                <td>MEKAN PUANI</td>
+                <td>X</td>
+            </tr>
+            <tr class="row3">
+                <td>ROTADA BULUNMA</td>
+                <td>Y</td>
+            </tr>
+      </table> 
+      <div class="buttonRow">
+        <button id="myButton1" onclick="changeText1()">KAYDET</button>
+        <button id="myButton2" onclick="changeText2()">EKLE</button>
+      </div><br>
+
+      <label class="tanitim" for="tanitim"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores illo placeat doloribus 
+        in quis natus consequatur tenetur iure dolorum, reiciendis ab praesentium nisi repellat doloremque nulla, aut, 
+        est asperiores sint.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores illo placeat doloribus 
+        in quis natus consequatur tenetur iure dolorum, reiciendis ab praesentium nisi repellat doloremque nulla, aut, 
+        est asperiores sint.sit amet, consectetur adipisicing. </p>
+      </label>
+    </div>
+
+
+    <div class="right-side">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="images/sarnic.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/sarnic.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="images/sarnic.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="mekanYorum">
+        <table class="table2">
+          <tbody>
+              <tr class="yorumKutusu">
+                <td>yorum 1...</td>
+              </tr>
+              <tr class="yorumKutusu">
+                <td>yorum 2...</td>
+              </tr>
+              <tr class="yorumKutusu">
+                <td>yorum 3...</td>
+              </tr>
+              <tr class="tumYorumKutusu">
+                <td><a href="#">TÜM YORUMLARI GÖR</a></td>
+              </tr>
+          </tbody>
+        </table><br>
+        <form id="myForm">
+          <textarea class="yorumAlani" id="userInput" name="userInput" rows="4" placeholder="Burası hakkında düşüncelerini diğer gezginlerle paylaşmaye ne dersin?"></textarea>
+          <div>
+            <button type="submit" class="buttonYorumYap">YORUM YAP</button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div><br>
+  <div class="yatayCizgi"></div><br>
+
+<div class="mt-5 pt-5 pb-5 footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 col-xs-12 about-company">
+  <p>Hakkımızda</p>
+  <p class="pr-5 text-white-50">Gezgin olarak seyahat severlerin Türkiye'nin muhteşem
+    destinasyonlarını keşfetmelerine rehberlik etmek için buradayız.
+    Bizimle keşfedin, düşlerinizdeki seyahati planlamaya başlayın! </p>
+  
+</div>            
+<div class="col-lg-4 col-xs-12 location">
+  <h4 class="mt-lg-0 mt-sm-4"></h4>
+  <p>Reklam ve iş birliği için bize ulaşın</p>
+  <p><a href="#"><i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i></p>
+  <p><i class="fa fa-envelope"></i>info@gezgin.com</p>
+</div>
+<div class="col-lg-3 col-xs-12 links">
+    <h4 class="mt-lg-0 mt-sm-3"></h4>
+      <ul class="m-0 p-0">
+          <li><a href="#">Trabzon'da araç kiralama noktaları</a></li>
+          <li><a href="#">İstanbul' da gezilecek en güzel 10 yerı</a></li>
+          <li><a href="#">Ankara' da gezilecek en güzel 10 yer</a></li>
+          <li><a href="#">İzmir' de gezilecek en güzel 10 yer</a></li>
+          <li><a href="#">Antalya' da gezilecek en güzel 10 yer</a></li>
+          <li><a href="#">İstanbul' da araç kiralama noktaları</a></li>
+      </ul>
+  </div>
+</div>
+<div class="row mt-5">
+<div class="col copyright">
+  <p class=""><small class="text-white-50">© 2023. All Rights Reserved.</small></p>
+</div>
+</div>
+</div>
+</div>
+       
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyDE46C5I2v5K56Jl2K6Uc2LiXm81I" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha384-8/0tSZKXLqHKhIdVGEBBAAKlO4jgYhC2og9uLj4ASGl6zTfbJt3p3F78VXzvPfwx" crossorigin="anonymous"></script>
+      
+  <script src="js/scripts_ana.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
+  <script src="js/scripts_mekanTanitim.js"></script>
+
+
+</body>
+</html>
