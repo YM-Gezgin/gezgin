@@ -40,7 +40,7 @@
         <div class="form-container">
 
 
-            <form id="registerForm" action="uye_ol.php" method="post" onsubmit="return validateForm()">
+            <form id="registerForm"  onsubmit="return validateForm()">
 
 
                 <p class="text-center" style="margin-top: 10px;">Merhaba gezgin,<br> Hemen giriş yap ya da hesap oluştur, rotanı belirleyelim
@@ -214,7 +214,7 @@
                 // Form verilerini FormData nesnesine alıyoruz
                 var formData = new FormData($(this)[0]);
 
-                // Ajax isteği yapılıyor
+                if(document.getElementById('registerForm').onsubmit()===true){
                 $.ajax({
                     url: "uye_ol.php",
                     type: "POST",
@@ -229,9 +229,14 @@
                             document.getElementById('email').value='';
                             document.getElementById('sifre_tekrar').value='';
                             document.getElementById('sifre').value='';                            
-                            document.getElementById('onay1').value='';
-                            document.getElementById('onay2').value='';
-                            document.getElementById('onay3').value='';
+                            document.getElementById('onay1').checked=false;
+                            document.getElementById('onay2').checked=false;
+                            document.getElementById('onay3').checked=false;
+                            document.getElementById('text').style.display='none';
+                            document.getElementById('sifreText').style.display='none';
+                            document.getElementById('sifre_tekrarText').style.display='none';
+                            
+
                         } else if (response === 'mail') {
                             document.getElementById('register_error').style.color = "red";
                             $('#register_error').text('Mail adresi sisteme kayıtlı.');
@@ -246,25 +251,24 @@
                         document.getElementById('register_error').innerText = "Bilinmeyen bir hata oluştu";
                     }
                 });
+            }
             });
 
             // Giriş Yap formunu gönderme
             $("#loginForm").submit(function(event) {
-                // Formun normal submit işlemini engelliyoruz
+
                 event.preventDefault();
 
-                // Form verilerini FormData nesnesine alıyoruz
                 var formData = new FormData($(this)[0]);
 
-                // Ajax isteği yapılıyor
                 $.ajax({
-                    url: "giris_yap.php", // Verilerin gönderileceği sayfa
-                    type: "POST", // HTTP methodu
-                    data: formData, // Gönderilecek veriler
+                    url: "giris_yap.php", 
+                    type: "POST", 
+                    data: formData, 
                     contentType: false,
                     processData: false,
                     success: function(response) {
-                        // İstek başarılıysa burada işlemler yapabilirsiniz
+                        
                         if (response === 'success') {
                             window.location.href = "index.php";
 
