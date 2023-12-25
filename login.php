@@ -205,7 +205,7 @@
     </div>
 
     <script>
-        $(document).ready(function() {
+            $(document).ready(function() {
             // Üye Ol formunu gönderme
             $("#registerForm").submit(function(event) {
                 // Formun normal submit işlemini engelliyoruz
@@ -326,7 +326,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js"></script> <!-- Bağlanacak olan JavaScript dosyası -->
+    <script src="js/scripts.js"></script> 
 
 
 </body>

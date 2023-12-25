@@ -124,8 +124,8 @@ document.getElementById("sifremiUnuttumButton").addEventListener("click", functi
         var emailIsValid = document.getElementById("text").style.color === "green";
         var passwordIsValid = document.getElementById("sifreText").style.color === "green" &&
                               document.getElementById("sifre_tekrarText").style.color === "green";
+
     
-        // kontroller doğru ise return true 
         return emailIsValid && passwordIsValid;
     }
 

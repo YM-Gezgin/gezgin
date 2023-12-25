@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="mekanTanitim.html"><i class="fas fa-search"></i> Keşfet </a>
+                    <a class="nav-link" href="mekanTanitim.php"><i class="fas fa-search"></i> Keşfet </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-car"></i> Otel & Araç Kiralama</a>

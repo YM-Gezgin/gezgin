@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO kullanici (e_mail, ad_soyad, p_hash,premium_kontrol,kullanici_tipi,rota_sayac) 
     VALUES ('$email', '$isim', '$hashed_password','$premium_kontrol','$kullanici_tipi','$rota_sayac')";
 
-    // Sorguyu çalıştırma
     try{
         
         if ($baglanti->query($sql) === TRUE) {
