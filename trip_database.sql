@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 23 Ara 2023, 20:01:55
+-- Üretim Zamanı: 25 Ara 2023, 20:34:58
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -58,7 +58,7 @@ CREATE TABLE `mekanlar` (
   `enlem` int(11) NOT NULL,
   `boylam` int(11) NOT NULL,
   `fotograf` varchar(150) NOT NULL,
-  `bilgi_yazisi` text NOT NULL,
+  `bilgi_yazisi` varchar(600) NOT NULL,
   `plaka` int(11) NOT NULL,
   `mt_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -68,7 +68,7 @@ CREATE TABLE `mekanlar` (
 --
 
 INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`, `fotograf`, `bilgi_yazisi`, `plaka`, `mt_id`) VALUES
-(1, 'Beylerbeyi Sarayı', 'Üsküdar', 1, 2, 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Istanbul_Beylerbeyi_Palace_IMG_7663_1805.jpg', 'Alperen was here.', 34, 7),
+(1, 'Beylerbeyi Sarayı', 'Üsküdar', 1, 2, 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Istanbul_Beylerbeyi_Palace_IMG_7663_1805.jpg', 'Beylerbeyi Sarayı, Osmanlı İmparatorluğu\'nun 19. yüzyıl saraylarından biridir. Sultan Abdülaziz tarafından inşa edilen bu tarihi mekan, Boğaz manzarası, estetik mimarisi ve Osmanlı kültürüyle öne çıkar. Ziyaretçilere İstanbul Boğazı\'nın güzelliklerini yaşama fırsatı sunan saray, tarihî ve kültürel bir miras olarak önem taşır. Müze olarak kullanılan saray, iç mekanları, bahçesi ve eğitici deneyimi ile İstanbul\'un tarihini keşfetmek isteyenler için çekici bir noktadır.', 34, 7),
 (2, 'Dolmabahçe Sarayı', 'Beşiktaş', 1, 2, 'https://media.timeout.com/images/103729947/750/422/image.jpg', 'asdasdasdadasdasd\r\nasd\r\nasd\r\na\r\nsd\r\nas\r\nda\r\nsd\r\nasadasdsdasdasaddsadasdasdasdasdsadsadsa', 34, 7),
 (3, 'Eyüp Sultan Camii', 'Eyüp', 1, 1, 'https://cdn.karar.com/news/1585462.jpg', 'asdasdas\r\nasd', 34, 2),
 (4, 'Emirgan Korusu', 'Sarıyer', 1, 2, 'https://cdn1.ntv.com.tr/gorsel/-kKKPXuRWEi6yProypbWFg.jpg?width=1000&mode=crop&scale=both', 'asdasd\r\nasd', 34, 3),
@@ -86,8 +86,10 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 (16, 'Ayasofya', 'Ortahisar', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/43/b3/dc/trabzon-ayasofya-muzesi.jpg?w=1200&h=-1&s=1', 'asaasd', 61, 2),
 (17, 'Cazılar Deresi', 'Yomra', 2, 2, 'https://fastly.4sqi.net/img/general/600x600/1375144478_yLfJt-50GHwdHVeiYoBwB3vojTNIGn26Hl_70EZy21w.jpg', 'asdasd', 61, 4),
 (18, 'Atatürk Köşkü', 'Ortahisar', 2, 2, 'https://www.hepsiemlak.com/emlak-yasam/wp-content/uploads/2018/09/ataturk-kosku-ndeki-gizemli-gecit-2.jpg', 'asd', 61, 7),
-(19, 'Nakkaştepe Milelt Bahçesi', 'Üsküdar', 2, 3, 'https://yerler.com.tr/wp-content/uploads/2021/06/nakkastepe-millet-bahcesi.jpeg', 'asd', 34, 3),
-(20, 'Boztepe', 'Boztepe', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/78/79/1a/boztepe.jpg?w=1200&h=1200&s=1', 'asd', 61, 4);
+(19, 'Nakkaştepe Millet Bahçesi', 'Üsküdar', 2, 3, 'https://yerler.com.tr/wp-content/uploads/2021/06/nakkastepe-millet-bahcesi.jpeg', '‘Şöyle biraz kafamı dinleyeyim, sporumu, pikniğimi yapıp bir güzel stres atayım’ diyorsanız bu soruların cevabı çok işinize yarayacak! Hem gözleriniz manzaraya doyacak hem de bedeniniz, ruhunuz dinlenecek.          \r\nBurası, İstanbul’un en yeşil, en huzurlu alanlarından biri olarak öne çıkıyor. Şehrin ilk millet bahçesi olma özelliğini taşıyan bu yer, 90 bin metrekarelik bir alanı kaplıyor. 15 Temmuz Şehitler Köprüsü’nü net olarak görme imkânı tanıyan bu yerde; konforlu piknik alanları, uzun yürüyüş yolları, envâi çeşit bitki, muhtelif eğlence imkânları bulunuyor.', 34, 3),
+(20, 'Boztepe', 'Boztepe', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/78/79/1a/boztepe.jpg?w=1200&h=1200&s=1', 'asd', 61, 4),
+(21, 'Galata Kulesi', 'Beyoğlu', 1, 1, 'https://st4.depositphotos.com/12992960/21546/i/950/depositphotos_215466342-stock-photo-night-view-old-narrow-street.jpg', 'asd', 34, 7),
+(22, 'Taş Han', 'Merkez', 33, 33, 'https://im.haberturk.com/yerel_haber/2020/10/18/ver1603015201/81678943_620x410.jpg', '33', 60, 7);
 
 -- --------------------------------------------------------
 
@@ -249,9 +251,16 @@ CREATE TABLE `yorumlar` (
   `mekan_id` int(11) NOT NULL,
   `yorum_metni` text DEFAULT NULL,
   `yorum_tarihi` date NOT NULL,
-  `oy` int(11) NOT NULL,
+  `oy` float NOT NULL,
   `onay` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Tablo döküm verisi `yorumlar`
+--
+
+INSERT INTO `yorumlar` (`yorum_id`, `e_mail`, `mekan_id`, `yorum_metni`, `yorum_tarihi`, `oy`, `onay`) VALUES
+(1, 'aa@gmail.com', 7, 'Eğer uçaklara merakınız varsa kesinlikle gidip görülmesi gereken bir mekan.', '2023-12-25', 5, 1);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -315,7 +324,7 @@ ALTER TABLE `yorumlar`
 -- Tablo için AUTO_INCREMENT değeri `mekanlar`
 --
 ALTER TABLE `mekanlar`
-  MODIFY `mekan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `mekan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `mekan_türleri`
@@ -333,7 +342,7 @@ ALTER TABLE `rotalar`
 -- Tablo için AUTO_INCREMENT değeri `yorumlar`
 --
 ALTER TABLE `yorumlar`
-  MODIFY `yorum_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `yorum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
