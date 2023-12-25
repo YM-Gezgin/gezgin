@@ -1,152 +1,123 @@
+
 body {
-    background-color: #f5f5f5; 
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); 
+    background-color: #f5f5f5;  
     margin: 0;
+    padding: 0; /* Sayfa içeriği ile kenarlıkları kaldır */
+    border: none;
     font-family: Arial, Helvetica, sans-serif;      
     -webkit-font-smoothing: antialiased;
+    overflow-x: auto;
     
 }
 
 .navbar-toggler {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 
 .navbar {
-    background-color: #f5f5f5 !important; 
-    border: none;
-  }
-  
+  background-color: #f5f5f5 !important; 
+  border: none;
+}
+
 .nav-container{
-    display: flex;
-    flex-direction: column;
-    margin-right: 25%;
-    margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 25%;
+  margin-left: 10%;
 }
 @media (max-width: 768px) {
-    .nav-container {
-      display: flex;
-      flex-direction: column;
-      margin-right: 0;
-      margin-left: 0;
-    }
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    margin-left: 0;
   }
+}
 .navbar-brand {
-    color: #fa8000 !important; /* Başlık rengi */
-    font-size: 80px;    
-    border: none;
-    display: inline-block;
-    padding-bottom: 0;
+  color: #fa8000 !important; /* Başlık rengi */
+  font-size: 80px;    
+  border: none;
+  display: inline-block;
+  padding-bottom: 0;
 }
-.custom-link {
-    color: black !important;
-    text-decoration: underline;
-    display: block;
-    margin-left: 110px;
-}
-
-
-
 .navbar-nav .nav-link {
-    color: black !important; /* Menü öğesi rengi */
-    margin-right: 20px;
-    text-decoration: none;
+  color: black !important; /* Menü öğesi rengi */
+  margin-right: 20px;
+  text-decoration: none;
 }
-  
-  /* Menü öğelerinin üzerine gelindiğinde */
+
+/* Menü öğelerinin üzerine gelindiğinde */
 .navbar-nav .nav-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 @media screen and (min-width:1600px ) {
-    .navbar-nav{
-        margin-left: 8%;
-    }
+  .navbar-nav{
+      margin-left: 8%;
+  }
 }
 
 .nav-item.giris-yap .nav-link {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    background-color: #fa8000; /* Arka plan rengi */
-    padding: 5px 10px; /* Arka plan alanı boyutlandırma */
-    border-radius: 10px; /* Kenar yumuşatma */
-    color: white !important; /* Yazı rengi */
-    text-decoration: none; /* Link altı çizgisi */
-    
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  background-color: #fa8000; /* Arka plan rengi */
+  padding: 5px 10px; /* Arka plan alanı boyutlandırma */
+  border-radius: 10px; /* Kenar yumuşatma */
+  color: white !important; /* Yazı rengi */
+  text-decoration: none; /* Link altı çizgisi */
+  
 }
 .nav-item.giris-yap .nav-link i {
-    margin-right: 8px; /* İkon ile metin arasına boşluk ekleyin */
+  margin-right: 8px; /* İkon ile metin arasına boşluk ekleyin */
 }
-.jumbotron-container {
-    width: 100%;
-    height: 100%;
-    margin-top: 0; /* İhtiyaca göre değiştirilebilir */
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    
+.custom-link {
+  color: black !important;
+  text-decoration: underline;
+  display: block;
+  margin-left: 110px;
 }
+
 .jumbotron {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 1%;
-    padding-bottom: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+ 
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #fa8000 !important; /* Replace with your preferred color */
+}
+
+
+
+  
+/* Kartları stilize et */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #fff; /* Beyaz arka plan */
+  position: relative; /* Göreceli konumlandırma kullanarak içerik içinde pozisyon alacak */
+  height: 250px;
+  width: 255px;
+  margin-right: 10px;
+  margin-bottom: 30%;
 }
     
-
-
-.footer {
-    background: #152F4F;
-    color: white;
+.card-image {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  object-fit: cover; 
 }
 
-.footer .links ul {
-    list-style-type: none;
-}
 
-.footer .links li a {
-    color: white;
-    transition: color 0.2s;
-    text-decoration: none;
-}
 
-.footer .links li a:hover {
-    text-decoration: underline;
-    color: #4180CB;
-}
 
-.footer .about-company i {
-    font-size: 25px;
-}
-
-.footer .about-company a {
-    color: white;
-    transition: color 0.2s;
-}
-
-.footer .about-company a:hover {
-    color: #4180CB;
-    text-decoration: none;
-}
-
-.footer .location i {
-    font-size: 18px;
-    margin: 0 5px;
-    color: white;
-}
-
-.footer .location p {
-    color: white;
-}
-
-.footer .location a {
-    text-decoration: none;
-    color: white;
-}
-
-.footer .copyright p {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
+    
+    
 
