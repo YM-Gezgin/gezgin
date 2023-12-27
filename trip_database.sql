@@ -6,6 +6,12 @@
 -- Üretim Zamanı: 25 Ara 2023, 20:34:58
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
+-- Yeni bir veritabanı oluştur
+CREATE DATABASE IF NOT EXISTS trip_database;
+
+-- Oluşturulan veritabanını kullan
+USE trip_database;
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;

@@ -250,3 +250,85 @@ function slideLeft3() {
     }
 };
 
+var container4 = document.getElementById('card-container-4');
+var slider4 = document.getElementById('slider-4');
+var slider_container4 = document.getElementById('slider-container-4');
+var buttons4 = container4.getElementsByClassName('btn');
+var slide4 = slider_container4.getElementsByClassName('slide');
+var slides4 = slide4.length;
+
+var currentPosition4 = 0;
+var currentMargin4 = 0;
+var slidesPerPage4 = 0;
+var slidesCount4 = slides4 - slidesPerPage4;
+var containerWidth4 = container4.offsetWidth;
+var prevKeyActivate4 = false;
+var nextKeyActivate4 = true;
+
+window.addEventListener("resize", checkWidth4);
+
+function checkWidth4() {
+    containerWidth4 = container4.offsetWidth;
+    setParams4(containerWidth4);
+}
+
+function setParams4(w) {
+    if (w < 551) {
+        slidesPerPage4 = 1;
+    } else {
+        if (w < 901) {
+            slidesPerPage4 = 2;
+        } else {
+            if (w < 1101) {
+                slidesPerPage4 = 3;
+            } else {
+                slidesPerPage4 = 4;
+            }
+        }
+    }
+    slidesCount4 = slides4 - slidesPerPage4;
+    if (currentPosition4 > slidesCount4) {
+        currentPosition4 -= slidesPerPage4;
+    };
+    currentMargin4 = -currentPosition4 * (100 / slidesPerPage4);
+    slider4.style.marginLeft = currentMargin4 + '%';
+    if (currentPosition4 > 0) {
+        buttons4[0].classList.remove('inactive');
+    }
+    if (currentPosition4 < slidesCount4) {
+        buttons4[1].classList.remove('inactive');
+    }
+    if (currentPosition4 >= slidesCount4) {
+        buttons4[1].classList.remove('inactive');
+    }
+}
+
+setParams4();
+
+function slideRight4() {
+    if (currentPosition4 != 0) {
+        slider4.style.marginLeft = currentMargin4 + (100 / slidesPerPage4) + '%';
+        currentMargin4 += (100 / slidesPerPage4);
+        currentPosition4--;
+    };
+    if (currentPosition4 === 0) {
+        buttons4[0].classList.add('inactive');
+    }
+    if (currentPosition4 < slidesCount4) {
+        buttons4[1].classList.add('inactive');
+    }
+};
+
+function slideLeft4() {
+    if (currentPosition4 != slidesCount4) {
+        slider4.style.marginLeft = currentMargin4 - (100 / slidesPerPage4) + '%';
+        currentMargin4 -= (100 / slidesPerPage4);
+        currentPosition4++;
+    }
+    if (currentPosition4 == slidesCount4) {
+        buttons4[1].classList.add('inactive');
+    }
+    if (currentPosition4 > 0) {
+        buttons4[0].classList.add('inactive');
+    }
+};
