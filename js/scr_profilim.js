@@ -79,4 +79,28 @@ function closeModal() {
 
 
 
+function duzenle() {
+  // Bilgileri düzenleme formunu göster
+  document.getElementById("editForm").style.display = "block";
+
+  // Mevcut bilgileri form elemanlarına aktar
+  document.getElementById("editIsim").value = document.getElementById("kullaniciAdi").innerText;
+  document.getElementById("editEmail").value = document.getElementById("kullaniciEmail").innerText;
+  document.getElementById("editTelefon").value = document.getElementById("kullaniciTelefon").innerText;
+
+  // Form görünür olduktan sonra form elemanına kaydır
+  editForm.scrollIntoView({ behavior: "smooth", block: "start" });
+
+}
+
+function saveChanges() {
+  // Formdan alınan yeni bilgileri güncelle
+  document.getElementById("kullaniciAdi").innerText = document.getElementById("editIsim").value;
+  document.getElementById("kullaniciEmail").innerText = document.getElementById("editEmail").value;
+  document.getElementById("kullaniciTelefon").innerText = document.getElementById("editTelefon").value;
+
+
+  // Formu gizle
+  document.getElementById("editForm").style.display = "none";
+}
 

@@ -403,4 +403,70 @@ body {
 }
 
 
+.half-width-image {
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+  }
   
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+    }
+.card-1 {
+    width: 220%;
+    position: relative;
+    background-color: white;
+    margin: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    word-wrap: break-word;
+}
+@media screen and (max-width: 1000px){
+    .card-1 {
+        width: 100%; 
+        height: 100%;
+        position: relative;
+        background-color: white;
+        margin: 15px;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: 0.5s;
+        word-wrap: break-word;
+      }   
+      
+}
+
+#editForm {
+    background-color: white;
+    border: 2px solid #fa8000;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%; /* Genişliği %100 olarak ayarla */
+    max-width: 400px; 
+    margin: auto
+}
+#editForm label,
+#editForm input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+#buttonContainer {
+    text-align: center;
+  }
+#editForm button {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+    cursor: pointer;
+  }

@@ -26,8 +26,13 @@
 
     <div class="container-wrapper">
         <div class="kesfet-container">
-            <label for="sehir">Sen gezmek istediğin şehri seç! Biz rotanı oluşturalım.</label>
-            <input type="text" placeholder="Gezmek istediğiniz şehri girin" id="sehir" style="height: 50px;">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Sen gezmek istediğin şehri seç! Biz rotanı oluşturalım.</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option selected id="sehir" style="height: 50px;">Gezmek istediğiniz şehri girin</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
 
         </div>
         <img src="images/route_icon.png" alt="rota">
