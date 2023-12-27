@@ -104,18 +104,87 @@
 
         <div class="p_content" id="Kullanıcı bilgilerim" style="display: inline;">
 
-          <!--BURASI DOLDURULUCAK-->
-          <H1>Kullanıcı bilgilerim içeriği</H1>
-          <p>default geliyor..</p>
-          <!--Fotoğraf değişikliği şifre e posta değişikliği vb.-->
+          
+            <div class="container py-5 ">
+              <div class="row d-flex  align-items-center ">
+                <div class="col col-lg-6 mb-4 mb-lg-0">
+                  <div class="card-1 mb-3" style="border-radius: .5rem;">
+                    <div class="row g-0">
+                      <div class="col-md-4 gradient-custom text-center text-white"
+                        style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                          alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                        <h5 id="kullaniciAdi">Zeynep İlkay Şahin</h5>
+                        <p>Gezgin</p>
+                        <i class="far fa-edit mb-5" onclick="duzenle()"></i>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body p-4">
+                          <h6>Bilgi</h6>
+                          <hr class="mt-0 mb-4">
+                          <div class="row pt-1">
+                            <div class="col-6 mb-3">
+                              <h6>Email</h6>
+                              <p class="text-muted" id="kullaniciEmail">zeynep_ilkay@hotmail.com</p>
+                            </div>
+                            <div class="col-6 mb-3">
+                              <h6>Telefon</h6>
+                              <p class="text-muted" id="kullaniciTelefon">0545 423 81 20</p>
+                            </div>
+                          </div>
+                          <h6>Hakkında</h6>
+                          <hr class="mt-0 mb-4">
+                          <div class="row pt-1">
+                            <div class="col-6 mb-3">
+                              <h6>Premium musunuz?</h6>
+                              <p class="text-muted">Evet</p>
+                            </div>
+                            <div class="col-6 mb-3">
+                              <h6>Kaç rotan var?</h6>
+                              <p class="text-muted">4 rota oluşturdun</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Düzenleme Formu -->
+            <div id="editForm" style="display: none;">
+              <label for="editIsim">İsim:</label>
+              <input type="text" id="editIsim" name="Isim"><br>
+            
+              <label for="editEmail">Email:</label>
+              <input type="text" id="editEmail" name="Email"><br>
+            
+              <label for="editTelefon">Telefon:</label>
+              <input type="text" id="editTelefon" name="Telefon"><br>
+            
+              <div id="buttonContainer">
+                <button onclick="saveChanges()">Değişiklikleri Kaydet</button>
+              </div>
+            </div>
+            
+
 
         </div>
 
         <div class="p_content" id="Soru ve taleplerim" style="display: none;">
-
-          <!--BURASI DOLDURULUCAK-->
-          <H1>Soru ve taleplerim içeriği</H1>
-          <!--Soru ve talep arayüzü olabilir iki metin içeriği gönder olur admin sayfasında görünür-->
+          <form>
+            <div class="form-group">
+              <label for="formGroupExampleInput">E-posta</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="gezgin@example.com">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Soru ve talepleriniz</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Talebim">
+            </div>
+            <button type="submit" class="soru-button">Gönder</button>
+          </form>
 
         </div>
         <div class="p_content" id="Rotalarım" style="display: none;">
@@ -126,10 +195,88 @@
 
         </div>
         <div class="p_content" id="Kaydettiklerim" style="display: none;">
-          <!--BURASI DOLDURULUCAK-->
-          <h1>Kaydettiklerim içeriği</h1>
-          <!--Kaydedilen mekanların küçük kartları gösterilebilir-->
 
+          <div class="row">
+            <div class="col-md-6">
+              <a href="mekanlink" class="card-link text-decoration-none">
+                <div class="card mb-3" style="max-width: 18rem; height: 250px;">
+                  <img class="card-img-top half-width-image" src="images\boyabat kalesi.jpg" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
+                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+        
+            <div class="col-md-6">
+              <a href="mekanlink" class="card-link text-decoration-none">
+                <div class="card mb-3" style="max-width: 18rem; height: 250px;">
+                  <img class="card-img-top half-width-image" src="images\route_icon.png" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
+                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <a href="mekanlink" class="card-link text-decoration-none">
+                <div class="card mb-3" style="max-width: 18rem; height: 250px;">
+                  <img class="card-img-top half-width-image" src="images\sarnic.jpg" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
+                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+        
+            <div class="col-md-6">
+              <a href="mekanlink" class="card-link text-decoration-none">
+                <div class="card mb-3" style="max-width: 18rem; height: 250px;">
+                  <img class="card-img-top half-width-image" src="images\route_icon.png" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
+                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-6">
+                <a href="mekanlink" class="card-link text-decoration-none">
+                  <div class="card mb-3" style="max-width: 18rem; height: 250px;">
+                    <img class="card-img-top half-width-image" src="images\sarnic.jpg" alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
+                      <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+          
+              <div class="col-md-6">
+                <a href="mekanlink" class="card-link text-decoration-none">
+                  <div class="card mb-3" style="max-width: 18rem; height: 250px;">
+                    <img class="card-img-top half-width-image" src="images\route_icon.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
+                      <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+              
+              
+          
+              
+            
           </div>
           <div class="p_content" id="Değerlendirmelerim" style="display: none;">
             <!--BURASI DOLDURULUCAK-->
@@ -156,43 +303,7 @@
 
 
 
-  <div class="mt-5 pt-5 pb-5 footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-xs-12 about-company">
-          <p>Hakkımızda</p>
-          <p class="pr-5 text-white-50">Gezgin olarak seyahat severlerin Türkiye'nin muhteşem
-            destinasyonlarını keşfetmelerine rehberlik etmek için buradayız.
-            Bizimle keşfedin, düşlerinizdeki seyahati planlamaya başlayın! </p>
-
-        </div>
-        <div class="col-lg-4 col-xs-12 location">
-          <h4 class="mt-lg-0 mt-sm-4"></h4>
-          <p>Reklam ve iş birliği için bize ulaşın</p>
-          <p><a href="#"><i class="fab fa-facebook-f"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-instagram"></i></p>
-          <p><i class="fa fa-envelope"></i>info@gezgin.com</p>
-        </div>
-        <div class="col-lg-3 col-xs-12 links">
-          <h4 class="mt-lg-0 mt-sm-3"></h4>
-          <ul class="m-0 p-0">
-            <li><a href="#">Trabzon'da araç kiralama noktaları</a></li>
-            <li><a href="#">İstanbul' da gezilecek en güzel 10 yerı</a></li>
-            <li><a href="#">Ankara' da gezilecek en güzel 10 yer</a></li>
-            <li><a href="#">İzmir' de gezilecek en güzel 10 yer</a></li>
-            <li><a href="#">Antalya' da gezilecek en güzel 10 yer</a></li>
-            <li><a href="#">İstanbul' da araç kiralama noktaları</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col copyright">
-          <p class=""><small class="text-white-50">© 2023. All Rights Reserved.</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <?php require_once('footer.php') ?>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
   <!-- Bootstrap JavaScript -->
