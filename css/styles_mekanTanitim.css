@@ -1,6 +1,6 @@
 .welcome {
     margin-top: 1%;
-    padding-left: 20%;
+    padding-left: 19%;
     font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
     color: #5C5C5C;
   }
@@ -16,13 +16,13 @@
 
   .left-side {
     flex: 1; /* Bu elemanın konteyner içinde diğer elemanlara göre iki kat fazla alan kaplamasını sağlar */
-    padding: 2px;
+    /* padding: 2px; */
     box-sizing: border-box;
   }
 
   .right-side {
     flex: 1.5; /* Bu elemanın konteyner içinde diğer elemanlara göre yarım alan kaplamasını sağlar */
-    padding: 2px;
+    /* padding: 2px; */
     box-sizing: border-box;
     padding-right: 7%;
   }
@@ -78,9 +78,8 @@
     max-width: 75%;
     max-height: 72%;
     border: 1px solid #fa8000; /* Çerçeve genişliği ve rengi */
-    padding: 2px; /* Metin kutusu içindeki iç boşluk */
     margin-left: 17%;
-    padding: 15px;
+    padding: 10px;
     overflow: hidden; /* Sığmayan içeriği gizle */
     text-overflow: ellipsis; 
   }
@@ -120,6 +119,10 @@
     .left-side {
       margin-right: 8%;
     }
+    .container{
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
   }
   @media screen and (max-width: 768px) {
     .butonlar1 {
@@ -129,8 +132,11 @@
   @media screen and (max-width: 768px) {
     .table2,
     .yorumAlani {
-      margin-left: 16%;
+      margin-left: 15%;
       max-width: 75%;
+    }
+    .table2 {
+      max-width: 75% !important;
     }
   }
 
@@ -156,17 +162,31 @@
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    max-width: 100½;
+    max-width: 100%;
     border: 1px solid #fa8000;
   }
   
 
   .table2 td,a {
-    font-size: 17px;
+    font-size: 15px;
     color: darkslategray;
     text-align: left;
     text-decoration: none;
   }
+  .table2 .yorumKutusu{
+    height: 60px;
+  }
+  .kullaniciBilgisi {
+    display: flex;
+    align-items: center; /* Öğeleri dikey olarak hizalar */
+}
+.mekanYorum{
+  line-height:1.3 ;
+}
+
+.kullaniciBilgisi img {
+    margin-right: 15px; /* Fotoğraf ile metin arasına bir boşluk bırakır */
+}
 
   .yatayCizgi {
     width: 1000px; /* Çizgi uzunluğunu istediğiniz değere ayarlayabilirsiniz */
