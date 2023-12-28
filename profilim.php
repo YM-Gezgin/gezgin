@@ -27,8 +27,8 @@
     <div class="row mx-auto col-md-9">
       <div class="col-md-4">
         <div style="padding-bottom: 20px;">
-          <img src="https://www.dekoros.com/wp-content/uploads/2023/05/YH-00850.jpg" class="yuvarlak-imge" width="60">
-          <span style="font-size: larger;font-weight: 500; padding-left: 4px;">Alperen Kösemeci</span>
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" class="yuvarlak-imge" width="60">
+          <span style="font-size: larger;font-weight: 500; padding-left: 4px;">Zeynep İlkay</span>
         </div>
         <!--veri tabanından çekilecek isim ve profilim yazısı-->
         <ul class="fa-ul">
@@ -112,8 +112,9 @@
                     <div class="row g-0">
                       <div class="col-md-4 gradient-custom text-center text-white"
                         style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                          alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                        <img id="avatarImage" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                        alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+
                         <h5 id="kullaniciAdi">Zeynep İlkay Şahin</h5>
                         <p>Gezgin</p>
                         <i class="far fa-edit mb-5" onclick="duzenle()"></i>
@@ -155,6 +156,12 @@
         
             <!-- Düzenleme Formu -->
             <div id="editForm" style="display: none;">
+            <label for="editAvatar">Avatar yükleyin:</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile" onchange="previewAvatar()">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+
               <label for="editIsim">İsim:</label>
               <input type="text" id="editIsim" name="Isim"><br>
             
