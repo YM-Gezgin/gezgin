@@ -19,6 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            if (password_verify($sifre, $row['p_hash'])) {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $email;
+            $_SESSION['isim'] = $row['ad_soyad'];
+            $_SESSION['fotograf'] = $row['fotograf'];
+            $_SESSION['rota_sayac'] = $row['rota_sayac'];
+
             echo 'success';
 
         } else {

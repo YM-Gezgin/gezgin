@@ -2,7 +2,10 @@ body {
     background-color: #f5f5f5; 
     margin: 0;
 }
-
+.kullaniciBilgisi img{
+    height: 50px;
+    width: 50px;
+}
 
 .jumbotron-container {
     width: 100%;
