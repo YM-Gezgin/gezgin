@@ -21,7 +21,7 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="nav-container mx a">
             <a class="navbar-brand" href="index.php">gezgin
                 <a href="profilim.php" class="custom-link">Premiumu Keşfet</a>

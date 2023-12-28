@@ -1,4 +1,6 @@
-<?php require_once("baglan.php") ?>
+<?php require_once("baglan.php");
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,20 +26,27 @@
 
 <body>
 
-  <?php require_once("navbar.php") ?>
+  <?php //require_once("navbar.php") 
+  if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // secilenSehir adlı POST verisini al
+    $secilenSehir = $_GET["secilenSehir"];
+  }
+  ?>
+
 
   <div class="welcome">
     <br>
     <h4>DEĞERLİ GEZGİN,</h4>
-    <p>SENİN İÇİN ŞEHİR HAKKINDA ARAŞTIRMA YAPTIK BİLE. İŞTE ROTANA EKLEYEBİLECEĞİN YERLER!</p>
+    <p>Senin için <?php echo $secilenSehir; ?> hakkında araştırma yaptık bile. İşte rotana ekleyebileceğin yerler!</p>
   </div>
+
 
   <div style="overflow-x:auto;">
     <table class="sehirTable3">
       <tr>
 
         <?php
-        $sql = "SELECT * FROM sehirler WHERE plaka=34";
+        $sql = "SELECT * FROM sehirler WHERE sehir_adi = '$secilenSehir'";
         $result = $baglanti->query($sql);
         $sehirler = $result->fetch_assoc();
         ?>
@@ -50,7 +59,7 @@
         <th>Şehir Puanı</th>
         <th>Mekan sayısı</th>
         <?php
-        $sql_mekan_sayisi = "SELECT COUNT(*) as mekanSayisi  FROM mekanlar WHERE plaka = 34;";
+        $sql_mekan_sayisi = "SELECT COUNT(*) as mekanSayisi  FROM mekanlar WHERE plaka = '{$sehirler['plaka']}'";
         $result2 = $baglanti->query($sql_mekan_sayisi);
         $mekan_sayisi = $result2->fetch_assoc();
         ?>
@@ -58,7 +67,7 @@
         <th>Yorum sayısı</th>
         <?php
 
-        $sql_mekanlar = "SELECT mekan_id FROM mekanlar WHERE plaka = 34;";
+        $sql_mekanlar = "SELECT mekan_id FROM mekanlar WHERE plaka = '{$sehirler['plaka']}'";
         $result_mekanlar = $baglanti->query($sql_mekanlar);
         $yorum_sayisi = 0;
         $mekan_puani = 0;
@@ -81,7 +90,14 @@
         ?>
       </tr>
       <tr>
-        <td> <?php echo number_format($mekan_puani / $yorum_sayisi, 1, '.', '') ?> <i class="fas fa-star"></i></td>
+        <td> 
+          <?php if($mekan_puani>0){
+            echo number_format($mekan_puani / $yorum_sayisi, 1, '.', ''); 
+          }
+          else {echo $mekan_puani;} 
+        ?> 
+        
+        <i class="fas fa-star"></i></td>
         <td> <?php echo $mekan_sayisi['mekanSayisi'] ?> <i class='fas fa-university'></i></td>
         <td> <?php echo $sehirler['sayac'] ?> <i class='fas fa-route'></i></td>
         <td> <?php echo $yorum_sayisi ?> <i class='far fa-comment-alt'></i></td>
@@ -91,7 +107,7 @@
 
   <?php
 
-  $sql_mekanlar = "SELECT * FROM mekanlar WHERE plaka=34";
+  $sql_mekanlar = "SELECT * FROM mekanlar WHERE plaka='{$sehirler['plaka']}'";
   $result_mekanlar = $baglanti->query($sql_mekanlar);
   $cr_count = 1;
   while ($mekanlar = $result_mekanlar->fetch_assoc()) {
@@ -129,7 +145,7 @@
           </tr>
         </table>
         <div class="buttonRow">
-          <button id="myButton1" onclick="changeText1()">KAYDET</button>
+          <button id="myButton"<?php echo $cr_count;?> onclick="changeText1()">KAYDET</button>
           <button id="myButton2" onclick="changeText2()">EKLE</button>
         </div><br>
 
@@ -151,10 +167,10 @@
               <img class="d-block w-100" src="<?php echo $mekanlar['fotograf'] ?>" alt="First slide" width="615px" height="325px">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="images/sarnic.jpg" alt="Second slide">
+              <img class="d-block w-100" src="<?php echo $mekanlar['fotograf2'] ?>" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="images/sarnic.jpg" alt="Third slide">
+              <img class="d-block w-100" src="<?php echo $mekanlar['fotograf3'] ?>" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators<?php echo $cr_count ?>" role="button" data-slide="prev">
@@ -169,35 +185,39 @@
 
         <div class="mekanYorum">
           <table class="table2">
-            
-              <tr class="yorumKutusu">
-                <?php
-                $stmt_mekan = $baglanti->prepare("SELECT yorum_metni,yorum_tarihi FROM yorumlar WHERE mekan_id = (SELECT mekan_id FROM mekanlar WHERE mekan_adi = ?)");
-                $stmt_mekan->bind_param("s", $mekanlar['mekan_adi']);
-                $stmt_mekan->execute();
-                $result_mekan_oy = $stmt_mekan->get_result();
-                $mekan_yorum_metni = "";
-                $mekan_yorum_tarihi= "";
-                while ($result_mekan_puani = $result_mekan_oy->fetch_assoc()) {
-                  $mekan_yorum_metni = $result_mekan_puani['yorum_metni'];
-                  $mekan_yorum_tarihi = $result_mekan_puani['yorum_tarihi'];
-                }
-                $stmt_mekan->close();
-                ?>
-                <td>
-                  <div class="kullaniciBilgisi">
-                  <img src="https://pbs.twimg.com/profile_images/1481692704195190796/gUEomF6Z_400x400.jpg" alt="Kullanıcı" width="50" height="50">
+
+            <tr class="yorumKutusu">
+              <?php
+              $stmt_mekan = $baglanti->prepare("SELECT yorum_metni,yorum_tarihi FROM yorumlar WHERE mekan_id = (SELECT mekan_id FROM mekanlar WHERE mekan_adi = ?)");
+              $stmt_mekan->bind_param("s", $mekanlar['mekan_adi']);
+              $stmt_mekan->execute();
+              $result_mekan_oy = $stmt_mekan->get_result();
+              $mekan_yorum_metni = "";
+              $mekan_yorum_tarihi = "";
+              while ($result_mekan_puani = $result_mekan_oy->fetch_assoc()) {
+                $mekan_yorum_metni = $result_mekan_puani['yorum_metni'];
+                $mekan_yorum_tarihi = $result_mekan_puani['yorum_tarihi'];
+              }
+              $stmt_mekan->close();
+              ?>
+              <td>
+                <div class="kullaniciBilgisi">
                   <?php 
-                    echo $mekan_yorum_metni;
-                   ?>
-                  </div>
-                  <span style="float: right;" class="tarih mt-2"><?php echo $mekan_yorum_tarihi ?></span>                  
-                </td>
-              </tr>
-              <tr class="tumYorumKutusu">
-                <td><a href="#">TÜM YORUMLARI GÖR</a></td>
-              </tr>
-            
+                  
+                  
+                  ?>
+                  <img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="K_foto" width="50" height="50">
+                  <?php
+                  echo $mekan_yorum_metni;
+                  ?>
+                </div>
+                <span style="float: right;" class="tarih mt-2"><?php echo $mekan_yorum_tarihi ?></span>
+              </td>
+            </tr>
+            <tr class="tumYorumKutusu">
+              <td><a href="#">TÜM YORUMLARI GÖR</a></td>
+            </tr>
+
           </table><br>
           <form id="myForm">
             <textarea class="yorumAlani" id="userInput" name="userInput" rows="4" placeholder="Burası hakkında düşüncelerini diğer gezginlerle paylaşmaye ne dersin?"></textarea>
@@ -215,7 +235,8 @@
   ?>
 
 
-  <?php require_once('footer.php') ?>
+  <?php //require_once('footer.php') 
+  ?>
 
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyDE46C5I2v5K56Jl2K6Uc2LiXm81I" crossorigin="anonymous"></script>

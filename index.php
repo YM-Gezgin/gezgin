@@ -16,23 +16,31 @@
 
     <title>Gezgin</title>
     <link rel="stylesheet" href="css/styles_ana.css">
-    
+    <link rel="stylesheet" href="css/styles_mekanTanitim.css">
+
 </head>
 
 <body>
 
-    <?php require_once('navbar.php') ?>
+    <?php require_once('navbar.php') 
+    ?>
 
 
     <div class="container-wrapper">
         <div class="kesfet-container">
             <label class="mr-sm-2" for="inlineFormCustomSelect">Sen gezmek istediğin şehri seç! Biz rotanı oluşturalım.</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                <option selected id="sehir" style="height: 50px;">Gezmek istediğiniz şehri girin</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+            <form method="GET" action="mekanTanitim.php">
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="secilenSehir">
+                    <option selected disabled>Gezmek istediğiniz şehri seçin</option>
+                    <?php
+                    $sql_sehirler = "SELECT sehir_adi, plaka FROM sehirler";
+                    $sonuc = $baglanti->query($sql_sehirler);
+                    while ($sehir_secimi = $sonuc->fetch_assoc()) {
+                    ?>
+                        <option value="<?php echo $sehir_secimi['sehir_adi']; ?>"><?php echo $sehir_secimi['sehir_adi']; ?></option>
+                    <?php } ?>
+                </select>
+            </form>
 
         </div>
         <img src="images/route_icon.png" alt="rota">
@@ -75,7 +83,6 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
-                                        <!-- burası için bir şey düşünülecek-->
                                     </div>
                                 </div>
                             </div>
@@ -93,12 +100,12 @@
         echo "Bilinmeyen bir hata oluştu";
     }
     ?>
+    <div id="mekanTanitim">
+        
+    </div>
 
-
-<?php require_once('footer.php') ?>
-
-    
-    <script src="js/scripts_ana.js"></script> 
+    <?php require_once('footer.php') ?>
+    <script src="js/scripts_ana.js"></script>
 </body>
 
 </html>

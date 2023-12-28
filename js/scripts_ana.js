@@ -332,3 +332,51 @@ function slideLeft4() {
         buttons4[0].classList.add('inactive');
     }
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    // DOMContentLoaded etkinliği
+    var selectElement = document.getElementById("inlineFormCustomSelect");
+    selectElement.addEventListener("change", function () {
+        var secilenSehir = this.value;
+        var centeredContainer = document.querySelector('.centered-container');
+        // var h2Element = centeredContainer.querySelector('h2');
+        // h2Element.innerText = secilenSehir + ' için en çok tercih edilen mekanlar'
+        centeredContainer.style.display='none';
+
+        var cardContainers = document.getElementsByClassName('card-container');
+        if (cardContainers.length > 0) {
+            var firstCardContainer = cardContainers[0];
+            var secondCardContainer = cardContainers[1];
+            var thirdCardContainer = cardContainers[2];
+            var fourthCardContainer = cardContainers[3];
+
+            firstCardContainer.style.display = 'none';
+            secondCardContainer.style.display = 'none';
+            thirdCardContainer.style.display = 'none';
+            fourthCardContainer.style.display = 'none';
+
+        } else {
+            console.error('card-container bulunamadı.');
+        }
+        var xhr = new XMLHttpRequest();
+        var url = "mekanTanitim.php?secilenSehir=" + encodeURIComponent(secilenSehir);
+
+
+        // mekanTanitim.php dosyasını asenkron olarak GET ile çağır
+        xhr.open("GET", url, true);
+
+        // XMLHttpRequest'in yüklenme durumu değiştiğinde çalışacak fonksiyon
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest tamamlandı ve başarıyla gerçekleştiyse
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // mekanTanitim id'sine sahip HTML öğesinin içeriğini mekanTanitim.php'nin içeriği ile güncelle
+                document.getElementById('mekanTanitim').innerHTML = xhr.responseText;
+            }
+        };
+
+        // XMLHttpRequest'i gönder
+        xhr.send();
+
+    });
+    
+});

@@ -1,4 +1,5 @@
-<?php require_once("baglan.php");  ?>
+<?php require_once("baglan.php");  
+session_start();?>
 
 
 <!DOCTYPE html>
@@ -27,8 +28,12 @@
     <div class="row mx-auto col-md-9">
       <div class="col-md-4">
         <div style="padding-bottom: 20px;">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" class="yuvarlak-imge" width="60">
-          <span style="font-size: larger;font-weight: 500; padding-left: 4px;">Zeynep İlkay</span>
+        <?php 
+        $base64Image = base64_encode($_SESSION['fotograf']);
+        
+        ?>
+          <img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" class="yuvarlak-imge" width="60">
+          <span style="font-size: larger;font-weight: 500; padding-left: 4px;"><?php echo $_SESSION['isim'];?></span>
         </div>
         <!--veri tabanından çekilecek isim ve profilim yazısı-->
         <ul class="fa-ul">
@@ -112,10 +117,10 @@
                     <div class="row g-0">
                       <div class="col-md-4 gradient-custom text-center text-white"
                         style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                        <img id="avatarImage" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                        <img id="avatarImage" src="data:image/jpeg;base64,<?php echo $base64Image; ?>"
                         alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
 
-                        <h5 id="kullaniciAdi">Zeynep İlkay Şahin</h5>
+                        <h5 id="kullaniciAdi"><?php echo $_SESSION['isim'];?></h5>
                         <p>Gezgin</p>
                         <i class="far fa-edit mb-5" onclick="duzenle()"></i>
                       </div>
@@ -126,11 +131,11 @@
                           <div class="row pt-1">
                             <div class="col-6 mb-3">
                               <h6>Email</h6>
-                              <p class="text-muted" id="kullaniciEmail">zeynep_ilkay@hotmail.com</p>
+                              <p class="text-muted" id="kullaniciEmail"><?php echo $_SESSION['username'];?></p>
                             </div>
                             <div class="col-6 mb-3">
                               <h6>Telefon</h6>
-                              <p class="text-muted" id="kullaniciTelefon">0545 423 81 20</p>
+                              <p class="text-muted" id="kullaniciTelefon">0545 423 99 20</p>
                             </div>
                           </div>
                           <h6>Hakkında</h6>
@@ -142,7 +147,7 @@
                             </div>
                             <div class="col-6 mb-3">
                               <h6>Kaç rotan var?</h6>
-                              <p class="text-muted">4 rota oluşturdun</p>
+                              <p class="text-muted"><?php echo $_SESSION['rota_sayac'];?> rota oluşturdun</p>
                             </div>
                           </div>
                           
@@ -317,7 +322,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="js/scr_profilim.js"></script>
 
-  
 
 </body>
 
