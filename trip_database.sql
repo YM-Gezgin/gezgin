@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 28 Ara 2023, 14:12:34
+-- Üretim Zamanı: 28 Ara 2023, 14:17:29
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -29,14 +29,15 @@ USE `trip_database`;
 -- Tablo için tablo yapısı `kullanici`
 --
 
-CREATE TABLE `kullanici` (
+CREATE TABLE IF NOT EXISTS `kullanici` (
   `e_mail` varchar(45) NOT NULL,
   `ad_soyad` varchar(45) NOT NULL,
   `p_hash` varchar(255) NOT NULL,
   `premium_kontrol` tinyint(1) NOT NULL,
   `kullanici_tipi` tinyint(1) NOT NULL,
   `rota_sayac` int(11) DEFAULT NULL,
-  `fotograf` mediumblob DEFAULT NULL
+  `fotograf` mediumblob DEFAULT NULL,
+  PRIMARY KEY (`e_mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -60,8 +61,8 @@ INSERT INTO `kullanici` (`e_mail`, `ad_soyad`, `p_hash`, `premium_kontrol`, `kul
 -- Tablo için tablo yapısı `mekanlar`
 --
 
-CREATE TABLE `mekanlar` (
-  `mekan_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mekanlar` (
+  `mekan_id` int(11) NOT NULL AUTO_INCREMENT,
   `mekan_adi` varchar(45) NOT NULL,
   `semt_ismi` varchar(40) NOT NULL,
   `enlem` float NOT NULL,
@@ -71,8 +72,11 @@ CREATE TABLE `mekanlar` (
   `fotograf3` varchar(250) DEFAULT NULL,
   `bilgi_yazisi` varchar(1000) NOT NULL,
   `plaka` int(11) NOT NULL,
-  `mt_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `mt_id` int(11) NOT NULL,
+  PRIMARY KEY (`mekan_id`),
+  KEY `plaka` (`plaka`),
+  KEY `mt_id` (`mt_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `mekanlar`:
@@ -125,10 +129,11 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 -- Tablo için tablo yapısı `mekan_türleri`
 --
 
-CREATE TABLE `mekan_türleri` (
-  `mt_id` int(11) NOT NULL,
-  `tur_adi` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS `mekan_türleri` (
+  `mt_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tur_adi` varchar(45) NOT NULL,
+  PRIMARY KEY (`mt_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `mekan_türleri`:
@@ -155,12 +160,15 @@ INSERT INTO `mekan_türleri` (`mt_id`, `tur_adi`) VALUES
 -- Tablo için tablo yapısı `rotalar`
 --
 
-CREATE TABLE `rotalar` (
-  `rota_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `rotalar` (
+  `rota_id` int(11) NOT NULL AUTO_INCREMENT,
   `e_mail` varchar(45) NOT NULL,
   `plaka` int(11) NOT NULL,
-  `rota_tarihi` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `rota_tarihi` date NOT NULL,
+  PRIMARY KEY (`rota_id`),
+  KEY `e_mail` (`e_mail`),
+  KEY `plaka` (`plaka`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `rotalar`:
@@ -183,10 +191,12 @@ INSERT INTO `rotalar` (`rota_id`, `e_mail`, `plaka`, `rota_tarihi`) VALUES
 -- Tablo için tablo yapısı `rota_kaydet`
 --
 
-CREATE TABLE `rota_kaydet` (
+CREATE TABLE IF NOT EXISTS `rota_kaydet` (
   `k_id` varchar(45) NOT NULL,
   `rota_id` int(11) NOT NULL,
-  `m_id` varchar(100) NOT NULL
+  `m_id` varchar(100) NOT NULL,
+  PRIMARY KEY (`k_id`,`rota_id`),
+  KEY `rota_id` (`rota_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -203,10 +213,11 @@ CREATE TABLE `rota_kaydet` (
 -- Tablo için tablo yapısı `sehirler`
 --
 
-CREATE TABLE `sehirler` (
+CREATE TABLE IF NOT EXISTS `sehirler` (
   `plaka` int(11) NOT NULL,
   `sehir_adi` varchar(45) NOT NULL,
-  `sayac` int(11) DEFAULT NULL
+  `sayac` int(11) DEFAULT NULL,
+  PRIMARY KEY (`plaka`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -306,15 +317,18 @@ INSERT INTO `sehirler` (`plaka`, `sehir_adi`, `sayac`) VALUES
 -- Tablo için tablo yapısı `yorumlar`
 --
 
-CREATE TABLE `yorumlar` (
-  `yorum_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `yorumlar` (
+  `yorum_id` int(11) NOT NULL AUTO_INCREMENT,
   `e_mail` varchar(45) NOT NULL,
   `mekan_id` int(11) NOT NULL,
   `yorum_metni` text DEFAULT NULL,
   `yorum_tarihi` date NOT NULL,
   `oy` float NOT NULL,
-  `onay` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `onay` tinyint(1) NOT NULL,
+  PRIMARY KEY (`yorum_id`),
+  KEY `e_mail` (`e_mail`),
+  KEY `mekan_id` (`mekan_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `yorumlar`:
@@ -340,87 +354,6 @@ INSERT INTO `yorumlar` (`yorum_id`, `e_mail`, `mekan_id`, `yorum_metni`, `yorum_
 (10, 'zeynep_ilk_ay@hotmail.com', 11, 'Gezmesi inanılmaz keyifli bir müze. Her eseri tek tek incelemek için vakit ayırmalısınız.', '2023-11-01', 5, 1),
 (11, 'zeynep_ilk_ay@hotmail.com', 8, 'Şehri tepeden gören bir yer fakat çok dik. Servisleri varmış sanırım ama biz bulamadığımız için yürüdük ve manzarası da tatmin etmedi. Arabayla gidilebilir.', '2023-09-20', 3, 1),
 (12, 'zeynep_ilk_ay@hotmail.com', 33, 'Ne zaman yürümek için huzurlu bir yol ararsanız tercih edebilirsiniz. Piknik alanları da güzel gözüküyordu fakat başka sefere deneyeceğiz... Lunaparkı olması bir artı', '2020-07-16', 5, 1);
-
---
--- Dökümü yapılmış tablolar için indeksler
---
-
---
--- Tablo için indeksler `kullanici`
---
-ALTER TABLE `kullanici`
-  ADD PRIMARY KEY (`e_mail`);
-
---
--- Tablo için indeksler `mekanlar`
---
-ALTER TABLE `mekanlar`
-  ADD PRIMARY KEY (`mekan_id`),
-  ADD KEY `plaka` (`plaka`),
-  ADD KEY `mt_id` (`mt_id`);
-
---
--- Tablo için indeksler `mekan_türleri`
---
-ALTER TABLE `mekan_türleri`
-  ADD PRIMARY KEY (`mt_id`);
-
---
--- Tablo için indeksler `rotalar`
---
-ALTER TABLE `rotalar`
-  ADD PRIMARY KEY (`rota_id`),
-  ADD KEY `e_mail` (`e_mail`),
-  ADD KEY `plaka` (`plaka`);
-
---
--- Tablo için indeksler `rota_kaydet`
---
-ALTER TABLE `rota_kaydet`
-  ADD PRIMARY KEY (`k_id`,`rota_id`),
-  ADD KEY `rota_id` (`rota_id`);
-
---
--- Tablo için indeksler `sehirler`
---
-ALTER TABLE `sehirler`
-  ADD PRIMARY KEY (`plaka`);
-
---
--- Tablo için indeksler `yorumlar`
---
-ALTER TABLE `yorumlar`
-  ADD PRIMARY KEY (`yorum_id`),
-  ADD KEY `e_mail` (`e_mail`),
-  ADD KEY `mekan_id` (`mekan_id`);
-
---
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
---
-
---
--- Tablo için AUTO_INCREMENT değeri `mekanlar`
---
-ALTER TABLE `mekanlar`
-  MODIFY `mekan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
---
--- Tablo için AUTO_INCREMENT değeri `mekan_türleri`
---
-ALTER TABLE `mekan_türleri`
-  MODIFY `mt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- Tablo için AUTO_INCREMENT değeri `rotalar`
---
-ALTER TABLE `rotalar`
-  MODIFY `rota_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Tablo için AUTO_INCREMENT değeri `yorumlar`
---
-ALTER TABLE `yorumlar`
-  MODIFY `yorum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
