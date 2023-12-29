@@ -30,7 +30,7 @@
   }
 
   #rotasyonGirisAltDetay{
-    font-size: 16px;
+    font-size: 17px;
     text-align: center;
     font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
     color: #152F4F;
@@ -97,6 +97,20 @@
     margin-left: 5%;
   }
 
+  @media (max-width: 600px) {
+    .seciliMekanAdi{
+      margin-left: 50%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .numberCircle,.numberCircle2,.numberCircle3{
+      padding-left: 80%;
+      padding-right: 80%;
+    }
+  }
+  
+
   .altBilgi p{
     padding-top: 1%;
     font-size: 19px;
@@ -116,9 +130,29 @@
     font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
   }
 
-/* Tıklanabilir metin hover durumu için stil */
-.clickable-text:hover {
-    color: #152F4F;
-}
-
+  /* Tıklanabilir metin hover durumu için stil */
+  .clickable-text:hover {
+      color: #152F4F;
+  }
   
+  @media (max-width: 600px) {
+    .clickable-text{
+      margin-left: 10% !important;
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .mobilUyarisi{
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .mobilUyarisi{
+      visibility: visible;
+      display: block;
+    }
+  }
