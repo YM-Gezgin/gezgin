@@ -11,7 +11,7 @@ session_start();
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
   <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -98,8 +98,8 @@ session_start();
         ?> 
         
         <i class="fas fa-star"></i></td>
-        <td> <?php echo $mekan_sayisi['mekanSayisi'] ?> <i class='fas fa-university'></i></td>
-        <td> <?php echo $sehirler['sayac'] ?> <i class='fas fa-route'></i></td>
+        <td id="mekan_sayac"> <?php echo $mekan_sayisi['mekanSayisi'] ?> <i class='fas fa-university'></i></td>
+        <td > <?php echo $sehirler['sayac'] ?> <i class='fas fa-route'></i></td>
         <td> <?php echo $yorum_sayisi ?> <i class='far fa-comment-alt'></i></td>
       </tr>
     </table>
@@ -116,7 +116,7 @@ session_start();
       <div class="left-side">
         <table class="table1">
           <tr class="row1">
-            <td style="text-align: center;"><?php echo $mekanlar['mekan_adi'] ?></td>
+            <td id="mekan<?php echo $cr_count;?>" style="text-align: center;"><?php echo $mekanlar['mekan_adi'] ?></td>
           </tr>
         </table>
         <table class="table1">
@@ -145,8 +145,8 @@ session_start();
           </tr>
         </table>
         <div class="buttonRow">
-          <button id="myButton"<?php echo $cr_count;?> onclick="changeText1()">KAYDET</button>
-          <button id="myButton2" onclick="changeText2()">EKLE</button>
+          <button id="myButton<?php echo $cr_count;?>" onclick="changeText(<?php echo $cr_count;?>)">KAYDET</button>
+          <button id="myButton2<?php echo $cr_count;?>" onclick="changeText2(<?php echo $cr_count;?>)">EKLE</button>
         </div><br>
 
         <label class="tanitim" for="tanitim">
@@ -188,25 +188,41 @@ session_start();
 
             <tr class="yorumKutusu">
               <?php
-              $stmt_mekan = $baglanti->prepare("SELECT yorum_metni,yorum_tarihi FROM yorumlar WHERE mekan_id = (SELECT mekan_id FROM mekanlar WHERE mekan_adi = ?)");
+              $stmt_mekan = $baglanti->prepare("SELECT * FROM yorumlar WHERE mekan_id = (SELECT mekan_id FROM mekanlar WHERE mekan_adi = ?)");
               $stmt_mekan->bind_param("s", $mekanlar['mekan_adi']);
               $stmt_mekan->execute();
               $result_mekan_oy = $stmt_mekan->get_result();
               $mekan_yorum_metni = "";
               $mekan_yorum_tarihi = "";
+              $e_mail="";
               while ($result_mekan_puani = $result_mekan_oy->fetch_assoc()) {
                 $mekan_yorum_metni = $result_mekan_puani['yorum_metni'];
                 $mekan_yorum_tarihi = $result_mekan_puani['yorum_tarihi'];
+                $e_mail = $result_mekan_puani['e_mail'];
               }
               $stmt_mekan->close();
               ?>
               <td>
                 <div class="kullaniciBilgisi">
                   <?php 
-                  
-                  
+                     
+                    $sql_fotograf = "SELECT * FROM kullanici WHERE e_mail = ?";
+                    $stmt = $baglanti->prepare($sql_fotograf);
+                    $stmt->bind_param("s", $e_mail);
+                    $stmt->execute();
+                    $result_fotograf = $stmt->get_result();
+                    $stmt->close();
+                        
+                    if ($mekan_yorum_metni) {
+                      $yorum_foto = $result_fotograf->fetch_assoc();
+                      $base64Image = base64_encode($yorum_foto['fotograf']);
+                  } else {
+                      $base64Image=null;
+                  }
+
                   ?>
-                  <img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="K_foto" width="50" height="50">
+                  <img src="<?php 
+                  if($base64Image!==null){echo "data:image/jpeg;base64,".$base64Image;} ?>" width="50" height="50"style="border-radius: 50%; object-fit: cover;">
                   <?php
                   echo $mekan_yorum_metni;
                   ?>
@@ -233,10 +249,10 @@ session_start();
     $cr_count++;
   }
   ?>
-
-
-  <?php //require_once('footer.php') 
-  ?>
+  
+        <center>
+            <button  id="rota_olustur" onclick="rotaOlustur()">ROTA OLUŞTUR</button>
+        </center>
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 28 Ara 2023, 14:17:29
+-- Üretim Zamanı: 30 Ara 2023, 23:54:32
 -- Sunucu sürümü: 10.4.28-MariaDB
 -- PHP Sürümü: 8.2.4
 
@@ -98,7 +98,7 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 (5, 'Gülhane Parkı', 'Fatih', 1, 2, 'https://kulturveyasam.com/wp-content/uploads/2018/07/2.jpg', 'https://kulturveyasam.com/wp-content/uploads/2018/07/1.jpg', 'https://www.mehmetakinci.com.tr/wp-content/uploads/2013/05/G%C3%9CLHANE-PARKI-9.jpg', 'Gülhane Parkı, İstanbul\'un Fatih ilçesinin Eminönü semtinde yer alan tarihî bir parktır. Alay Köşkü, Topkapı Sarayı ve Sarayburnu arasında yer alır.', 34, 3),
 (6, 'Miniatürk', 'Beyoğlu', 1, 2, 'https://geoim.bloomberght.com/2014/02/24/ver1393232928/1514095_576x384.jpg', 'https://www.miniaturk.com.tr/assets/img/anasayfa/kizkulesi.jpg', 'https://kultur.istanbul/arsiv/i.kultur.istanbul/storage/files/images/2018/06/29/miniaturke-besiktas-ve-kabatasdan-g-JxOu.jpg', 'Miniatürk ya da Minyatür Türkiye Park, Türkiye\'deki çeşitli yapıtların maketlerinin sergilendiği, Beyoğlu, İstanbul\'daki 60.000 metrekarelik alanda kurulu olan dünyanın en geniş alana kurulu minyatür parkıdır. Haliç kıyısında bulunan eski bir park alanında konumlanmıştır.', 34, 7),
 (7, 'Havacılık Müzesi', 'Yeşilköy', 1, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/0a/93/17/aviation-museum.jpg?w=1200&h=-1&s=1', 'https://1.bp.blogspot.com/-e-pySK_DQrg/Xqju42YKK1I/AAAAAAAAAP4/InPADJZj_6ckmBMs7dEXCVMYklG2J9LkQCEwYBhgL/s640/m%25C3%25BCzen-3.jpg', 'https://1.bp.blogspot.com/-DgLbzBVFNKI/YBf8rZHpE0I/AAAAAAAA3FY/zhGv1-o4cgIVt0Na7tsOA7L1Dleex63hgCLcBGAsYHQ/s941/ads%25C4%25B1z.jpg', 'stanbul Hava Kuvvetleri Müzesi, Yeşilköy\'de askeri havaalanın bitişiğinde yer alan ve Türk hava kuvvetlerine ait uçakların sergilendiği müzedir.', 34, 1),
-(8, 'Ankara Kalesi', 'Altındağ', 1, 2, 'https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2078000/ankara-kalesi-2079071.jpg', 'https://www.kulturportali.gov.tr/contents/images/ANKARA-HAVADAN%20ULUS-HAM%C4%B0T%20HAL%C3%87IN%20(3)%20logolu.jpg', 'https://static.birgun.net/resim/haber-detay-resim/2020/05/29/tarihi-ankara-kalesi-nin-sokaklari-yenilecek-737340-5.jpg', 'Ankara Kalesi, Ankara\'nın Altındağ ilçesinde bulunan tarihi bir kale. Ne zaman yapıldığı kesin olarak bilinmemekle birlikte M.Ö. 5. yüzyıl başında Galatların Ankara\'ya yerleşmeleri sırasında kalenin var olduğu bilinmektedir.', 6, 7),
+(8, 'Ankara Kalesi', 'Altındağ', 39.9415, 32.8654, 'https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2078000/ankara-kalesi-2079071.jpg', 'https://www.kulturportali.gov.tr/contents/images/ANKARA-HAVADAN%20ULUS-HAM%C4%B0T%20HAL%C3%87IN%20(3)%20logolu.jpg', 'https://static.birgun.net/resim/haber-detay-resim/2020/05/29/tarihi-ankara-kalesi-nin-sokaklari-yenilecek-737340-5.jpg', 'Ankara Kalesi, Ankara\'nın Altındağ ilçesinde bulunan tarihi bir kale. Ne zaman yapıldığı kesin olarak bilinmemekle birlikte M.Ö. 5. yüzyıl başında Galatların Ankara\'ya yerleşmeleri sırasında kalenin var olduğu bilinmektedir.', 6, 7),
 (9, 'Anıtkabir', 'Çankaya', 39.925, 32.8371, 'https://blog.jollytur.com/wp-content/uploads/2018/09/anitkabir.jpg', 'https://blog.jollytur.com/wp-content/uploads/2018/09/anitkabir-aslanli-yol.jpg', 'https://cdn1.ntv.com.tr/gorsel/8a4HD9-qU0aHVb4a0izYcw.jpg?width=1000&mode=crop&scale=both', 'Türk Kurtuluş Savaşı’nın ve Türk İnkılâplarının büyük önderi, Türkiye Cumhuriyeti’nin kurucusu Gazi Mustafa Kemal Atatürk’ün ebedi istirahatgahı', 6, 8),
 (10, 'Kuğulu Park', 'Çankaya', 39.9026, 32.8603, 'https://www.lutarsturizm.com/wp-content/uploads/2016/03/ku%C4%9Fulu-park-900x600.jpg', 'https://www.kulturportali.gov.tr/contents/images/ANKARA-KU%c4%9eULU%c4%9eARK-KI%c5%9e-G%c3%9cLCANACAR%20(2)%20kopya.jpg', 'https://www.kulturportali.gov.tr/contents/images/ANKARA-KU%c4%9eULU%c4%9eARK-KI%c5%9e-G%c3%9cLCANACAR%20(8)%20kopya.jpg', 'Kavaklıdere semtinde yer alan bu park kuğuları ile ünlüdür. Havuzda kuğular ve ördekler parkın içinde gezinirler. Çocuk bahçesi ve kafeterya halkın hizmetindedir. Ankara merkezde yer alan bu park, muhteşem tabiatı ve ev sahipliği yaptığı kuğuları ile şehir dışından gelenlerin mutlaka görmek istedikleri bir durak olmanın haricinde Ankarılaların da stres attıklar, şehir içinde orman havası soludukları bir noktadır.', 6, 9),
 (11, 'Rahmi Koç Müzesi', 'Altındağ', 39.9374, 32.8638, 'https://www.meroddi.com/wp-content/uploads/2022/08/koc-muzesi.png', 'https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20200321151334286_AnkaraRahmiKocMuzesi%201.jpg?format=jpg&quality=50', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Rahmi_ko%C3%A7_m%C3%BCzesi.jpg/1200px-Rahmi_ko%C3%A7_m%C3%BCzesi.jpg', 'Ankara Kalesi ana giriş kapısının karşısında yer alan Ankara Rahmi M. Koç Müzesi 2005 yılında ziyarete açılmıştır. Ankara’nın ilk sanayi müzesi olan Rahmi M. Koç Müzesi tarihi Çengelhan ve Safranhan olmak üzere iki ana bölümden oluşmaktadır.\r\n\r\nKanuni Sultan Süleyman döneminde yaptırılan Çengelhan, günümüze kadar ayakta kalmayı ve özgünlüğünü koruyabilmeyi sağlamış nadir yapılardandır. ', 6, 8),
@@ -328,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `yorumlar` (
   PRIMARY KEY (`yorum_id`),
   KEY `e_mail` (`e_mail`),
   KEY `mekan_id` (`mekan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- TABLO İLİŞKİLERİ `yorumlar`:
@@ -353,7 +353,9 @@ INSERT INTO `yorumlar` (`yorum_id`, `e_mail`, `mekan_id`, `yorum_metni`, `yorum_
 (9, 'zeynep_ilk_ay@hotmail.com', 32, 'Sevdiklerinizle oturup sohbet etmek, beklemek için huzur dolu bir yer. ', '2017-04-14', 5, 1),
 (10, 'zeynep_ilk_ay@hotmail.com', 11, 'Gezmesi inanılmaz keyifli bir müze. Her eseri tek tek incelemek için vakit ayırmalısınız.', '2023-11-01', 5, 1),
 (11, 'zeynep_ilk_ay@hotmail.com', 8, 'Şehri tepeden gören bir yer fakat çok dik. Servisleri varmış sanırım ama biz bulamadığımız için yürüdük ve manzarası da tatmin etmedi. Arabayla gidilebilir.', '2023-09-20', 3, 1),
-(12, 'zeynep_ilk_ay@hotmail.com', 33, 'Ne zaman yürümek için huzurlu bir yol ararsanız tercih edebilirsiniz. Piknik alanları da güzel gözüküyordu fakat başka sefere deneyeceğiz... Lunaparkı olması bir artı', '2020-07-16', 5, 1);
+(12, 'zeynep_ilk_ay@hotmail.com', 33, 'Ne zaman yürümek için huzurlu bir yol ararsanız tercih edebilirsiniz. Piknik alanları da güzel gözüküyordu fakat başka sefere deneyeceğiz... Lunaparkı olması bir artı', '2020-07-16', 5, 1),
+(13, 'alpiren1905@gmail.com', 9, 'Her Türk gencinin kesinlikle görmesi gerekiyor', '2023-12-05', 5, 1),
+(14, 'zeynep_ilk_ay@hotmail.com', 2, 'Sarayın mimarisi çok güzel her gittiğimde büyüleniyorum.', '2023-12-03', 4.5, 1);
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

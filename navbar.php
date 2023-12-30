@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="nav-container mx a">
             <a class="navbar-brand" href="index.php">gezgin
-                <a href="profilim.php" class="custom-link">Premiumu Keşfet</a>
+                <a href="index.php" class="custom-link">Premium'u Keşfet</a>
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,13 +33,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="mekanTanitim.php"><i class="fas fa-search"></i> Keşfet </a>
+                    <a class="nav-link" href="kesfet.php"><i class="fas fa-search"></i> Keşfet </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-car"></i> Otel & Araç Kiralama</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Hakkımızda</a>
+                    <a class="nav-link" id="hakkimizdaLink" href="#">Hakkımızda</a>
                 </li>
                 <li class="nav-item giris-yap" id="logged">
 
@@ -64,6 +64,16 @@
             </ul>
         </div>
     </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var hakkimizdaLink = document.getElementById("hakkimizdaLink");
+
+        hakkimizdaLink.addEventListener("click", function(event) {
+        document.body.scrollIntoView({ behavior: "smooth", block: "end" });
+        event.preventDefault();
+    });
+});
+    </script>
     <div class="container-fluid">
         <hr>
     </div>
