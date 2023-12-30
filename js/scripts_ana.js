@@ -334,7 +334,6 @@ function slideLeft4() {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    // DOMContentLoaded etkinliği
     var selectElement = document.getElementById("inlineFormCustomSelect");
     selectElement.addEventListener("change", function () {
         var secilenSehir = this.value;
@@ -362,21 +361,69 @@ document.addEventListener('DOMContentLoaded', function () {
         var url = "mekanTanitim.php?secilenSehir=" + encodeURIComponent(secilenSehir);
 
 
-        // mekanTanitim.php dosyasını asenkron olarak GET ile çağır
         xhr.open("GET", url, true);
 
-        // XMLHttpRequest'in yüklenme durumu değiştiğinde çalışacak fonksiyon
         xhr.onreadystatechange = function () {
-            // XMLHttpRequest tamamlandı ve başarıyla gerçekleştiyse
             if (xhr.readyState == 4 && xhr.status == 200) {
                 // mekanTanitim id'sine sahip HTML öğesinin içeriğini mekanTanitim.php'nin içeriği ile güncelle
                 document.getElementById('mekanTanitim').innerHTML = xhr.responseText;
             }
         };
-
-        // XMLHttpRequest'i gönder
         xhr.send();
 
     });
     
 });
+
+function changeText(count) {
+    var button = document.getElementById("myButton"+count);
+  
+    if (button.innerHTML === "KAYDET") {
+      button.innerHTML = "KAYDEDİLDİ";
+    } else {
+      button.innerHTML = "KAYDET";
+    }
+  }
+  
+  function changeText2(count) {
+      var button = document.getElementById("myButton2"+count);
+  
+      if (button.innerHTML === "EKLE") {
+          button.innerHTML = "ROTADA";
+      } else {
+          button.innerHTML = "EKLE";
+      }
+  }
+  
+    function rotaOlustur(){
+        var count=1;
+        var rotalar=[];
+        var mekan_sayisi=document.getElementById('mekan_sayac').innerText;
+            while(count<=mekan_sayisi){
+            var rotaButonlari = document.getElementById('myButton2'+count);
+            if(rotaButonlari.innerText=='ROTADA'){
+                var rota_mekan_id = document.getElementById('mekan'+count);
+                
+                rotalar.push(rota_mekan_id.innerText);
+            }
+            count++;
+        }
+        
+    
+    
+    $.ajax({
+      type: "POST",
+      url: "rotaOlustur.php", 
+      data: { rotalar: rotalar },
+      success: function (response) {
+        if(response==='success'){
+            window.location.href = "rotasyon.php";
+        }
+      },
+      error: function (xhr, status, error) {
+      console.error("AJAX Hatası:", status, error);
+      console.log(xhr.responseText); 
+    }
+    });}
+
+    
