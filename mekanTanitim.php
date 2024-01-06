@@ -141,7 +141,7 @@ session_start();
           </tr>
           <tr class="row3">
             <td>Rotada Bulunma</td>
-            <td>Y</td>
+            <td>1</td>
           </tr>
         </table>
         <div class="buttonRow">
