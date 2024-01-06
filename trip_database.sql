@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 30 Ara 2023, 23:54:32
--- Sunucu sürümü: 10.4.28-MariaDB
--- PHP Sürümü: 8.2.4
+-- Üretim Zamanı: 31 Ara 2023, 09:12:30
+-- Sunucu sürümü: 10.4.32-MariaDB
+-- PHP Sürümü: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,6 +28,9 @@ USE `trip_database`;
 --
 -- Tablo için tablo yapısı `kullanici`
 --
+-- Oluşturma: 31 Ara 2023, 07:24:53
+-- Son güncelleme: 31 Ara 2023, 07:24:53
+--
 
 CREATE TABLE IF NOT EXISTS `kullanici` (
   `e_mail` varchar(45) NOT NULL,
@@ -39,10 +42,6 @@ CREATE TABLE IF NOT EXISTS `kullanici` (
   `fotograf` mediumblob DEFAULT NULL,
   PRIMARY KEY (`e_mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- TABLO İLİŞKİLERİ `kullanici`:
---
 
 --
 -- Tablo döküm verisi `kullanici`
@@ -59,6 +58,9 @@ INSERT INTO `kullanici` (`e_mail`, `ad_soyad`, `p_hash`, `premium_kontrol`, `kul
 
 --
 -- Tablo için tablo yapısı `mekanlar`
+--
+-- Oluşturma: 31 Ara 2023, 07:24:53
+-- Son güncelleme: 31 Ara 2023, 07:55:24
 --
 
 CREATE TABLE IF NOT EXISTS `mekanlar` (
@@ -79,14 +81,6 @@ CREATE TABLE IF NOT EXISTS `mekanlar` (
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- TABLO İLİŞKİLERİ `mekanlar`:
---   `plaka`
---       `sehirler` -> `plaka`
---   `mt_id`
---       `mekan_türleri` -> `mt_id`
---
-
---
 -- Tablo döküm verisi `mekanlar`
 --
 
@@ -102,9 +96,9 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 (9, 'Anıtkabir', 'Çankaya', 39.925, 32.8371, 'https://blog.jollytur.com/wp-content/uploads/2018/09/anitkabir.jpg', 'https://blog.jollytur.com/wp-content/uploads/2018/09/anitkabir-aslanli-yol.jpg', 'https://cdn1.ntv.com.tr/gorsel/8a4HD9-qU0aHVb4a0izYcw.jpg?width=1000&mode=crop&scale=both', 'Türk Kurtuluş Savaşı’nın ve Türk İnkılâplarının büyük önderi, Türkiye Cumhuriyeti’nin kurucusu Gazi Mustafa Kemal Atatürk’ün ebedi istirahatgahı', 6, 8),
 (10, 'Kuğulu Park', 'Çankaya', 39.9026, 32.8603, 'https://www.lutarsturizm.com/wp-content/uploads/2016/03/ku%C4%9Fulu-park-900x600.jpg', 'https://www.kulturportali.gov.tr/contents/images/ANKARA-KU%c4%9eULU%c4%9eARK-KI%c5%9e-G%c3%9cLCANACAR%20(2)%20kopya.jpg', 'https://www.kulturportali.gov.tr/contents/images/ANKARA-KU%c4%9eULU%c4%9eARK-KI%c5%9e-G%c3%9cLCANACAR%20(8)%20kopya.jpg', 'Kavaklıdere semtinde yer alan bu park kuğuları ile ünlüdür. Havuzda kuğular ve ördekler parkın içinde gezinirler. Çocuk bahçesi ve kafeterya halkın hizmetindedir. Ankara merkezde yer alan bu park, muhteşem tabiatı ve ev sahipliği yaptığı kuğuları ile şehir dışından gelenlerin mutlaka görmek istedikleri bir durak olmanın haricinde Ankarılaların da stres attıklar, şehir içinde orman havası soludukları bir noktadır.', 6, 9),
 (11, 'Rahmi Koç Müzesi', 'Altındağ', 39.9374, 32.8638, 'https://www.meroddi.com/wp-content/uploads/2022/08/koc-muzesi.png', 'https://www.kulturportali.gov.tr/repoKulturPortali/large/SehirRehberi//GezilecekYer/20200321151334286_AnkaraRahmiKocMuzesi%201.jpg?format=jpg&quality=50', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Rahmi_ko%C3%A7_m%C3%BCzesi.jpg/1200px-Rahmi_ko%C3%A7_m%C3%BCzesi.jpg', 'Ankara Kalesi ana giriş kapısının karşısında yer alan Ankara Rahmi M. Koç Müzesi 2005 yılında ziyarete açılmıştır. Ankara’nın ilk sanayi müzesi olan Rahmi M. Koç Müzesi tarihi Çengelhan ve Safranhan olmak üzere iki ana bölümden oluşmaktadır.\r\n\r\nKanuni Sultan Süleyman döneminde yaptırılan Çengelhan, günümüze kadar ayakta kalmayı ve özgünlüğünü koruyabilmeyi sağlamış nadir yapılardandır. ', 6, 8),
-(12, 'Tokat Kalesi', 'Merkez', 1, 2, 'https://belediyehaber.net/wp-content/uploads/2021/11/1.jpg', NULL, NULL, 'Tokatı yaşayan bilir.', 60, 7),
-(13, 'Ballıca Mağarası', 'Semerkant', 3, 3, 'https://www.etstur.com/letsgo/wp-content/uploads/2015/03/lets-go-825x600-11.jpg', NULL, NULL, 'assasddas', 60, 7),
-(14, 'Niksar Kalesi', 'Niksar', 3, 4, 'https://im.haberturk.com/l/2022/08/16/ver1660632895/3512603/jpg/640x360', NULL, NULL, 'Trnin en büyük 2.kalesi', 60, 7),
+(12, 'Tokat Kalesi', 'Merkez', 40.318, 36.5485, 'https://belediyehaber.net/wp-content/uploads/2021/11/1.jpg', 'https://th.bing.com/th/id/R.f09498cdf7a786d1e3e95506a4502421?rik=9%2bA8OSe%2bgs8uMg&pid=ImgRaw&r=0', 'https://img.piri.net/mnresize/900/-/resim/imagecrop/2021/04/19/01/24/resized_e8570-349ce576tokatkalesi.jpg', 'Tokat Kalesi, yapım tarihi ve hangi medeniyet tarafından yapıldığı bilinmeyen kermen. Kaleye ait en eski izler 5 ya da 6. yüzyıla ait olup kalenin bu yıllarda var olduğu bilinmektedir. Yapının inşa edildiği kayalıklar doğal bir kale özelliğine sahip olmakla beraber surlar ve kale içerisindeki odalar insanlarca yapılmıştır.', 60, 7),
+(13, 'Ballıca Mağarası', 'Semerkant', 40.2271, 36.3018, 'https://www.etstur.com/letsgo/wp-content/uploads/2015/03/lets-go-825x600-11.jpg', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5f/39/70/photo0jpg.jpg?w=1200&h=-1&s=1', 'http://upload.wikimedia.org/wikipedia/commons/7/77/Ballica-magarasi_109064.jpg', 'Ziyarete açılan 8 salonu 680 m. uzunluğunda ve 95 m. yüksekliğinde olan Ballıca Mağarası, dünyanın en büyük ve en görkemli mağaralarından biri. Bu doğa harikası, henüz ziyarete açılmayan ve keşfedilmemiş bölümleri ile gizemini korumayı sürdürüyor.\r\n\r\nBallıca Mağarası\'ndaki oluşumları izlemek, doğal bir müzeyi gezmek gibi. Yaşı yaklaşık 3.4 milyon yıl olarak tespit edilen Ballıca Mağarası, şimdiye kadar tespit edilen tüm mağara oluşumlarına sahip olmanın yanı sıra, özgün Soğan Sarkıtları ile de uluslararası önem taşıyor. Mağarayı dolaşmak, her adımda hayrete düşüren, heyecan veren gizemli bir yolculuğa çıkmak gibi. ', 60, 3),
+(14, 'Niksar Kalesi', 'Niksar', 40.5922, 36.9553, 'https://im.haberturk.com/l/2022/08/16/ver1660632895/3512603/jpg/640x360', 'https://seyyahdefteri.com/wp-content/uploads/2019/05/Niksar-Kalesi-1024x745.jpg', 'https://i2.milimaj.com/i/milliyet/75/869x477/618e760d86b247250c913bad.jpg', 'Niksar Kalesi, Türkiye\'nin Tokat ilinde bulunan tarihi bir yapıdır. Niksar\'ın tarihi ve kültürel değerlerini yansıtmaktadır. Kale, Niksar\'ın tarihi merkezinde bulunmaktadır ve bölgenin turistik gezilecek yerlerinden biridir. Kale, tarihi kalıntıları, eski surları ve kale içindeki tarihi yapıları görülebilir. Aynı zamanda, kale içinde tarihi hamam, cami ve kervansaray gibi yapılar da bulunmaktadır. Niksar Kalesi, ziyaretçiler için keyifli bir gezi imkanı sunmaktadır. Kalede, tarihi ve kültürel değerlerin yanı sıra, panoramik manzaralara da tanık olunabilir. ', 60, 7),
 (15, 'Uzungöl', 'Çaykara', 4, 5, 'https://www.uzungol.net/wp-content/uploads/2015/08/Uzungol-manzara-748x498.jpg', NULL, NULL, 'Uzungöl, Türkiye\'nin Trabzon ilinde yer alan bir heyelan set gölüdür. Çaykara ilçesinin Uzungöl Mahallesi\'nde bulunur. Yamaçlardan düşen kayaların, Haldizen deresinin önünü kapatmasıyla oluşmuştur.', 61, 7),
 (16, 'Ayasofya', 'Ortahisar', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/43/b3/dc/trabzon-ayasofya-muzesi.jpg?w=1200&h=-1&s=1', NULL, NULL, 'asaasd', 61, 2),
 (17, 'Cazılar Deresi', 'Yomra', 2, 2, 'https://fastly.4sqi.net/img/general/600x600/1375144478_yLfJt-50GHwdHVeiYoBwB3vojTNIGn26Hl_70EZy21w.jpg', NULL, NULL, 'asdasd', 61, 4),
@@ -112,14 +106,14 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 (19, 'Nakkaştepe Millet Bahçesi', 'Üsküdar', 2, 3, 'https://yerler.com.tr/wp-content/uploads/2021/06/nakkastepe-millet-bahcesi.jpeg', 'https://www.uskudar.bel.tr/fotograf/fotoGaleri/10726-nakkastepe-millet-bahcesi-uskudar-fotogaleri_800x600.jpg', 'https://www.peyzax.com/wp-content/uploads/2021/12/IMG_E7496-1.jpg', '‘Şöyle biraz kafamı dinleyeyim, pikniğimi yapıp bir güzel stres atayım’ diyorsanız bu soruların cevabı çok işinize yarayacak! Hem gözleriniz manzaraya doyacak hem de bedeniniz, ruhunuz dinlenecek. Burası, İstanbul’un en yeşil, en huzurlu alanlarından biri olarak öne çıkıyor. Şehrin ilk millet bahçesi olma özelliğini taşıyan bu yer, 90 bin metrekarelik bir alanı kaplıyor. 15 Temmuz Şehitler Köprüsü’nü net olarak görme imkânı tanıyan bu yerde; konforlu piknik alanları, oyun alanları mevcut.', 34, 3),
 (20, 'Boztepe', 'Boztepe', 2, 2, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/78/79/1a/boztepe.jpg?w=1200&h=1200&s=1', NULL, NULL, 'asd', 61, 4),
 (21, 'Galata Kulesi', 'Beyoğlu', 1, 1, 'https://st4.depositphotos.com/12992960/21546/i/950/depositphotos_215466342-stock-photo-night-view-old-narrow-street.jpg', 'https://i.neredekal.com/i/neredekal/75/1200x818/6531f87460557207a61ddd33', 'https://media-cdn.tripadvisor.com/media/photo-s/1b/49/40/78/galata-kulesi.jpg', 'Galata Kulesi ya da müze olarak kullanılmaya başlaması sonrasındaki adıyla Galata Kulesi Müzesi, İstanbul\'un Beyoğlu ilçesinde bulunan bir kuledir. Adını, bulunduğu Galata semtinden alır.', 34, 7),
-(22, 'Taş Han', 'Merkez', 33, 33, 'https://im.haberturk.com/yerel_haber/2020/10/18/ver1603015201/81678943_620x410.jpg', NULL, NULL, '33', 60, 7),
-(25, 'Yazmacılar Hanı', 'Merkez', 40.317, 36.5505, 'https://www.turkiyeturizm.com/d/other/yazmacilar-hani.jpg', 'https://www.bizevdeyokuz.com/wp-content/uploads/yazma-tokat.jpg ', NULL, 'Tokat\'ta, Selçuklu döneminden kalan ve Cumhuriyet döneminde 50 yıl süresince Yazmacılar Hanı olarak kullanılan, son 30 yıldır atıl durumdaki 700 yıllık tarihi yapı restore edilerek butik otele dönüştürüldü.  Kaynak: Tokat\'ta 700 yıllık Yazmacılar Hanı butik otel olarak hizmet vermektedir.Tokat’ın meşhur sofra bezi ve el baskısı yazmalarının yapılışını görebileceğiniz, bir 19. yüzyıl sonu Osmanlı yapısıdır.', 60, 5),
-(26, 'Arastalı Bedesten', 'Merkez', 40.3161, 36.5468, 'https://www.bizevdeyokuz.com/wp-content/uploads/tokat-muze-2.jpg', 'https://image.hurimg.com/i/hurriyet/75/770x0/5e43d1fa67b0a90724816c55.jpg', NULL, ' Müze toplam 3 kattan oluşmakta. Üst katta etnografya bölümünde Tokat\'ın yetiştirdiği ünlü şahsiyetler ile kente ait gündelik nesne konulu çalışmalar var. Giriş katta bir sanat galerisi mevcut. Burada Tokat\'ın Cumhuriyet dönemi ve Osmanlı döneminde çekilmiş olan 336 karelik bir fotoğraf panosu var. Yine arka tarafında Tokat\'a ait el sanatlarını görsel sanatları yerinde inceleyebileceğiniz bir sanat galerisi oluşturmuş bulunmaka. Eser sayısı şuanda 11 bin parçayı aşmış bulunmakta.', 60, 8),
-(27, 'Deveciler Hanı', 'Merkez', 40.3164, 36.5453, 'https://blog.biletbayi.com/wp-content/uploads/2020/02/deveciler-hani-768x401.jpg', 'https://cdn.kulturenvanteri.com/wp-content/uploads/2020/06/Kaleden-Deveciler-Han%C4%B1-Tokat.jpg?_gl=1*1c4a8zs*_ga*ODA5OTA5OTI0LjE3MDM3NTMzNDI.*_ga_TV1YB45K0M*MTcwMzc1Nzg4MS4yLjEuMTcwMzc1Nzg4MS4wLjAuMA..&_ga=2.254111040.910941414.1703753342-809909924', 'https://www.google.com.tr/maps/place/Deveciler+Han%C4%B1/@40.3157289,36.5454336,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOWGqSaHKJsHnm8oqfM69rRNMQwXTZiuw8', 'Şimdilerde, Gaziosmanpaşa Üniversitesi Güzel Sanatlar Fakülte binası olarak kullanılan hanın kitabesi olmadığından tam olarak hangi tarihte yapıldığı belli olmasa da, hanın mimari özelliklerinden, 1400’lü yılların başlarında yapıldığı tahmin ediliyor. Girişteki mukarnaslarla dikkat çeken yapı, Tarihi İpek Yolu üzerinde bulunması ve döneminin tek kişilik konaklama imkanı sunan en eski şehir hanlarından olması nedeniyle önem taşıyor.', 60, 7),
-(28, 'Mevlevihane', 'Merkez', 40.311, 36.554, 'https://www.bizevdeyokuz.com/wp-content/uploads/tokat-mevlevihanesi.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Tokat_Mevlevihanesi_06.JPG/1200px-Tokat_Mevlevihanesi_06.JPG?20141013232107', NULL, '13. yüzyılda Tokat’ta yayılmaya başlayan Mevlevilik, 1600’lere gelindiğinde şehirde bu mevlevihane kalıcı yapılar inşa edecek kadar gelişiyor. Sultan 3. Ahmed döneminde Yeniçeri ağası Sülün Mustafa Paşa tarafından 1638’de yaptırılan Tokat Mevlevihanesi, tamamen bütünüyle günümüze kalmamış olsa da, 19. yüzyıl Tokat evleri mimarisinde restore edilerek yeniden ziyarete açılmış', 60, 8),
-(29, 'Tokat Saat Kulesi', 'Merkez', 40.3117, 36.5537, 'https://www.bizevdeyokuz.com/wp-content/uploads/saat-kulesi-tokat.jpg', 'http://www.tokat.gov.tr/kurumlar/tokat.gov.tr/Genel/Dokumanlar/2021/Eylul/Tokat-Saat-Kulesi3.jpg?mode=resize&width=1200', NULL, '1902 yılında, II. Abdulhamid’in tahta çıkmasının 25. yılı şerefine yaptırılan 33 metrelik saat kulesi, şehrin her yerinden görülebilecek bir noktaya konduruluyor. Kesme taştan yapılma kulenin saati, halher yarım saatte bir ve saat başlarında çalıyor. Sesi kentin her yerinden rahatlıkla duyulabiliyor', 60, 7),
+(22, 'Taş Han', 'Merkez', 40.3183, 36.5517, 'https://im.haberturk.com/yerel_haber/2020/10/18/ver1603015201/81678943_620x410.jpg', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/34/ec/e9/1626-1632-yillari-arasinda.jpg?w=1200&h=-1&s=1', 'https://ayder.com.tr/uploads/p/o/9s6TvqtUyNLO.jpg', 'Türkiye’nin en güzel hanlarından biri olan Taşhan, Anadolu’daki en büyük şehir hanlarındandır. Gaziosmanpaşa Bulvarı üzerindedir. 1626-1632 yılları arasında inşa edilmiş bir Osmanlı eseridir. Dikdörtgen planlı, açık avlulu, iki katlı bir yapıdır. İçeride dış dükkanların bulunduğu kuzey ve doğu yönünde revaksız işyerleri, güney ve batı yönünde ise önünde revak bulunan dükkanlar yer almaktadır. Giriş koridorunun sonunda sağdan ve soldan ikinci kata çıkılmaktadır. İkinci katta bütün odalar revaka açılmaktadır. Girişin üstünde kubbeli bir mekan vardır ve bu mekan konsollar üzerinde dışa taşmaktadır. ', 60, 7),
+(25, 'Yazmacılar Hanı', 'Merkez', 40.317, 36.5505, 'https://yazmacilar-hani-otel-restaurant-tokat.hotel-mix.de/data/Photos/OriginalPhoto/9745/974547/974547013/Yazmacilar-Hani-Otel-Restaurant-Tokat-Exterior.JPEG', 'https://www.bizevdeyokuz.com/wp-content/uploads/yazma-tokat.jpg ', 'https://q-xx.bstatic.com/xdata/images/hotel/max1024x720/229375750.jpg?k=9e67963defb6c2e6d72b8f4e19c37a4cbf7a9cc37d9e8e9b3746e5a339df70df&o=', 'Tokat\'ta, Selçuklu döneminden kalan ve Cumhuriyet döneminde 50 yıl süresince Yazmacılar Hanı olarak kullanılan, son 30 yıldır atıl durumdaki 700 yıllık tarihi yapı restore edilerek butik otele dönüştürüldü.  Kaynak: Tokat\'ta 700 yıllık Yazmacılar Hanı butik otel olarak hizmet vermektedir.Tokat’ın meşhur sofra bezi ve el baskısı yazmalarının yapılışını görebileceğiniz, bir 19. yüzyıl sonu Osmanlı yapısıdır.', 60, 5),
+(26, 'Arastalı Bedesten', 'Merkez', 40.3161, 36.5468, 'https://www.bizevdeyokuz.com/wp-content/uploads/tokat-muze-2.jpg', 'https://image.hurimg.com/i/hurriyet/75/770x0/5e43d1fa67b0a90724816c55.jpg', 'https://www.kulturportali.gov.tr/contents/images/05022013_cf294782-f977-4042-b3ba-6040d6a1825c.jpg', ' Müze toplam 3 kattan oluşmakta. Üst katta etnografya bölümünde Tokat\'ın yetiştirdiği ünlü şahsiyetler ile kente ait gündelik nesne konulu çalışmalar var. Giriş katta bir sanat galerisi mevcut. Burada Tokat\'ın Cumhuriyet dönemi ve Osmanlı döneminde çekilmiş olan 336 karelik bir fotoğraf panosu var. Yine arka tarafında Tokat\'a ait el sanatlarını görsel sanatları yerinde inceleyebileceğiniz bir sanat galerisi oluşturmuş bulunmaka. Eser sayısı şuanda 11 bin parçayı aşmış bulunmakta.', 60, 8),
+(27, 'Deveciler Hanı', 'Merkez', 40.3164, 36.5453, 'https://blog.biletbayi.com/wp-content/uploads/2020/02/deveciler-hani-768x401.jpg', 'https://cdn.kulturenvanteri.com/wp-content/uploads/2020/06/Kaleden-Deveciler-Han%C4%B1-Tokat.jpg?_gl=1*1c4a8zs*_ga*ODA5OTA5OTI0LjE3MDM3NTMzNDI.*_ga_TV1YB45K0M*MTcwMzc1Nzg4MS4yLjEuMTcwMzc1Nzg4MS4wLjAuMA..&_ga=2.254111040.910941414.1703753342-809909924', 'https://tarihgezisi.com/wp-content/uploads/2020/11/MG_1051.jpg', 'Şimdilerde, Gaziosmanpaşa Üniversitesi Güzel Sanatlar Fakülte binası olarak kullanılan hanın kitabesi olmadığından tam olarak hangi tarihte yapıldığı belli olmasa da, hanın mimari özelliklerinden, 1400’lü yılların başlarında yapıldığı tahmin ediliyor. Girişteki mukarnaslarla dikkat çeken yapı, Tarihi İpek Yolu üzerinde bulunması ve döneminin tek kişilik konaklama imkanı sunan en eski şehir hanlarından olması nedeniyle önem taşıyor.', 60, 7),
+(28, 'Mevlevihane', 'Merkez', 40.311, 36.554, 'https://www.bizevdeyokuz.com/wp-content/uploads/tokat-mevlevihanesi.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Tokat_Mevlevihanesi_06.JPG/1200px-Tokat_Mevlevihanesi_06.JPG?20141013232107', 'https://www.bitokat.com/uploads/bitokat.com/2019/01/mevlevihane-vakif-muzesi.jpg', '13. yüzyılda Tokat’ta yayılmaya başlayan Mevlevilik, 1600’lere gelindiğinde şehirde bu mevlevihane kalıcı yapılar inşa edecek kadar gelişiyor. Sultan 3. Ahmed döneminde Yeniçeri ağası Sülün Mustafa Paşa tarafından 1638’de yaptırılan Tokat Mevlevihanesi, tamamen bütünüyle günümüze kalmamış olsa da, 19. yüzyıl Tokat evleri mimarisinde restore edilerek yeniden ziyarete açılmış', 60, 8),
+(29, 'Tokat Saat Kulesi', 'Merkez', 40.3117, 36.5537, 'https://www.bizevdeyokuz.com/wp-content/uploads/saat-kulesi-tokat.jpg', 'http://www.tokat.gov.tr/kurumlar/tokat.gov.tr/Genel/Dokumanlar/2021/Eylul/Tokat-Saat-Kulesi3.jpg?mode=resize&width=1200', 'https://www.gezivetatilrehberi.com/resimler/sehir/tokat/gezi/tokat-tokat-saat-kulesi-1613235433.jpg', '1902 yılında, II. Abdulhamid’in tahta çıkmasının 25. yılı şerefine yaptırılan 33 metrelik saat kulesi, şehrin her yerinden görülebilecek bir noktaya konduruluyor. Kesme taştan yapılma kulenin saati, halher yarım saatte bir ve saat başlarında çalıyor. Sesi kentin her yerinden rahatlıkla duyulabiliyor', 60, 7),
 (30, 'Trabzon Kalesi', 'Ortahisar', 41.0015, 39.7188, 'https://www.bizevdeyokuz.com/wp-content/uploads/trabzon-kale.jpg', 'https://lh3.googleusercontent.com/gps-proxy/AMy85WIqkC6W1SD-aPC-N29_sXtrCKeIXRLKxAPBARlS9ELku3j8vpOeWA8Izm7Tea3nVHB-oTVLOCI6Vv79dYaPZVnlCweG1OoK991BSh4NubFgcHR1Zcb0MQfobItrFvjHp8M1bOjDnpL6cxhkXQz5yMOVKEaL17SdAG_buPzJuWb_MV9lyUDNXYk=w408-h271-k-no', '', 'Ortahisar mevkiinde, Tabakhane ve Zağnos vadileri arasındaki yüksek kaya kitlesi üzerine kurulmuş olan Trabzon Kalesi’nin, günümüze kadar korunarak gelmiş olan şehir surları Trabzon’un en eski yapıları. Bugünkü surların en eski bölümü MÖ 4. yüzyıl Roma Dönemi’ne uzanıyor. Surlar Yukarı Hisar, İç Kale, Orta Hisar ve Aşağı Hisar olmak üzere üç bölüme ayrılıyor. Kale, kaba haliyle bir yamuğa benzediğinden, şehrin adının bu trapez (trapezius) yamuk şeklinden geldiği düşünülüyor.', 61, 7),
-(31, 'Tarihi Kalkanoğlu Pilavcısı', 'Merkez', 41.0088, 39.7211, 'https://www.bizevdeyokuz.com/wp-content/uploads/kalkanoglu-trabzon.jpg', NULL, NULL, 'Trabzon’un çok fazla lezzeti var ama merkezdeyken tatmalısınız diyeceğimiz lezzetlerden biri meşhur tereyağlı pilavı. Rivayete göre, padişah bile bu pilavı o kadar güzel bulmuş ki benim halkım da bunu tatmalı diyerek pilavcı açılmasını fetva etmiş. Tereyağlı pilavın hasını yiyebileceğiniz yer de Tarihi Kalkanoğlu Pilavcısı.', 61, 4),
+(31, 'Tarihi Kalkanoğlu Pilavcısı', 'Merkez', 41.0088, 39.7211, 'https://www.bizevdeyokuz.com/wp-content/uploads/kalkanoglu-trabzon.jpg', 'https://4.bp.blogspot.com/-zsFvNo1lYRs/Vy0jgCXBlnI/AAAAAAAAHlU/v4ztQoF5uZclX-RIZwq9UouRV0qqSV4dgCLcB/w1200-h630-p-k-no-nu/Kalkano%25C4%259Flu%2B1.png', 'https://fastly.4sqi.net/img/general/1116x400/54877665_-ZlqfwBuIPq_SOBfOWKwuTRZDA16TGTIc6uHMjHNgyU.jpg', 'Trabzon’un çok fazla lezzeti var ama merkezdeyken tatmalısınız diyeceğimiz lezzetlerden biri meşhur tereyağlı pilavı. Rivayete göre, padişah bile bu pilavı o kadar güzel bulmuş ki benim halkım da bunu tatmalı diyerek pilavcı açılmasını fetva etmiş. Tereyağlı pilavın hasını yiyebileceğiniz yer de Tarihi Kalkanoğlu Pilavcısı.', 61, 4),
 (32, 'Gençlik Parkı', 'Altındağ', 39.9372, 32.8498, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/84/04/7c/genclik-parki.jpg?w=1200&h=-1&s=1', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/84/03/94/genclik-parki.jpg?w=1200&h=-1&s=1', 'https://seyyahdefteri.com/wp-content/uploads/2018/12/Gen%C3%A7lik-Park%C4%B1-Nerede.webp', 'Gençlik Parkı Hakkında Bilgiler 19 mayıs 1943 yılında açılmış olan park, 275 bin m² alan üzerine kurulmuş oldukça büyük bir park.', 6, 2),
 (33, 'Harikalar Diyarı', 'Sincan', 39.9838, 32.5922, 'https://seyahatdergisi.com/wp-content/uploads/2016/03/Ankara-Harikalar-Diyar%C4%B1ndan-Kareler-768x511.jpg', 'https://seyahatdergisi.com/wp-content/uploads/2016/03/Sincan-Harikalar-Diyar%C4%B1.jpg', 'https://seyahatdergisi.com/wp-content/uploads/2016/03/Harikalar-Diyar%C4%B1-Ankara.jpg', 'Ankara Harikalar Diyarı parkı ülkemizin ve aynı zamanda tüm Avrupa’nın en büyük parkı olma özelliğine sahip olan bir parktır. Parkın içerisinde, Harikalar Diyarı adlı kitapta bulabileceğiniz tüm karakterler yer almakta ve muhteşem görüntüleri ile bizlere harika bir gezi sunmaktadır.', 6, 9);
 
@@ -128,16 +122,15 @@ INSERT INTO `mekanlar` (`mekan_id`, `mekan_adi`, `semt_ismi`, `enlem`, `boylam`,
 --
 -- Tablo için tablo yapısı `mekan_türleri`
 --
+-- Oluşturma: 31 Ara 2023, 07:24:53
+-- Son güncelleme: 31 Ara 2023, 07:24:53
+--
 
 CREATE TABLE IF NOT EXISTS `mekan_türleri` (
   `mt_id` int(11) NOT NULL AUTO_INCREMENT,
   `tur_adi` varchar(45) NOT NULL,
   PRIMARY KEY (`mt_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- TABLO İLİŞKİLERİ `mekan_türleri`:
---
 
 --
 -- Tablo döküm verisi `mekan_türleri`
@@ -159,6 +152,8 @@ INSERT INTO `mekan_türleri` (`mt_id`, `tur_adi`) VALUES
 --
 -- Tablo için tablo yapısı `rotalar`
 --
+-- Oluşturma: 31 Ara 2023, 07:24:53
+--
 
 CREATE TABLE IF NOT EXISTS `rotalar` (
   `rota_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -169,14 +164,6 @@ CREATE TABLE IF NOT EXISTS `rotalar` (
   KEY `e_mail` (`e_mail`),
   KEY `plaka` (`plaka`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- TABLO İLİŞKİLERİ `rotalar`:
---   `e_mail`
---       `kullanici` -> `e_mail`
---   `plaka`
---       `sehirler` -> `plaka`
---
 
 --
 -- Tablo döküm verisi `rotalar`
@@ -190,6 +177,8 @@ INSERT INTO `rotalar` (`rota_id`, `e_mail`, `plaka`, `rota_tarihi`) VALUES
 --
 -- Tablo için tablo yapısı `rota_kaydet`
 --
+-- Oluşturma: 31 Ara 2023, 07:24:53
+--
 
 CREATE TABLE IF NOT EXISTS `rota_kaydet` (
   `k_id` varchar(45) NOT NULL,
@@ -199,18 +188,13 @@ CREATE TABLE IF NOT EXISTS `rota_kaydet` (
   KEY `rota_id` (`rota_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- TABLO İLİŞKİLERİ `rota_kaydet`:
---   `k_id`
---       `kullanici` -> `e_mail`
---   `rota_id`
---       `rotalar` -> `rota_id`
---
-
 -- --------------------------------------------------------
 
 --
 -- Tablo için tablo yapısı `sehirler`
+--
+-- Oluşturma: 31 Ara 2023, 07:24:53
+-- Son güncelleme: 31 Ara 2023, 07:24:53
 --
 
 CREATE TABLE IF NOT EXISTS `sehirler` (
@@ -219,10 +203,6 @@ CREATE TABLE IF NOT EXISTS `sehirler` (
   `sayac` int(11) DEFAULT NULL,
   PRIMARY KEY (`plaka`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- TABLO İLİŞKİLERİ `sehirler`:
---
 
 --
 -- Tablo döküm verisi `sehirler`
@@ -316,6 +296,9 @@ INSERT INTO `sehirler` (`plaka`, `sehir_adi`, `sayac`) VALUES
 --
 -- Tablo için tablo yapısı `yorumlar`
 --
+-- Oluşturma: 31 Ara 2023, 07:24:53
+-- Son güncelleme: 31 Ara 2023, 08:00:06
+--
 
 CREATE TABLE IF NOT EXISTS `yorumlar` (
   `yorum_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -328,15 +311,7 @@ CREATE TABLE IF NOT EXISTS `yorumlar` (
   PRIMARY KEY (`yorum_id`),
   KEY `e_mail` (`e_mail`),
   KEY `mekan_id` (`mekan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- TABLO İLİŞKİLERİ `yorumlar`:
---   `e_mail`
---       `kullanici` -> `e_mail`
---   `mekan_id`
---       `mekanlar` -> `mekan_id`
---
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Tablo döküm verisi `yorumlar`
@@ -355,7 +330,9 @@ INSERT INTO `yorumlar` (`yorum_id`, `e_mail`, `mekan_id`, `yorum_metni`, `yorum_
 (11, 'zeynep_ilk_ay@hotmail.com', 8, 'Şehri tepeden gören bir yer fakat çok dik. Servisleri varmış sanırım ama biz bulamadığımız için yürüdük ve manzarası da tatmin etmedi. Arabayla gidilebilir.', '2023-09-20', 3, 1),
 (12, 'zeynep_ilk_ay@hotmail.com', 33, 'Ne zaman yürümek için huzurlu bir yol ararsanız tercih edebilirsiniz. Piknik alanları da güzel gözüküyordu fakat başka sefere deneyeceğiz... Lunaparkı olması bir artı', '2020-07-16', 5, 1),
 (13, 'alpiren1905@gmail.com', 9, 'Her Türk gencinin kesinlikle görmesi gerekiyor', '2023-12-05', 5, 1),
-(14, 'zeynep_ilk_ay@hotmail.com', 2, 'Sarayın mimarisi çok güzel her gittiğimde büyüleniyorum.', '2023-12-03', 4.5, 1);
+(14, 'zeynep_ilk_ay@hotmail.com', 2, 'Sarayın mimarisi çok güzel her gittiğimde büyüleniyorum.', '2023-12-03', 4.5, 1),
+(15, 'zeynep_ilk_ay@hotmail.com', 13, 'Doğal oluşumları izlerken hayrete düştük. Derinlere inerken nefes darlığı yaşayabilirsiniz.', '2018-07-18', 4, 1),
+(16, 'zeynep_ilk_ay@hotmail.com', 29, 'Hala birilerinin kıymet verip bakımıyla ilgileniyor ve çalışır durumda tutuyor olması gerçekten çok değerli', '2023-12-14', 5, 1);
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
