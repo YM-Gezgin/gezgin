@@ -201,7 +201,7 @@ session_start();?>
         </div>
         <div class="p_content" id="Rotalarım" style="display: none;">
 
-          <!--BURASI DOLDURULUCAK-->
+          
           <h1>Rotalarım içeriği</h1>
           <!--rota hakkında bilgiler zaman falan tutulur yapanın yaratıcılığına kalmış-->
 
@@ -212,10 +212,10 @@ session_start();?>
             <div class="col-md-6">
               <a href="mekanlink" class="card-link text-decoration-none">
                 <div class="card mb-3" style="max-width: 18rem; height: 250px;">
-                  <img class="card-img-top half-width-image" src="images\boyabat kalesi.jpg" alt="Card image cap">
+                  <img class="card-img-top half-width-image" src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2078000/ankara-kalesi-2079071.jpg" alt="Card image cap">
                   <div class="card-body text-center">
-                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
-                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                    <h5 class="card-title" style="color: #fa8000;">Ankara Kalesi</h5>
+                    <p class="card-text" style="color: #fa8000;">Altındağ/Ankara</p>
                   </div>
                 </div>
               </a>
@@ -225,10 +225,10 @@ session_start();?>
             <div class="col-md-6">
               <a href="mekanlink" class="card-link text-decoration-none">
                 <div class="card mb-3" style="max-width: 18rem; height: 250px;">
-                  <img class="card-img-top half-width-image" src="images\route_icon.png" alt="Card image cap">
+                  <img class="card-img-top half-width-image" src="https://blog.jollytur.com/wp-content/uploads/2018/09/anitkabir.jpg" alt="Card image cap">
                   <div class="card-body text-center">
-                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
-                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                    <h5 class="card-title" style="color: #fa8000;">Anıtkabir</h5>
+                    <p class="card-text" style="color: #fa8000;">Çankaya/Ankara</p>
                   </div>
                 </div>
               </a>
@@ -238,10 +238,10 @@ session_start();?>
             <div class="col-md-6">
               <a href="mekanlink" class="card-link text-decoration-none">
                 <div class="card mb-3" style="max-width: 18rem; height: 250px;">
-                  <img class="card-img-top half-width-image" src="images\sarnic.jpg" alt="Card image cap">
+                  <img class="card-img-top half-width-image" src="https://www.lutarsturizm.com/wp-content/uploads/2016/03/ku%C4%9Fulu-park-900x600.jpg" alt="Card image cap">
                   <div class="card-body text-center">
-                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
-                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                    <h5 class="card-title" style="color: #fa8000;">Kuğulu Park</h5>
+                    <p class="card-text" style="color: #fa8000;">Çankaya/Ankara</p>
                   </div>
                 </div>
               </a>
@@ -250,10 +250,10 @@ session_start();?>
             <div class="col-md-6">
               <a href="mekanlink" class="card-link text-decoration-none">
                 <div class="card mb-3" style="max-width: 18rem; height: 250px;">
-                  <img class="card-img-top half-width-image" src="images\route_icon.png" alt="Card image cap">
+                  <img class="card-img-top half-width-image" src="https://cdn.karar.com/news/1585462.jpg" alt="Card image cap">
                   <div class="card-body text-center">
-                    <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
-                    <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                    <h5 class="card-title" style="color: #fa8000;">Eyüp Sultan Camii</h5>
+                    <p class="card-text" style="color: #fa8000;">Eyüp/İstanbul</p>
                   </div>
                 </div>
               </a>
@@ -263,35 +263,20 @@ session_start();?>
               <div class="col-md-6">
                 <a href="mekanlink" class="card-link text-decoration-none">
                   <div class="card mb-3" style="max-width: 18rem; height: 250px;">
-                    <img class="card-img-top half-width-image" src="images\sarnic.jpg" alt="Card image cap">
+                    <img class="card-img-top half-width-image" src="https://geoim.bloomberght.com/2014/02/24/ver1393232928/1514095_576x384.jpg" alt="Card image cap">
                     <div class="card-body text-center">
-                      <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
-                      <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
+                      <h5 class="card-title" style="color: #fa8000;">Miniatürk</h5>
+                      <p class="card-text" style="color: #fa8000;">Beyoğlu/İstanbul</p>
                     </div>
                   </div>
                 </a>
               </div>
           
-              <div class="col-md-6">
-                <a href="mekanlink" class="card-link text-decoration-none">
-                  <div class="card mb-3" style="max-width: 18rem; height: 250px;">
-                    <img class="card-img-top half-width-image" src="images\route_icon.png" alt="Card image cap">
-                    <div class="card-body text-center">
-                      <h5 class="card-title" style="color: #fa8000;">Boyabat Kalesi</h5>
-                      <p class="card-text" style="color: #fa8000;">Boyabat/Sinop</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-              
-              
-          
+            </div>    
               
             
           </div>
           <div class="p_content" id="Değerlendirmelerim" style="display: none;">
-            <!--BURASI DOLDURULUCAK-->
             <h1>Değerlendirmelerim içeriği</h1>
             <!-- kart adı falan çıkıp verdiği puan yorum gösterebiliriz.-->
 
