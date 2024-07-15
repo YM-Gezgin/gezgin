@@ -2,6 +2,15 @@
 
 Bu gezi uygulaması, şehir seçme, gezi rotası oluşturma ve premium kullanıcılara özel ayrıcalıklar sunma amacıyla geliştirilmiştir.
 
+# GEZGİN ARAYÜZÜ
+
+![Ekran görüntüsü 2024-07-15 132831](https://github.com/user-attachments/assets/268e9802-a120-48bf-aad6-8a4251e72a2c)
+![Ekran görüntüsü 2024-07-15 132857](https://github.com/user-attachments/assets/84f92811-6b81-42c5-845f-b98bcd2484ae)
+![image](https://github.com/user-attachments/assets/555e0d55-622d-4d8c-89d2-610456026fec)
+![image](https://github.com/user-attachments/assets/953f61d6-5cd7-409b-8b58-f952fd672677)
+![image](https://github.com/user-attachments/assets/de0ea6a1-6bd0-48a5-a7ca-665ad8b9ae8a)
+
+
 ## Kullanılan Teknolojiler
 
 - PHP
